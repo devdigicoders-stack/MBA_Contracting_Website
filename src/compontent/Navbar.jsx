@@ -118,10 +118,10 @@ export default function Navbar() {
             
             <a
               href="tel:9696559848"
-              className="sm:hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-white font-medium text-xs bg-gradient-to-r from-[#caa359] to-[#a37930]"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-white bg-gradient-to-r from-[#caa359] to-[#a37930]"
+              aria-label="Call"
             >
-              <Phone className="w-3.5 h-3.5" />
-              <span>Call</span>
+              <Phone className="w-4 h-4" />
             </a>
             
             <button

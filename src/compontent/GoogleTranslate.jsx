@@ -110,7 +110,6 @@ export default function GoogleTranslate() {
         aria-expanded={isOpen}
         title="Change Language"
       >
-        <Globe className="w-3.5 h-3.5 text-[#c59b4b] shrink-0" />
         <span className="text-sm leading-none">{current.flag}</span>
         <span className="font-semibold text-xs tracking-wide">{current.code.toUpperCase()}</span>
         <ChevronDown
