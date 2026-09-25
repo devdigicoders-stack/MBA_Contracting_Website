@@ -10,7 +10,7 @@ export default function Footer() {
     { name: 'Services', path: '/services' },
     { name: 'Finishing Works', path: '/finishing-works' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Blog & Insights', path: '/blog' },
+    // { name: 'Blog & Insights', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 

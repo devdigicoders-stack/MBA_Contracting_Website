@@ -34,8 +34,8 @@ function App() {
             <Route path="/finishing-works" element={<FinishingWorks />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/process" element={<Process />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
+            {/* <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
