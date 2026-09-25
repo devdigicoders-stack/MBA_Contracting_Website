@@ -106,7 +106,7 @@ export default function GoogleTranslate() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg border border-gray-200 hover:border-[#c59b4b] bg-white text-gray-800 hover:text-[#0c1b2a] shadow-xs text-xs font-semibold transition-all duration-200 focus:outline-none cursor-pointer"
+        className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg border border-gray-200 hover:border-[#003366] bg-white text-gray-800 hover:text-[#0c1b2a] shadow-xs text-xs font-semibold transition-all duration-200 focus:outline-none cursor-pointer"
         aria-expanded={isOpen}
         title="Change Language"
       >
@@ -124,7 +124,7 @@ export default function GoogleTranslate() {
         <div className="absolute right-0 mt-2 w-52 rounded-xl bg-white shadow-xl border border-gray-100 py-1.5 z-50 animate-in fade-in zoom-in-95 duration-150">
           <div className="px-3 py-1.5 border-b border-gray-100 text-[10px] font-bold uppercase tracking-wider text-gray-400 flex items-center justify-between">
             <span>Select Language</span>
-            <span className="text-[9px] text-[#c59b4b] font-normal">Google Translate</span>
+            <span className="text-[9px] text-[#003366] font-normal">Google Translate</span>
           </div>
 
           <div className="py-1">
@@ -135,7 +135,7 @@ export default function GoogleTranslate() {
                 onClick={() => handleSelectLanguage(lang.code)}
                 className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors cursor-pointer ${
                   selectedLang === lang.code
-                    ? 'bg-amber-50 text-[#c59b4b] font-bold'
+                    ? 'bg-amber-50 text-[#003366] font-bold'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
@@ -146,7 +146,7 @@ export default function GoogleTranslate() {
                     <div className="text-[10px] text-gray-400">{lang.label}</div>
                   </div>
                 </div>
-                {selectedLang === lang.code && <Check className="w-4 h-4 text-[#c59b4b] shrink-0" />}
+                {selectedLang === lang.code && <Check className="w-4 h-4 text-[#003366] shrink-0" />}
               </button>
             ))}
           </div>

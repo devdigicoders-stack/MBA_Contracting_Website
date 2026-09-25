@@ -13,12 +13,12 @@ export default function Process() {
     <div className="min-h-[calc(100vh-80px)] bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         
-        <div className="inline-block px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-[#b88f44] text-sm font-semibold mb-4">
+        <div className="inline-block px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-[#002952] text-sm font-semibold mb-4">
           How We Work
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-          Hello from <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#caa359] to-[#9c7128]">Process</span>
+          Hello from <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004080] to-[#9c7128]">Process</span>
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-2xl">
@@ -33,7 +33,7 @@ export default function Process() {
                 <div className="absolute top-4 right-5 text-4xl font-black text-gray-100">
                   {st.num}
                 </div>
-                <Icon className="w-8 h-8 text-[#caa359] mb-3 relative z-10" />
+                <Icon className="w-8 h-8 text-[#004080] mb-3 relative z-10" />
                 <h3 className="text-xl font-bold text-[#0c1b2a] relative z-10">{st.title}</h3>
                 <p className="text-gray-500 text-sm mt-2 relative z-10 leading-relaxed">{st.desc}</p>
               </div>

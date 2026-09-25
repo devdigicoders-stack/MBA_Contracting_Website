@@ -27,14 +27,14 @@ export default function CtaSection() {
             <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
               Built on Trust. Focused on Results.
             </h2>
-            <div className="w-12 h-1 bg-[#caa359] mt-3 rounded-full" />
+            <div className="w-12 h-1 bg-[#004080] mt-3 rounded-full" />
 
             {/* 4 Value Pillars in a horizontal grid */}
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
               
               {/* 1. Quality-Focused Approach */}
               <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#caa359] flex items-center justify-center mb-3">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#004080] flex items-center justify-center mb-3">
                   <Gem className="w-5 h-5" />
                 </div>
                 <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -44,7 +44,7 @@ export default function CtaSection() {
 
               {/* 2. Complete Solutions */}
               <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#caa359] flex items-center justify-center mb-3">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#004080] flex items-center justify-center mb-3">
                   <Handshake className="w-5 h-5" />
                 </div>
                 <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -54,7 +54,7 @@ export default function CtaSection() {
 
               {/* 3. Practical Project Execution */}
               <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#caa359] flex items-center justify-center mb-3">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#004080] flex items-center justify-center mb-3">
                   <Settings className="w-5 h-5" />
                 </div>
                 <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -64,7 +64,7 @@ export default function CtaSection() {
 
               {/* 4. Client-Centered Service */}
               <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#caa359] flex items-center justify-center mb-3">
+                <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 text-[#004080] flex items-center justify-center mb-3">
                   <Users className="w-5 h-5" />
                 </div>
                 <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
@@ -77,7 +77,7 @@ export default function CtaSection() {
 
           {/* Right Side: Golden Card ("Let's Build Your Next Project") */}
           <div className="lg:col-span-4">
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-[#caa359] via-[#b88d44] to-[#9c7128] text-white shadow-2xl relative overflow-hidden">
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-[#004080] via-[#b88d44] to-[#9c7128] text-white shadow-2xl relative overflow-hidden">
               <div className="w-10 h-1 bg-white/60 rounded-full mb-4" />
               <h3 className="text-2xl font-black tracking-tight leading-snug">
                 Let's Build Your Next Project

@@ -22,11 +22,28 @@ import {
   ClipboardList,
   HeartHandshake,
   Timer,
-  Maximize
+  Maximize,
+  Smartphone,
+  Play,
+  Monitor,
+  Phone,
+  MessageCircle,
+  Zap,
+  Droplets,
+  Wind,
+  Camera,
+  Sun,
+  FileText,
+  Search,
+  Rocket,
+  AlertCircle,
+  X
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import CtaSection from '../compontent/CtaSection';
 import { useInView } from 'react-intersection-observer';
+import WhoWeAre from '../compontent/WhoWeAre';
+import MeetOurTeam from '../compontent/MeetOurTeam';
+
 
 const AnimatedCounter = ({ end, duration, suffix }) => {
   const [count, setCount] = useState(0);
@@ -59,6 +76,85 @@ export default function Home() {
   const [blogs, setBlogs] = useState([]);
   const [loadingBlogs, setLoadingBlogs] = useState(true);
   const [selectedProject, setSelectedProject] = useState(null);
+
+  // Contact Form State
+  const [formData, setFormData] = useState({
+    fullName: '',
+    companyName: '',
+    phone: '',
+    email: '',
+    service: '',
+    location: '',
+    projectDetails: '',
+  });
+  const [toast, setToast] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5001/api/v1';
+
+      const payload = {
+        name: formData.fullName,
+        fullName: formData.fullName,
+        companyName: formData.companyName,
+        phone: formData.phone,
+        phoneNumber: formData.phone,
+        email: formData.email,
+        service: formData.service,
+        serviceRequired: formData.service,
+        location: formData.location,
+        projectLocation: formData.location,
+        subject: formData.service ? `${formData.service} Inquiry` : 'General Inquiry',
+        message: formData.projectDetails,
+        projectDetails: formData.projectDetails,
+      };
+
+      const response = await fetch(`${apiUrl}/contacts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit inquiry. Please try again.');
+      }
+
+      setFormData({
+        fullName: '',
+        companyName: '',
+        phone: '',
+        email: '',
+        service: '',
+        location: '',
+        projectDetails: '',
+      });
+
+      setToast({
+        title: 'Message Sent Successfully!',
+        message: 'Thank you for reaching out. Our engineering team in Doha will get back to you soon.',
+      });
+
+      setTimeout(() => {
+        setToast(null);
+      }, 5000);
+
+    } catch (err) {
+      console.error('Contact submission error:', err);
+      setError(err.message || 'Failed to connect to the server. Please check your network and try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const expertiseList = [
     { 
@@ -140,7 +236,7 @@ export default function Home() {
     {
       title: 'Construction',
       icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#caa359]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#004080]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M3 21h18" />
           <path d="M5 21V7l7-4 7 4v14" />
           <path d="M9 10h1" />
@@ -155,7 +251,7 @@ export default function Home() {
     {
       title: 'Extensions',
       icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#caa359]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#004080]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
           <polyline points="9 22 9 12 15 12 15 22" />
         </svg>
@@ -164,7 +260,7 @@ export default function Home() {
     {
       title: 'Finishing',
       icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#caa359]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#004080]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m14.7 6.3 5 5-9.4 9.4H5.3v-5z" />
           <path d="m9.7 11.3 3 3" />
           <path d="m18 4 2 2" />
@@ -174,7 +270,7 @@ export default function Home() {
     {
       title: 'Maintenance',
       icon: (
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#caa359]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#004080]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="3" />
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
         </svg>
@@ -231,451 +327,592 @@ export default function Home() {
     <div className="bg-white text-gray-900 font-sans selection:bg-amber-100 selection:text-amber-900">
       
       {/* ========================================================
-          1. HERO SECTION (Identical to Screenshot)
+          1. HERO SECTION (Updated to match design)
       ======================================================== */}
-      <section className="relative w-full min-h-[560px] lg:h-[calc(100vh-80px)] lg:max-h-[640px] flex flex-col justify-between overflow-hidden bg-[#09121c]">
+      <section className="relative w-full min-h-[100vh] lg:h-screen flex items-center overflow-hidden bg-[#fafafa]">
+        {/* Subtle grid background */}
+        <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTM5IDM5VjFoLTM4djM4aDM4eiIgZmlsbD0iI2YwZjBmMCIgZmlsbC1vcGFjaXR5PSIwLjUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==')] opacity-60"></div>
         
-        {/* Background Image with Dark Vignette/Gradient Overlays */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/image.png"
-            alt="MBA Contracting Doha Luxury Villa"
-            className="w-full h-full object-cover object-right lg:object-center"
-          />
-          {/* Left Dark Gradient for sharp contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070e17] via-[#08121e]/95 sm:via-[#08121e]/90 lg:via-[#08121e]/80 to-transparent lg:w-[65%]" />
-          {/* Subtle dark tint */}
-          <div className="absolute inset-0 bg-black/20 lg:bg-black/10" />
-          {/* Bottom edge shadow */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070e17]/90 to-transparent" />
-        </div>
 
-        {/* Hero Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 lg:py-8 w-full h-full flex flex-col justify-between flex-1">
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between h-full pt-28 pb-24 lg:pt-24 lg:pb-0">
           
-          {/* Hero Middle Content - Vertically Centered */}
-          <div className="my-auto max-w-xl lg:max-w-2xl py-4 sm:py-6">
-            
-            {/* Top Tagline */}
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-semibold tracking-widest text-gray-300 uppercase mb-2.5 sm:mb-3">
-              <span>CONSTRUCTION</span>
-              <span className="text-[#caa359]">•</span>
-              <span>CONTRACTING</span>
-              <span className="text-[#caa359]">•</span>
-              <span>FINISHING</span>
-              <span className="text-[#caa359]">•</span>
-              <span>BUILDING MAINTENANCE</span>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl lg:text-[2.65rem] font-extrabold text-white tracking-tight leading-[1.14]">
-              Building Quality.<br />
-              <span className="text-[#caa359]">Delivering Excellence.</span>
+          {/* Left Content */}
+          <div className="w-full lg:w-[55%] xl:w-1/2 pt-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#2a2a2a] leading-[1.15] mb-5">
+              Premium Property<br />Maintenance &<br />Renovation <span className="text-[#003366]">in Dubai</span>
             </h1>
-
-            {/* Subtitle */}
-            <h2 className="mt-2.5 sm:mt-3 text-sm sm:text-base lg:text-lg font-semibold text-gray-100 leading-snug">
-              Professional Contracting, Construction &amp; Finishing Solutions in Qatar
-            </h2>
-
-            {/* Description Paragraph */}
-            <p className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-gray-300/85 leading-relaxed max-w-lg">
-              From villa construction and property extensions to Majlis construction, building maintenance and complete finishing works, MBA Contracting provides practical and professional solutions for residential and commercial properties in Doha, Qatar.
+            <p className="text-[13px] sm:text-[15px] text-gray-700 font-medium mb-8 max-w-lg leading-relaxed">
+              MBA Contracting is a property maintenance and <span className="text-[#003366]">renovation company in Dubai</span>, providing reliable maintenance, repair, and renovation solutions for homes, villas, apartments, and commercial properties. Our services include AC, plumbing, electrical, painting, handyman work, renovation, fit-out, and <span className="text-[#003366]">Annual Maintenance Contracts (AMC)</span>.
             </p>
-
-            {/* CTA Action Buttons */}
-            <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
-              <Link
-                to="/quote"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-white font-semibold text-xs sm:text-sm bg-gradient-to-r from-[#caa359] via-[#b88d44] to-[#a37930] hover:from-[#b99144] hover:to-[#926925] shadow-md hover:shadow-lg transition-all duration-150 active:scale-95"
-              >
-                <span>Request a Consultation</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-white font-medium text-xs sm:text-sm bg-black/40 hover:bg-white/10 backdrop-blur-md border border-white/35 hover:border-white/50 transition-all duration-150"
-              >
-                <span>Explore Our Services</span>
-              </Link>
+            <div className="flex flex-wrap items-center gap-4">
+              <a href="tel:123456789" className="inline-flex items-center gap-3 bg-[#004080] hover:bg-[#002952] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-blue-200/50">
+                Call us now
+                <span className="bg-white text-[#004080] rounded-full p-1 w-6 h-6 flex items-center justify-center">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </a>
+              <a href="https://wa.me/123456789" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-[#2ed573] hover:bg-[#27ae60] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-green-200/50">
+                Or chat with us on 
+                <span className="bg-white text-[#2ed573] rounded-full p-1 flex items-center justify-center w-6 h-6">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                </span>
+              </a>
             </div>
-
           </div>
-
-          {/* Bottom Row: 4 Service Badges (Left) + Floating Doha Qatar Card (Right) */}
-          <div className="pt-4 border-t border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            
-            {/* 4 Service Pillars */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white text-xs sm:text-sm font-semibold">
-              {heroHighlights.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-center gap-2 ${
-                    idx !== heroHighlights.length - 1 ? 'sm:border-r sm:border-white/20 sm:pr-6' : ''
-                  }`}
-                >
-                  {item.icon}
-                  <span>{item.title}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Floating Location Badge on Right */}
-            <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-[#111923]/80 backdrop-blur-md border border-white/15 shadow-xl flex-shrink-0 self-start md:self-auto">
-              <div className="w-8 h-8 rounded-full bg-[#caa359]/20 border border-[#caa359]/40 flex items-center justify-center text-[#caa359]">
-                <MapPin className="w-4 h-4 text-[#caa359]" />
-              </div>
-              <div>
-                <h4 className="text-xs sm:text-sm font-bold text-white tracking-wide">Doha, Qatar</h4>
-                <p className="text-[9px] font-bold tracking-wider text-gray-400 uppercase">
-                  Your Trusted Contracting Partner
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ========================================================
-          2. ABOUT MBA CONTRACTING SECTION
-      ======================================================== */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-            
-            {/* Left Column: Image with floating badge */}
-            <div className="lg:col-span-5 relative group">
-              <div className="rounded-none overflow-hidden shadow-lg h-full min-h-[400px] max-h-[500px] relative border border-gray-200/50">
-                <img
-                  src="/about_construction.jpg"
-                  alt="Quality Construction for a Better Tomorrow"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-0 left-0 bg-white/95 backdrop-blur-md p-5 rounded-none shadow-xl border-t-2 border-r-2 border-[#caa359] max-w-[85%]">
-                  <h4 className="text-[#0c1b2a] font-bold text-sm leading-relaxed">
-                    Quality Construction for a Better Tomorrow.
-                  </h4>
-                  <div className="w-12 h-1 bg-[#caa359] mt-3 rounded-none" />
-                </div>
-              </div>
-            </div>
-
-            {/* Center Column: Text & 3 Value Icons & CTA Button */}
-            <div className="lg:col-span-4 flex flex-col justify-center py-4">
-              <span className="text-[11px] font-bold tracking-[0.25em] text-[#caa359] uppercase">
-                ABOUT MBA CONTRACTING
-              </span>
-              
-              <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-[#0c1b2a] tracking-tight leading-snug">
-                Your Project.<br />Our Commitment.
-              </h2>
-
-              <p className="mt-5 text-sm text-gray-600 leading-relaxed">
-                MBA Contracting is a Doha-based contracting company focused on construction, renovation, finishing and building maintenance. We support clients through different stages of a property project — from construction and extensions to detailed finishing and maintenance requirements.
-              </p>
-
-              {/* 3 Value Pillars */}
-              <div className="mt-8 grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
-                <div className="flex flex-col items-start">
-                  <div className="w-10 h-10 rounded-none bg-gray-50 border border-gray-100 text-[#caa359] flex items-center justify-center mb-3">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <h5 className="text-xs font-bold text-[#0c1b2a] leading-tight">Professional Workmanship</h5>
-                </div>
-
-                <div className="flex flex-col items-start">
-                  <div className="w-10 h-10 rounded-none bg-gray-50 border border-gray-100 text-[#caa359] flex items-center justify-center mb-3">
-                    <Users className="w-5 h-5" />
-                  </div>
-                  <h5 className="text-xs font-bold text-[#0c1b2a] leading-tight">Client-Centered Approach</h5>
-                </div>
-
-                <div className="flex flex-col items-start">
-                  <div className="w-10 h-10 rounded-none bg-gray-50 border border-gray-100 text-[#caa359] flex items-center justify-center mb-3">
-                    <Building2 className="w-5 h-5" />
-                  </div>
-                  <h5 className="text-xs font-bold text-[#0c1b2a] leading-tight">Residential & Commercial</h5>
-                </div>
-              </div>
-
-              {/* Learn More Button */}
-              <div className="mt-8">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-none text-white font-bold text-xs uppercase tracking-wider bg-[#0c1b2a] hover:bg-[#caa359] shadow-md transition-all active:scale-95 group"
-                >
-                  <span>Learn More About Us</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Doha, Qatar Card with Architectural Skyline illustration */}
-            <div className="lg:col-span-3">
-              <div className="h-full bg-[#0c1b2a] text-white rounded-none border-b-4 border-[#caa359] p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
-                <div className="relative z-10">
-                  <h3 className="text-xl font-extrabold text-white tracking-tight">
-                    Doha, Qatar
-                  </h3>
-                  
-                  <ul className="mt-6 space-y-3 text-xs font-bold tracking-widest text-gray-400 uppercase">
-                    <li className="hover:text-[#caa359] transition-colors cursor-pointer flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#caa359] rounded-none"></span> CONSTRUCTION</li>
-                    <li className="hover:text-[#caa359] transition-colors cursor-pointer flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#caa359] rounded-none"></span> CONTRACTING</li>
-                    <li className="hover:text-[#caa359] transition-colors cursor-pointer flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#caa359] rounded-none"></span> FINISHING</li>
-                    <li className="hover:text-[#caa359] transition-colors cursor-pointer flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#caa359] rounded-none"></span> MAINTENANCE</li>
-                  </ul>
-
-                  <div className="w-12 h-1 bg-[#caa359] mt-6 rounded-none" />
-                </div>
-
-                {/* Architectural Skyline Image */}
-                <div className="mt-4 pt-2 relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden flex justify-center">
-                  <img 
-                    src="/image copy 5.png" 
-                    alt="Doha Skyline" 
-                    className="w-full max-w-[120%] h-auto object-contain scale-125 origin-bottom transform translate-y-4"
-                  />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          3. OUR CORE SERVICES SECTION (6 Cards Grid)
-      ======================================================== */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50/60 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">
-            <div>
-              <span className="text-[11px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                OUR CORE SERVICES
-              </span>
-              <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold text-[#0c1b2a] tracking-tight">
-                Complete Contracting Solutions Under One Roof.
-              </h2>
+          {/* Right Content - Image and Floating Stats */}
+          <div className="w-full lg:w-[45%] xl:w-1/2 relative mt-16 lg:mt-0 flex justify-end h-full items-center">
+            {/* The Building Background and Car Image */}
+            <div className="relative w-[150%] lg:w-[180%] xl:w-[160%] right-[-15%] lg:right-[-35%] xl:right-[-30%] z-0 h-full flex items-center">
+              {/* Foreground Image containing Dubai Skyline */}
+              <img 
+                src="/image copy 11.png" 
+                alt="Dubai Skyline" 
+                className="w-full h-auto object-contain transform scale-125 lg:scale-150 xl:scale-125 z-10 origin-right"
+              />
             </div>
+            
+            {/* Floating Stats Bar */}
+            <div className="absolute -bottom-8 lg:bottom-12 left-0 lg:left-[-20%] xl:left-[-15%] right-4 lg:right-auto bg-white rounded-xl shadow-2xl py-4 px-2 sm:px-6 z-20 flex justify-between sm:justify-start items-center border border-gray-100/50">
+              <div className="text-center px-3 sm:px-5">
+                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">25k+</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Jobs Completed</div>
+              </div>
+              <div className="text-center px-3 sm:px-5 border-l border-gray-200">
+                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">15k+</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Happy Clients</div>
+              </div>
+              <div className="text-center px-3 sm:px-5 border-l border-gray-200">
+                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">20+</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Vehicles</div>
+              </div>
+              <div className="text-center px-3 sm:px-5 border-l border-gray-200 hidden md:block">
+                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">50+</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Technicians</div>
+              </div>
+              <div className="text-center px-3 sm:px-5 border-l border-gray-200 hidden xl:block">
+                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">20+</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Years of<br/>Expertise</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* ========================================================
+          WHO WE ARE SECTION
+      ======================================================== */}
+      <WhoWeAre />
+
+      {/* ========================================================
+          3. COMPLETE PROPERTY MAINTENANCE SERVICES
+      ======================================================== */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
+            Complete Property Maintenance Services
+          </h2>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Column: Orbital Animation */}
+            <div className="flex items-center justify-center py-8 relative h-[400px] w-full max-w-[400px] mx-auto">
+              
+              {/* Center Icon */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-[#004080]">
+                <ShieldCheck className="w-8 h-8" />
+              </div>
+
+              {/* Orbit 1 */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[45%] h-[45%] rounded-full border border-gray-200 animate-spin-slow z-10" style={{ animationDuration: '25s' }}>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow-reverse" style={{ animationDuration: '25s' }}>
+                  <Zap className="w-4 h-4" />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow-reverse" style={{ animationDuration: '25s' }}>
+                  <Droplets className="w-4 h-4" />
+                </div>
+              </div>
+
+              {/* Orbit 2 */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] rounded-full border border-gray-200 animate-spin-slow z-10" style={{ animationDuration: '35s', animationDirection: 'reverse' }}>
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow" style={{ animationDuration: '35s' }}>
+                  <Wrench className="w-5 h-5" />
+                </div>
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow" style={{ animationDuration: '35s' }}>
+                  <Paintbrush className="w-5 h-5" />
+                </div>
+              </div>
+
+              {/* Orbit 3 */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] rounded-full border border-gray-200 animate-spin-slow z-10" style={{ animationDuration: '45s' }}>
+                <div className="absolute top-[14.6%] left-[14.6%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow-reverse" style={{ animationDuration: '45s' }}>
+                  <Wind className="w-5 h-5" />
+                </div>
+                <div className="absolute bottom-[14.6%] left-[14.6%] -translate-x-1/2 translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow-reverse" style={{ animationDuration: '45s' }}>
+                  <Camera className="w-5 h-5" />
+                </div>
+                <div className="absolute bottom-[14.6%] right-[14.6%] translate-x-1/2 translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-[#004080] animate-spin-slow-reverse" style={{ animationDuration: '45s' }}>
+                  <Sun className="w-5 h-5" />
+                </div>
+              </div>
+
+            </div>
+
+            {/* Right Column: Services Lists */}
+            <div className="flex flex-col gap-10">
+              
+              {/* Group 1 */}
+              <div>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0c1b2a] mb-4">Our Core<br />Contracting Services</h3>
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
+                    <HardHat className="w-4 h-4 text-[#004080]" /> General Contracting
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
+                    <HomeIcon className="w-4 h-4 text-[#004080]" /> Villa Construction
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
+                    <Building2 className="w-4 h-4 text-[#004080]" /> Extension Construction
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
+                    <Sparkles className="w-4 h-4 text-[#004080]" /> Majlis Construction
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
+                    <Wrench className="w-4 h-4 text-[#004080]" /> Building Maintenance Services
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div className="mt-16 text-center">
             <Link
               to="/services"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#caa359] hover:text-[#a37930] transition group"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#004080] text-white font-bold text-sm tracking-wide hover:bg-[#002952] hover:-translate-y-1 shadow-lg shadow-blue-200/50 transition-all group"
             >
               <span>View All Services</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          {/* 6 Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {coreServices.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white rounded-none overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
-                >
-                  <div>
-                    {/* Card Image */}
-                    <div className="h-48 lg:h-56 overflow-hidden relative">
-                      <img
-                        src={service.img}
-                        alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                      
-                      {/* Floating Icon */}
-                      <div className="absolute bottom-4 left-4 w-10 h-10 rounded-none bg-[#caa359] text-white flex items-center justify-center shadow-lg shadow-black/20">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="p-6">
-                      {/* Title */}
-                      <h3 className="font-extrabold text-lg text-[#0c1b2a] leading-snug group-hover:text-[#caa359] transition-colors">
-                        {service.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                        {service.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Bottom Arrow Link */}
-                  <div className="p-6 pt-0 mt-auto">
-                    <Link
-                      to={service.link}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#caa359] group-hover:text-[#a37930] transition-colors"
-                    >
-                      <span>Explore Service</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ========================================================
-          NEW SECTION 3: OUR EXPERTISE (From Finishing Works)
-      ======================================================== */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">
-            <div>
-              <span className="text-[11px] font-bold tracking-[0.25em] text-[#caa359] uppercase">
-                Finishing Works
+              <span className="bg-white text-[#004080] rounded-full p-1 w-6 h-6 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <ArrowRight className="w-4 h-4 transform -rotate-45" />
               </span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-[#0c1b2a] tracking-tight">
-                Our Expertise
-              </h2>
-            </div>
-            <Link
-              to="/finishing-works"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0c1b2a] hover:text-[#caa359] transition group"
-            >
-              <span>View All Services</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {expertiseList.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <Link 
-                  to="/finishing-works"
-                  key={i} 
-                  className="group cursor-pointer bg-white rounded-none shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 flex flex-col"
-                >
-                  <div className="w-full h-48 overflow-hidden relative">
-                    <div className="absolute inset-0 bg-[#0c1b2a]/10 group-hover:bg-transparent transition-colors z-10" />
-                    <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute top-4 left-4 z-20 w-10 h-10 bg-white rounded-none flex items-center justify-center shadow-md">
-                      <Icon className="w-5 h-5 text-[#caa359]" />
-                    </div>
-                  </div>
-
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="font-extrabold text-xl text-[#0c1b2a] group-hover:text-[#caa359] transition-colors mb-3">
-                      {s.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
-                      {s.desc}
-                    </p>
-                    
-                    <div className="inline-flex items-center gap-2 text-xs font-bold text-[#caa359] uppercase tracking-wider mt-auto group-hover:translate-x-1 transition-transform">
-                      Explore Service <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
         </div>
       </section>
 
+
+
+
       {/* ========================================================
-          NEW SECTION 1: MBA IN NUMBERS (Statistics)
+          EXPERIENCE THE DIFFERENCE SECTION
       ======================================================== */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-[#0c1b2a] relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#caa359 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        
-        <div ref={statsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 divide-x-0 md:divide-x divide-gray-800">
-            {[
-              { value: 15, suffix: '+', label: 'Years Experience', icon: Timer },
-              { value: 150, suffix: '+', label: 'Projects Completed', icon: Trophy },
-              { value: 45, suffix: '+', label: 'Expert Engineers', icon: HardHat },
-              { value: 100, suffix: '%', label: 'Client Satisfaction', icon: HeartHandshake }
-            ].map((stat, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center px-4 group">
-                <stat.icon className="w-8 h-8 text-[#caa359] mb-4 opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-300" strokeWidth={1.5} />
-                <div className="text-4xl sm:text-5xl font-black text-white mb-2 tracking-tight group-hover:text-[#caa359] transition-colors">
-                  {statsInView ? (
-                    <AnimatedCounter end={stat.value} duration={2.5} suffix={stat.suffix} />
-                  ) : (
-                    `0${stat.suffix}`
-                  )}
-                </div>
-                <div className="text-sm font-semibold tracking-wider text-gray-400 uppercase">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
+              Experience the<br />difference of MBA
+            </h2>
           </div>
-        </div>
-      </section>
 
-      {/* ========================================================
-          NEW SECTION 4: PROJECTS / OUR WORK
-      ======================================================== */}
-      <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="text-center mb-14 max-w-3xl mx-auto">
-          <span className="text-sm font-bold tracking-[0.2em] text-[#caa359] uppercase mb-2 block">
-            Portfolio
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase">
-            Projects / Our Work
-          </h2>
-          <div className="w-16 h-1 bg-[#caa359] mx-auto mt-6 mb-6" />
-          <p className="text-[#0c1b2a] font-bold text-lg mb-2">Quality Work You Can See.</p>
-          <p className="text-gray-500 text-sm">
-            Showcase completed and ongoing projects with strong photography and concise project descriptions.
-          </p>
-        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Content */}
+            <div className="flex flex-col items-start order-2 lg:order-1">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#003366] uppercase mb-4">
+                SUPERIOR QUALITY
+              </span>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-[#0c1b2a] leading-tight mb-6">
+                Dedicated Engineers<br />Who Know Your Property
+              </h3>
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
+                Our experienced engineers understand the unique needs of your property, from AC systems to plumbing and electrical infrastructure. Through detailed inspections and a smart service history, every visit is informed, precise, and efficient. Your property is never just another job. It is a tailored maintenance journey built around reliability and care.
+              </p>
+              
+              <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 text-[#0c1b2a] font-bold text-sm hover:border-[#003366] hover:text-[#003366] transition-colors group shadow-sm">
+                <span>Request Consultation</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform -rotate-45" />
+              </Link>
+            </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projectCategories.map((cat, idx) => (
-            <div 
-              key={idx} 
-              onClick={() => setSelectedProject(cat)}
-              className="bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer relative"
-            >
-              <div className="h-48 overflow-hidden">
+            {/* Right Content - Image and Badges */}
+            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+              {/* Background Shape */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] max-w-[500px] h-[110%] bg-gradient-to-br from-[#003366] to-[#004080] rounded-[2rem] z-0 opacity-10"></div>
+              
+              {/* The Image */}
+              <div className="relative z-10 w-full max-w-[450px] bg-white rounded-[2rem] p-3 sm:p-4 shadow-2xl border border-gray-100 transform translate-x-4 sm:translate-x-8">
                 <img 
-                  src={cat.img} 
-                  alt={cat.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  src="/engineer_blueprints.jpg" 
+                  alt="Dedicated Engineer" 
+                  className="w-full h-auto rounded-[1.5rem] object-cover"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
               </div>
-              <div className="p-4 bg-[#0c1b2a]">
-                <h3 className="text-sm font-bold text-white text-center tracking-wide">{cat.title}</h3>
+
+              {/* Floating Badge 1 */}
+              <div className="absolute top-1/4 -left-4 sm:-left-10 z-20 bg-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-2 sm:gap-3">
+                <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Experts in Dubai property systems</span>
+              </div>
+
+              {/* Floating Badge 2 */}
+              <div className="absolute bottom-1/4 -left-8 sm:-left-14 z-20 bg-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-2 sm:gap-3">
+                <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Consistent technician visits</span>
               </div>
             </div>
-          ))}
+
+          </div>
         </div>
-        
-        <div className="mt-12 text-center">
-          <Link to="/projects" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#caa359] hover:bg-[#b88f44] text-white font-bold text-xs uppercase tracking-wider rounded-none shadow-md transition-colors">
-            View All Projects
-          </Link>
+      </section>
+
+      {/* ========================================================
+          ENGINEERED SOLUTIONS
+      ======================================================== */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#f8fafd] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Row 1: Engineered Solutions */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Left Content - Text */}
+            <div className="flex flex-col items-start order-2 lg:order-1">
+              <span className="text-[11px] font-bold tracking-[0.2em] text-[#003366] uppercase mb-4">
+                ENGINEERED SOLUTIONS
+              </span>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] leading-tight mb-6">
+                Your Property,<br />Engineered for Reliability
+              </h3>
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
+                We go beyond basic repairs to deliver reliable property maintenance and home maintenance services in Dubai. Our certified engineers use advanced tools, deep technical expertise, and a preventive approach to optimize every system in your property. From HVAC and MEP systems to essential home maintenance, we ensure consistent performance and long-term reliability year-round.
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#004080] text-white font-bold text-sm hover:bg-[#002952] transition-colors group shadow-md shadow-blue-200/50">
+                  <span>Call us now</span>
+                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform -rotate-45" />
+                </Link>
+
+                <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2ed573] text-white font-bold text-sm hover:bg-[#27ae60] transition-colors shadow-md shadow-green-200/50 group">
+                  <span>Or chat with us on</span>
+                  <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform fill-current" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Content - Image and Badges */}
+            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
+              <div className="relative z-10 w-full max-w-[550px]">
+                <img 
+                  src="/engineer_meeting.jpg" 
+                  alt="Engineered Solutions" 
+                  className="w-full h-auto rounded-[2rem] shadow-2xl object-cover"
+                />
+              </div>
+
+              {/* Floating Badge 1 */}
+              <div className="absolute top-1/4 -left-4 sm:-left-8 z-20 bg-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-2 sm:gap-3">
+                <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Expert analysis</span>
+              </div>
+
+              {/* Floating Badge 2 */}
+              <div className="absolute bottom-1/4 -left-6 sm:-left-12 z-20 bg-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-2 sm:gap-3">
+                <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Preventive care that stops issues</span>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
 
+
       {/* ========================================================
-          4. WHY CHOOSE MBA CONTRACTING (Dark Doha Skyline Banner)
+          NEW SECTION 4: CLIENTS / HANDS-ON EXPERIENCE (Marquee)
       ======================================================== */}
-      <CtaSection />
+      <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
+        
+        {/* Decorative Top Slanted Strips (Like Reference Image) */}
+        <div className="absolute top-0 left-0 w-[50%] md:w-[40%] h-12 sm:h-20 bg-[#ffb78c]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 20%, 0 100%)' }}></div>
+        <div className="absolute top-0 right-0 w-[50%] md:w-[40%] h-12 sm:h-20 bg-[#ffb78c]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 60%)' }}></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 sm:mb-16 mt-4">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#1f2937] text-center tracking-tight leading-tight max-w-2xl mx-auto">
+            We have hands-on <br className="hidden sm:block" /> experience with
+          </h2>
+        </div>
+
+        {/* Scrolling Marquee Container */}
+        <div className="relative w-full overflow-hidden flex items-center h-24 sm:h-32 before:absolute before:left-0 before:top-0 before:w-16 sm:before:w-32 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:w-16 sm:after:w-32 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
+          
+          {/* Marquee Track */}
+          <div className="flex animate-marquee w-max items-center gap-16 sm:gap-24 px-8 text-[#2a3b4c] opacity-80 hover:opacity-100 transition-opacity duration-300">
+            
+            {/* Logo Set 1 */}
+            <div className="flex items-center gap-16 sm:gap-24">
+              <span className="font-black text-2xl tracking-tighter">SAMSUNG</span>
+              <span className="font-serif text-2xl tracking-widest uppercase">Emaar</span>
+              <span className="font-bold text-2xl tracking-wider">NAKHEEL</span>
+              <span className="font-sans font-extrabold italic text-2xl">MERAAS</span>
+              <span className="font-bold text-xl uppercase tracking-tighter flex items-center gap-1">
+                <div className="w-5 h-5 rounded-full border-[3px] border-current opacity-70"></div> dewa
+              </span>
+              <span className="font-bold text-2xl tracking-tight">DAIKIN</span>
+              <span className="font-medium text-2xl tracking-tight">Midea</span>
+              <span className="font-black text-xl italic tracking-widest">O GENERAL</span>
+              <span className="font-bold text-sm bg-[#1f2937] text-white px-4 py-1.5 rounded-full italic tracking-wide">Carrier</span>
+              <span className="font-bold text-sm border-2 border-[#1f2937] px-4 py-1 rounded-full uppercase tracking-widest">Cosmoplast</span>
+            </div>
+
+            {/* Logo Set 2 (Duplicate for seamless scroll) */}
+            <div className="flex items-center gap-16 sm:gap-24">
+              <span className="font-black text-2xl tracking-tighter">SAMSUNG</span>
+              <span className="font-serif text-2xl tracking-widest uppercase">Emaar</span>
+              <span className="font-bold text-2xl tracking-wider">NAKHEEL</span>
+              <span className="font-sans font-extrabold italic text-2xl">MERAAS</span>
+              <span className="font-bold text-xl uppercase tracking-tighter flex items-center gap-1">
+                <div className="w-5 h-5 rounded-full border-[3px] border-current opacity-70"></div> dewa
+              </span>
+              <span className="font-bold text-2xl tracking-tight">DAIKIN</span>
+              <span className="font-medium text-2xl tracking-tight">Midea</span>
+              <span className="font-black text-xl italic tracking-widest">O GENERAL</span>
+              <span className="font-bold text-sm bg-[#1f2937] text-white px-4 py-1.5 rounded-full italic tracking-wide">Carrier</span>
+              <span className="font-bold text-sm border-2 border-[#1f2937] px-4 py-1 rounded-full uppercase tracking-widest">Cosmoplast</span>
+            </div>
+            
+          </div>
+        </div>
+
+      </section>
+
+      {/* ========================================================
+          SEND US A MESSAGE SECTION (From Contact Page)
+      ======================================================== */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#f8fafd] border-t border-gray-100 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* ---------------- RIGHT: FORM CARD (6 Cols) ---------------- */}
+            <div className="lg:col-span-6 order-1 lg:order-2 bg-white p-6 sm:p-10 rounded-2xl border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] flex flex-col justify-center">
+              
+              <div className="mb-8">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c1b2a] tracking-tight">
+                  Send Us a <span className="text-[#004080]">Message</span>
+                </h2>
+                <p className="mt-1.5 text-xs sm:text-sm text-gray-500">
+                  Fill out the form below and our team will get back to you soon.
+                </p>
+              </div>
+
+              {error && (
+                <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-start gap-3 animate-fade-in">
+                  <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold">Unable to send message</p>
+                    <p className="mt-0.5 text-red-600">{error}</p>
+                  </div>
+                </div>
+              )}
+
+              {toast && (
+                <div className="mb-6 p-4 rounded-xl bg-amber-50/90 border border-amber-300/80 text-[#0c1b2a] text-xs sm:text-sm flex items-start justify-between gap-3 animate-fade-in shadow-xs">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#004080] shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-bold text-slate-900">{toast.title}</p>
+                      <p className="mt-0.5 text-slate-600 leading-relaxed">{toast.message}</p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setToast(null)}
+                    className="text-slate-400 hover:text-slate-700 cursor-pointer p-0.5"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                
+                {/* Row 1: Full Name & Company */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      placeholder="Enter your full name"
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                      Company / Property Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.companyName}
+                      onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
+                      placeholder="Enter company or property name"
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Phone Number & Email Address */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="Enter your phone number"
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="Enter your email address"
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 3: Service Required & Project Location */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                      Service Required *
+                    </label>
+                    <select
+                      required
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 bg-white transition"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="General Contracting">General Contracting</option>
+                      <option value="Villa Construction">Villa Construction</option>
+                      <option value="Extension Construction">Extension Construction</option>
+                      <option value="Majlis Construction">Majlis Construction</option>
+                      <option value="Building Maintenance">Building Maintenance</option>
+                      <option value="General Finishing Works">General Finishing Works</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                      Project Location *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.location}
+                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                      placeholder="Enter project location"
+                      className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 4: Project Details */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                    Project Details *
+                  </label>
+                  <textarea
+                    rows="4"
+                    required
+                    value={formData.projectDetails}
+                    onChange={(e) => setFormData({ ...formData, projectDetails: e.target.value })}
+                    placeholder="Tell us about your project (size, type of work, timeline, etc.)"
+                    className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition resize-none"
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-3.5 px-6 rounded-lg text-white font-bold text-sm bg-gradient-to-r from-[#004080] via-[#002952] to-[#001a33] hover:from-[#002952] hover:to-[#001326] shadow-md hover:shadow-lg transition-all duration-150 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending Inquiry...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Inquiry</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+                </div>
+
+              </form>
+
+            </div>
+
+            {/* ---------------- LEFT: QATAR MAP (6 Cols) ---------------- */}
+            <div className="lg:col-span-6 order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-gray-200 min-h-[400px] lg:min-h-full bg-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)]">
+              <iframe
+                title="MBA Contracting Qatar Map"
+                src="https://maps.google.com/maps?q=Doha%20Qatar&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
+
+              {/* Floating Doha, Qatar Pin Overlay */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md shadow-lg border border-gray-200 text-xs font-extrabold text-[#0c1b2a]">
+                  <div className="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center">
+                    <MapPin className="w-3 h-3" />
+                  </div>
+                  <span>Doha, Qatar</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* ========================================================
           LATEST NEWS & INSIGHTS (Blog Section)
@@ -686,7 +923,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">
             <div>
-              <span className="text-[11px] font-bold tracking-[0.25em] text-[#caa359] uppercase">
+              <span className="text-[11px] font-bold tracking-[0.25em] text-[#004080] uppercase">
                 LATEST NEWS & INSIGHTS
               </span>
               <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-[#0c1b2a] tracking-tight">
@@ -695,7 +932,7 @@ export default function Home() {
             </div>
             <Link
               to="/blog"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0c1b2a] hover:text-[#caa359] transition group"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0c1b2a] hover:text-[#004080] transition group"
             >
               <span>View All Articles</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -705,7 +942,7 @@ export default function Home() {
           <div className="mt-8">
             {loadingBlogs ? (
               <div className="flex flex-col items-center justify-center py-16">
-                <Loader2 className="w-8 h-8 text-[#caa359] animate-spin mb-3" />
+                <Loader2 className="w-8 h-8 text-[#004080] animate-spin mb-3" />
                 <p className="text-gray-500 text-sm font-medium">Loading latest articles...</p>
               </div>
             ) : blogs && blogs.length > 0 ? (
@@ -729,18 +966,18 @@ export default function Home() {
 
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center justify-between gap-2 mb-4">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none text-xs font-bold bg-[#caa359] text-white">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none text-xs font-bold bg-[#004080] text-white">
                           <Tag className="w-3 h-3" />
                           {blog.category || 'General'}
                         </span>
                         <div className="flex items-center gap-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                          <Calendar className="w-3.5 h-3.5 text-[#caa359]" />
+                          <Calendar className="w-3.5 h-3.5 text-[#004080]" />
                           <span>{formatDate(blog.createdAt)}</span>
                         </div>
                       </div>
 
                       <Link to={`/blog/${blog.slug}`} className="block">
-                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#caa359] transition-colors line-clamp-2 leading-snug mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#004080] transition-colors line-clamp-2 leading-snug mb-3">
                           {blog.title}
                         </h3>
                       </Link>
@@ -752,7 +989,7 @@ export default function Home() {
                       <div className="pt-4 border-t border-gray-100 flex items-center justify-between mt-auto">
                         <Link
                           to={`/blog/${blog.slug}`}
-                          className="inline-flex items-center gap-2 text-xs font-bold text-[#caa359] group-hover:text-[#0c1b2a] transition-all cursor-pointer uppercase tracking-wider"
+                          className="inline-flex items-center gap-2 text-xs font-bold text-[#004080] group-hover:text-[#0c1b2a] transition-all cursor-pointer uppercase tracking-wider"
                         >
                           <span>Read Article</span>
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -775,37 +1012,62 @@ export default function Home() {
       {/* ========================================================
           NEW SECTION 2: OUR WORKING PROCESS
       ======================================================== */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50 border-b border-gray-100 relative overflow-hidden">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-white to-[#f8fafd] border-b border-gray-100 relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+          <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-50/50 blur-3xl"></div>
+          <div className="absolute top-[60%] -right-[10%] w-[40%] h-[60%] rounded-full bg-blue-50/50 blur-3xl"></div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.25em] text-[#caa359] uppercase">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-blue-50 border border-blue-100 text-[11px] font-extrabold tracking-[0.2em] text-[#004080] uppercase mb-4 shadow-sm">
               How We Work
             </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-[#0c1b2a] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
               Our Simple Process
             </h2>
+            <p className="mt-5 text-gray-500 text-sm sm:text-base leading-relaxed">
+              We've streamlined our workflow to ensure seamless communication, complete transparency, and top-quality results from start to finish.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            {/* Connecting line for desktop */}
-            <div className="hidden md:block absolute top-[45px] left-[10%] right-[10%] h-[2px] bg-gray-200" />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
+            
+            {/* Connecting dashed line for desktop */}
+            <div className="hidden md:block absolute top-[48px] left-[12.5%] right-[12.5%] h-[2px] border-t-2 border-dashed border-gray-300 z-0 opacity-70" />
             
             {[
-              { title: 'Consultation', desc: 'We discuss your vision, requirements, and budget.', icon: Users },
-              { title: 'Planning', desc: 'Detailed architectural plans and project timeline.', icon: ClipboardList },
-              { title: 'Construction', desc: 'Expert execution with quality materials.', icon: Wrench },
-              { title: 'Handover', desc: 'Final inspection and key delivery.', icon: Sparkles }
+              { title: 'Consultation', desc: 'We discuss your vision, requirements, and budget in detail.', icon: Users },
+              { title: 'Planning', desc: 'Our experts draft precise architectural plans and timelines.', icon: ClipboardList },
+              { title: 'Construction', desc: 'Flawless execution using premium materials and expert labor.', icon: Wrench },
+              { title: 'Handover', desc: 'Final inspection, quality assurance, and key delivery.', icon: Sparkles }
             ].map((step, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
-                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300 relative">
-                  {/* Step number badge */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#caa359] text-white flex items-center justify-center font-bold text-sm shadow-md border-2 border-white">
+                
+                {/* Circle Container */}
+                <div className="w-24 h-24 rounded-full bg-white p-2 shadow-[0_8px_30px_rgb(0,0,0,0.06)] group-hover:shadow-[0_15px_40px_rgba(0,64,128,0.15)] transition-all duration-500 relative mb-8 group-hover:-translate-y-2">
+                  
+                  {/* Inner Circle (Changes color on hover) */}
+                  <div className="w-full h-full rounded-full bg-[#f8fafd] border border-gray-100 flex items-center justify-center group-hover:bg-[#004080] group-hover:border-[#004080] transition-colors duration-500">
+                    <step.icon className="w-8 h-8 text-[#004080] group-hover:text-white transition-colors duration-500" />
+                  </div>
+
+                  {/* Step Number Badge */}
+                  <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-gradient-to-tr from-[#004080] to-[#002952] text-white flex items-center justify-center font-black text-sm shadow-lg border-2 border-white transform group-hover:scale-110 transition-transform duration-500">
                     {idx + 1}
                   </div>
-                  <step.icon className="w-8 h-8 text-[#0c1b2a] group-hover:text-[#caa359] transition-colors" />
+                  
                 </div>
-                <h3 className="text-lg font-bold text-[#0c1b2a] mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">{step.desc}</p>
+
+                {/* Text Content */}
+                <h3 className="text-xl font-extrabold text-[#0c1b2a] mb-3 group-hover:text-[#004080] transition-colors duration-300">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed max-w-[220px]">
+                  {step.desc}
+                </p>
+                
               </div>
             ))}
           </div>
@@ -836,7 +1098,7 @@ export default function Home() {
             
             {/* Content Section */}
             <div className="w-full md:w-1/2 p-8 sm:p-10 flex flex-col justify-center">
-              <span className="text-[#caa359] font-bold text-xs tracking-widest uppercase mb-2 hidden md:block">Project Focus</span>
+              <span className="text-[#004080] font-bold text-xs tracking-widest uppercase mb-2 hidden md:block">Project Focus</span>
               <h2 className="text-3xl font-extrabold text-[#0c1b2a] mb-6 hidden md:block">{selectedProject.title}</h2>
               
               <div className="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
@@ -846,7 +1108,7 @@ export default function Home() {
                 <p>
                   From initial planning to the final finishing touches, our dedicated team manages all aspects of the project, delivering results that exceed expectations while strictly adhering to timelines and budgets.
                 </p>
-                <ul className="space-y-2 mt-4 border-l-2 border-[#caa359] pl-4">
+                <ul className="space-y-2 mt-4 border-l-2 border-[#004080] pl-4">
                   <li>✔ Premium Quality Materials</li>
                   <li>✔ Timely Project Delivery</li>
                   <li>✔ Expert Workmanship</li>
@@ -854,7 +1116,7 @@ export default function Home() {
               </div>
               
               <div className="mt-auto">
-                <Link to="/contact" className="inline-flex justify-center items-center gap-2 w-full py-4 bg-[#0c1b2a] hover:bg-[#caa359] text-white font-bold text-sm uppercase tracking-wider rounded-none shadow-md transition-colors group">
+                <Link to="/contact" className="inline-flex justify-center items-center gap-2 w-full py-4 bg-[#0c1b2a] hover:bg-[#004080] text-white font-bold text-sm uppercase tracking-wider rounded-none shadow-md transition-colors group">
                   Discuss a similar project
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
@@ -863,6 +1125,11 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* ========================================================
+          MEET OUR TEAM SECTION
+      ======================================================== */}
+      <MeetOurTeam />
 
     </div>
   );

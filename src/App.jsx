@@ -4,6 +4,7 @@ import Navbar from './compontent/Navbar';
 import Footer from './compontent/Footer';
 import ScrollToTop from './compontent/ScrollToTop';
 import PageLoader from './compontent/PageLoader';
+import FloatingContact from './compontent/FloatingContact';
 import Home from './page/Home';
 import About from './page/About';
 import Services from './page/Services';
@@ -25,6 +26,7 @@ function App() {
       <PageLoader />
       <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-amber-100 selection:text-amber-900">
         <Navbar />
+        <FloatingContact />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

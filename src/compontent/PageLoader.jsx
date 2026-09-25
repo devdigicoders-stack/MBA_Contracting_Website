@@ -39,7 +39,7 @@ export default function PageLoader() {
         {/* Minimalist Geometry Loader */}
         <div className="relative flex items-center justify-center w-24 h-24">
           {/* Rotating Outer Ring */}
-          <div className="absolute inset-0 rounded-full border-2 border-gray-100 border-t-[#caa359] border-r-[#caa359] animate-spin" style={{ animationDuration: '1.5s' }} />
+          <div className="absolute inset-0 rounded-full border-2 border-gray-100 border-t-[#004080] border-r-[#004080] animate-spin" style={{ animationDuration: '1.5s' }} />
           
           {/* Inner Pulsing Diamond */}
           <div className="absolute w-8 h-8 bg-[#0c1b2a] rotate-45 animate-pulse rounded-sm" />

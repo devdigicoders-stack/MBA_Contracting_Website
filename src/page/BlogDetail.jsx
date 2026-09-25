@@ -164,7 +164,7 @@ export default function BlogDetail() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#fcfbf9] flex flex-col items-center justify-center py-24">
-        <Loader2 className="w-12 h-12 text-[#caa359] animate-spin mb-4" />
+        <Loader2 className="w-12 h-12 text-[#004080] animate-spin mb-4" />
         <p className="text-gray-500 font-medium">Loading article details...</p>
       </div>
     );
@@ -173,14 +173,14 @@ export default function BlogDetail() {
   if (error || !post) {
     return (
       <div className="min-h-screen bg-[#fcfbf9] flex flex-col items-center justify-center py-24 px-4 text-center">
-        <BookOpen className="w-16 h-16 text-[#caa359] mb-4 opacity-50" />
+        <BookOpen className="w-16 h-16 text-[#004080] mb-4 opacity-50" />
         <h2 className="text-2xl font-bold text-gray-900 mb-2">{error || 'Article Not Found'}</h2>
         <p className="text-gray-500 max-w-md mb-6">
           The requested article may have been relocated or updated by our engineering editorial team.
         </p>
         <Link
           to="/blog"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#caa359] text-white rounded-xl text-sm font-semibold hover:bg-[#b58f4a] transition-all cursor-pointer"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#004080] text-white rounded-xl text-sm font-semibold hover:bg-[#b58f4a] transition-all cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Articles</span>
@@ -197,7 +197,7 @@ export default function BlogDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none text-xs font-bold bg-[#caa359] text-white">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none text-xs font-bold bg-[#004080] text-white">
                 <Tag className="w-3 h-3" />
                 {post.category || 'Contracting'}
               </span>
@@ -221,7 +221,7 @@ export default function BlogDetail() {
 
             <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-gray-700/50 mt-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#caa359]/20 border border-[#caa359]/40 flex items-center justify-center text-[#caa359] font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-[#004080]/20 border border-[#004080]/40 flex items-center justify-center text-[#004080] font-bold text-sm">
                   {post.author ? post.author.charAt(0).toUpperCase() : 'M'}
                 </div>
                 <div>
@@ -258,7 +258,7 @@ export default function BlogDetail() {
                 </button>
                 <button
                   onClick={() => shareToPlatform('copy')}
-                  className="px-2.5 h-8 rounded-none bg-white/10 hover:bg-[#caa359] hover:text-white text-gray-300 flex items-center gap-1 text-xs font-semibold transition-colors cursor-pointer"
+                  className="px-2.5 h-8 rounded-none bg-white/10 hover:bg-[#004080] hover:text-white text-gray-300 flex items-center gap-1 text-xs font-semibold transition-colors cursor-pointer"
                 >
                   {copied ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Share2 className="w-3.5 h-3.5" />}
                   <span>{copied ? 'Copied!' : 'Link'}</span>
@@ -278,7 +278,7 @@ export default function BlogDetail() {
 
             {/* Excerpt Highlight Box */}
             {post.excerpt && (
-              <div className="p-5 sm:p-6 rounded-none bg-amber-50/60 border-l-4 border-[#caa359] text-gray-800 text-base leading-relaxed italic shadow-xs">
+              <div className="p-5 sm:p-6 rounded-none bg-amber-50/60 border-l-4 border-[#004080] text-gray-800 text-base leading-relaxed italic shadow-xs">
                 "{post.excerpt}"
               </div>
             )}
@@ -315,7 +315,7 @@ export default function BlogDetail() {
                   {post.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-white rounded-lg border border-gray-200 text-xs font-medium text-gray-600 hover:border-[#caa359] hover:text-[#caa359] transition-colors"
+                      className="px-3 py-1 bg-white rounded-lg border border-gray-200 text-xs font-medium text-gray-600 hover:border-[#004080] hover:text-[#004080] transition-colors"
                     >
                       #{tag}
                     </span>
@@ -328,7 +328,7 @@ export default function BlogDetail() {
             {post.faqs && post.faqs.length > 0 && (
               <div className="pt-8 border-t border-gray-200 space-y-4">
                 <div className="flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-[#caa359]" />
+                  <HelpCircle className="w-5 h-5 text-[#004080]" />
                   <h3 className="text-xl font-bold text-gray-900 tracking-tight">
                     Frequently Asked Questions
                   </h3>
@@ -342,12 +342,12 @@ export default function BlogDetail() {
                     >
                       <button
                         onClick={() => toggleFaq(index)}
-                        className="w-full flex items-center justify-between p-4 text-left font-bold text-sm text-gray-900 hover:text-[#caa359] transition-colors cursor-pointer"
+                        className="w-full flex items-center justify-between p-4 text-left font-bold text-sm text-gray-900 hover:text-[#004080] transition-colors cursor-pointer"
                       >
                         <span>{faq.question}</span>
                         <ChevronDown
                           className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                            openFaqIndex === index ? 'rotate-180 text-[#caa359]' : ''
+                            openFaqIndex === index ? 'rotate-180 text-[#004080]' : ''
                           }`}
                         />
                       </button>
@@ -364,7 +364,7 @@ export default function BlogDetail() {
 
             {/* Author Editorial Bio Card */}
             <div className="p-6 rounded-none bg-gradient-to-r from-gray-50 to-amber-50/30 border border-gray-200/80 flex flex-col sm:flex-row items-center sm:items-start gap-4">
-              <div className="w-14 h-14 rounded-none bg-[#caa359] text-white flex items-center justify-center font-extrabold text-xl shadow-md shrink-0">
+              <div className="w-14 h-14 rounded-none bg-[#004080] text-white flex items-center justify-center font-extrabold text-xl shadow-md shrink-0">
                 {post.author ? post.author.charAt(0).toUpperCase() : 'M'}
               </div>
               <div className="text-center sm:text-left space-y-1">
@@ -381,7 +381,7 @@ export default function BlogDetail() {
             <div className="pt-6 flex items-center justify-between">
               <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#caa359] hover:underline"
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#004080] hover:underline"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back to All Articles</span>
@@ -397,7 +397,7 @@ export default function BlogDetail() {
             {toc.length > 0 && (
               <div className="p-6 rounded-none bg-white border border-gray-100 shadow-xs space-y-4">
                 <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-100 pb-3 flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-[#caa359]" />
+                  <BookOpen className="w-4 h-4 text-[#004080]" />
                   Table of Contents
                 </h3>
                 <nav className="space-y-2 pt-1">
@@ -405,7 +405,7 @@ export default function BlogDetail() {
                     <a
                       key={idx}
                       href={`#${item.id}`}
-                      className={`block text-xs sm:text-sm text-gray-600 hover:text-[#caa359] hover:underline transition-colors ${
+                      className={`block text-xs sm:text-sm text-gray-600 hover:text-[#004080] hover:underline transition-colors ${
                         item.level === 3 ? 'pl-4 text-xs' : 'font-semibold'
                       }`}
                       onClick={(e) => {
@@ -433,7 +433,7 @@ export default function BlogDetail() {
             
             {/* 1. Request Consultation CTA Widget */}
             <div className="p-6 rounded-none bg-gradient-to-br from-[#0b1722] to-[#162737] text-white shadow-xl space-y-5 border border-gray-800">
-              <div className="w-10 h-10 rounded-none bg-[#caa359]/20 flex items-center justify-center text-[#caa359]">
+              <div className="w-10 h-10 rounded-none bg-[#004080]/20 flex items-center justify-center text-[#004080]">
                 <Building2 className="w-5 h-5" />
               </div>
 
@@ -449,7 +449,7 @@ export default function BlogDetail() {
               <div className="space-y-2.5 pt-1">
                 <Link
                   to="/quote"
-                  className="w-full py-3 bg-[#caa359] hover:bg-[#b58f4a] text-white rounded-xl text-xs font-bold text-center block shadow-md shadow-[#caa359]/20 transition-all cursor-pointer"
+                  className="w-full py-3 bg-[#004080] hover:bg-[#b58f4a] text-white rounded-xl text-xs font-bold text-center block shadow-md shadow-[#004080]/20 transition-all cursor-pointer"
                 >
                   Request a Free Quote
                 </Link>
@@ -489,10 +489,10 @@ export default function BlogDetail() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-[10px] font-bold text-[#caa359] uppercase block mb-0.5">
+                        <span className="text-[10px] font-bold text-[#004080] uppercase block mb-0.5">
                           {item.category || 'Article'}
                         </span>
-                        <h4 className="text-xs font-bold text-gray-900 group-hover:text-[#caa359] transition-colors line-clamp-2 leading-snug">
+                        <h4 className="text-xs font-bold text-gray-900 group-hover:text-[#004080] transition-colors line-clamp-2 leading-snug">
                           {item.title}
                         </h4>
                         <span className="text-[10px] text-gray-400 mt-1 block">

@@ -1,223 +1,217 @@
 import React from 'react';
-import { Users, Award, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { 
+  ArrowRight, 
+  MessageCircle, 
+  ShieldCheck, 
+  Clock, 
+  CreditCard, 
+  HardHat, 
+  HeartHandshake, 
+  Award,
+  Target,
+  Eye 
+} from 'lucide-react';
+import AboutCompany from '../compontent/AboutCompany';
+import MeetOurTeam from '../compontent/MeetOurTeam';
+import WhatWeDo from '../compontent/WhatWeDo';
+
 
 export default function About() {
-  const approaches = [
-    'Understand the client\'s requirement',
-    'Assess the property or project site',
-    'Define the scope of work',
-    'Execute the approved works professionally',
-    'Inspect completed works and coordinate handover'
+  const differences = [
+    {
+      title: 'Certified & Licensed',
+      desc: 'Every engineer and technician is certified, licensed, and rigorously vetted. Your project\'s safety is our top priority.',
+      icon: ShieldCheck
+    },
+    {
+      title: 'Fast & Reliable',
+      desc: 'We value your time. Our team offers swift response times and long-lasting contracting and maintenance solutions.',
+      icon: Clock
+    },
+    {
+      title: 'Transparent Pricing',
+      desc: 'No hidden fees, no surprises. You\'ll always receive clear, upfront pricing before any work begins.',
+      icon: CreditCard
+    },
+    {
+      title: 'Expert Engineers',
+      desc: 'Our team comprises highly skilled engineers and craftsmen dedicated to delivering flawless execution on every site.',
+      icon: HardHat
+    },
+    {
+      title: 'Customer-Centric',
+      desc: 'Your satisfaction is our ultimate metric. We build lasting relationships through trust, not just one-time transactions.',
+      icon: HeartHandshake
+    },
+    {
+      title: 'Quality Workmanship',
+      desc: 'We use top-tier materials and proven techniques to ensure the highest quality in every job we undertake.',
+      icon: Award
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-[#fcfbf9] flex flex-col">
-      {/* Hero Section */}
-      <section className="relative w-full bg-[#09121c] overflow-hidden flex items-center min-h-[475px] lg:min-h-[575px]">
-        {/* Background Image with Dark Gradient Overlays (matching Home Page) */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/image copy 10.png"
-            alt="About MBA Contracting"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Left Dark Gradient for sharp contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070e17] via-[#08121e]/95 sm:via-[#08121e]/90 lg:via-[#08121e]/80 to-transparent lg:w-[65%]" />
-          {/* Subtle dark tint */}
-          <div className="absolute inset-0 bg-black/20" />
-          {/* Bottom edge shadow */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070e17]/90 to-transparent" />
-        </div>
-        
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="max-w-3xl space-y-6 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-[#caa359]/20 border border-[#caa359]/30 text-[#caa359] text-xs font-bold uppercase tracking-widest">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#caa359] animate-pulse" />
-              Who We Are
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase leading-none mb-4">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#caa359] to-[#d4b475]">Us</span>
-            </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 font-medium italic border-l-4 border-[#caa359] pl-4 sm:pl-5 py-1">
-              "Built on Quality. Driven by Excellence."
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-white font-sans text-[#0c1b2a]">
+      
+      {/* ========================================================
+          1. HERO SECTION
+      ======================================================== */}
+      <section className="relative w-full overflow-hidden bg-white">
+        {/* Background Grid Pattern from Contact page */}
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
-      {/* Main Content Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Text Content */}
-          <div className="space-y-8">
-            <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
-              <p>
-                <span className="font-bold text-[#0c1b2a] text-xl">MBA Contracting</span> delivers construction, contracting, finishing and maintenance solutions for clients in Doha, Qatar. Our objective is to provide dependable workmanship, organized project execution and solutions aligned with each client's requirements.
-              </p>
-              <p>
-                We understand that every property project has different requirements. Our team works around the project scope, site conditions and desired finish to deliver practical solutions with attention to detail.
-              </p>
-            </div>
-
-            {/* Approach Section */}
-            <div className="pt-8 border-t border-gray-200">
-              <h2 className="text-2xl font-extrabold text-[#0c1b2a] uppercase tracking-tight mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-[#caa359]"></span>
-                Our Approach
-              </h2>
+          {/* Left: Text Content */}
+          <div className="space-y-6 lg:pr-8 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+              Your Trusted <br />
+              <span className="text-[#004080]">Maintenance Partner</span>
+            </h1>
+            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-lg">
+              Since our founding, MBA Contracting has been dedicated to delivering professional property maintenance, construction, and renovation services that Doha homeowners and businesses can rely on. With certified engineers, transparent pricing, and a commitment to excellence, we've become the trusted partner for countless properties across Qatar.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+              <Link to="/services" className="inline-flex items-center justify-between gap-3 px-6 py-3.5 bg-[#004080] hover:bg-[#002952] text-white rounded-full font-bold text-[15px] transition-all shadow-md hover:shadow-lg w-full sm:w-auto shrink-0">
+                <span>Explore Our Services</span>
+                <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0">
+                  <ArrowRight className="w-4 h-4 text-[#004080] stroke-[3]" />
+                </span>
+              </Link>
               
-              <ul className="space-y-4">
-                {approaches.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-[#caa359]/30 transition-all group">
-                    <div className="w-8 h-8 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#caa359] transition-colors">
-                      <span className="text-[#caa359] group-hover:text-white font-bold text-sm">
-                        0{idx + 1}
-                      </span>
-                    </div>
-                    <span className="text-gray-700 font-medium pt-1.5">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center justify-between gap-3 px-6 py-3.5 bg-[#2ed573] text-white font-bold text-[15px] rounded-full hover:bg-[#27ae60] transition-all shadow-md hover:shadow-lg w-full sm:w-auto shrink-0">
+                <span>Chat with us on WA</span>
+                <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0">
+                  <MessageCircle className="w-4 h-4 text-[#2ed573] stroke-[3]" />
+                </span>
+              </a>
             </div>
           </div>
 
-          {/* Right Column: Floating Stats & Image */}
-          <div className="relative">
-            <div className="sticky top-24 space-y-6">
-              
-              <div className="relative rounded-none overflow-hidden h-[400px] shadow-2xl border border-gray-200">
-                <img src="/image copy 5.png" alt="Construction Site" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1b2a]/90 via-[#0c1b2a]/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="w-12 h-12 bg-[#caa359] flex items-center justify-center mb-4">
-                    <ShieldCheck className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold uppercase tracking-wide">Dependable Workmanship</h3>
-                </div>
-              </div>
-
-              {/* Core Values / Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-[#caa359] transition-colors">
-                  <Users className="w-8 h-8 text-[#caa359] mb-3 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-bold text-[#0c1b2a]">Expert Team</h4>
-                  <p className="text-xs text-gray-500 mt-2">Certified engineers & craftsmen</p>
-                </div>
-                
-                <div className="p-6 bg-white border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-[#caa359] transition-colors">
-                  <Award className="w-8 h-8 text-[#caa359] mb-3 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-bold text-[#0c1b2a]">15+ Years</h4>
-                  <p className="text-xs text-gray-500 mt-2">Excellence in execution</p>
-                </div>
-              </div>
-
+          {/* Right: Overlapping Images */}
+          <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full mt-12 lg:mt-0">
+            {/* Top Right Image */}
+            <div className="absolute top-0 right-0 lg:right-4 w-[65%] h-[60%] rounded-[2rem] overflow-hidden shadow-2xl z-10 border-4 border-white">
+              <img src="/about_hero_1.jpg" alt="Happy Clients" className="w-full h-full object-cover" />
+            </div>
+            
+            {/* Bottom Left Image */}
+            <div className="absolute bottom-4 left-0 lg:left-4 w-[55%] h-[60%] rounded-[2rem] overflow-hidden shadow-2xl z-20 border-4 border-white">
+              <img src="/about_hero_2.jpg" alt="Engineers at work" className="w-full h-full object-cover" />
             </div>
           </div>
-
+          
+        </div>
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
-      <section className="w-full bg-[#0c1b2a] py-20 px-4 sm:px-6 lg:px-8 text-white mt-12 relative overflow-hidden">
-        {/* Decorative background element */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#caa359] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
+      {/* ========================================================
+          MISSION & VISION SECTION
+      ======================================================== */}
+      <section className="w-full bg-white py-20 lg:py-28 relative overflow-hidden">
+        {/* Background Decorative Element */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#f8fafd] rounded-full translate-x-1/2 -translate-y-1/4 opacity-50 pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-sm font-bold tracking-[0.2em] text-[#caa359] uppercase mb-2 block">
-              Core Purpose
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight uppercase">
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#f05c26] uppercase">Our Purpose</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
               Mission & Vision
             </h2>
-            <div className="w-16 h-1 bg-[#caa359] mx-auto mt-6" />
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 w-full">
+            
             {/* Mission Card */}
-            <div className="bg-white/5 border border-white/10 p-8 lg:p-10 hover:bg-white/10 transition-colors rounded-none backdrop-blur-sm">
-              <div className="w-14 h-14 bg-[#caa359]/20 flex items-center justify-center mb-6">
-                <ShieldCheck className="w-8 h-8 text-[#caa359]" />
+            <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-orange-100/50 flex items-center justify-center mb-8 relative z-10 border border-orange-100">
+                <Target className="w-8 h-8 text-[#f05c26]" strokeWidth={2} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Our Mission</h3>
-              <p className="text-gray-300 leading-relaxed font-medium">
-                To deliver construction and contracting services of the highest quality in Qatar. We are dedicated to providing dependable workmanship, safe project execution, and innovative solutions that exceed client expectations, ensuring every project is completed on time and within budget.
+              
+              <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4 relative z-10">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed relative z-10">
+                To provide unparalleled property maintenance, construction, and renovation services in Qatar. We strive to deliver transparent, high-quality, and reliable solutions that enhance the value and comfort of every property we touch, ensuring total customer satisfaction on every project.
               </p>
             </div>
 
             {/* Vision Card */}
-            <div className="bg-white/5 border border-white/10 p-8 lg:p-10 hover:bg-white/10 transition-colors rounded-none backdrop-blur-sm">
-              <div className="w-14 h-14 bg-[#caa359]/20 flex items-center justify-center mb-6">
-                <Award className="w-8 h-8 text-[#caa359]" />
+            <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+              
+              <div className="w-16 h-16 rounded-2xl bg-blue-100/50 flex items-center justify-center mb-8 relative z-10 border border-blue-100">
+                <Eye className="w-8 h-8 text-[#004080]" strokeWidth={2} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Our Vision</h3>
-              <p className="text-gray-300 leading-relaxed font-medium">
-                To be the most trusted and preferred contracting partner in the region, recognized for our commitment to excellence, sustainable building practices, and our ability to transform architectural visions into enduring realities that shape the future skyline.
+              
+              <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4 relative z-10">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed relative z-10">
+                To be the most trusted and sought-after contracting and maintenance partner in the Middle East. We envision setting new industry standards for operational excellence, innovation, and sustainable building practices, building a legacy of quality that lasts for generations.
               </p>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Our History Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-        <div className="text-center mb-16">
-          <span className="text-sm font-bold tracking-[0.2em] text-[#caa359] uppercase mb-2 block">
-            Our Journey
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase">
-            Our History
-          </h2>
-          <div className="w-16 h-1 bg-[#caa359] mx-auto mt-6" />
-        </div>
+      {/* ========================================================
+          2. WHO WE ARE SECTION
+      ======================================================== */}
+      <AboutCompany />
 
-        <div className="relative lg:mx-auto lg:w-4/5 py-8 space-y-12 before:absolute before:inset-0 before:left-6 md:before:left-1/2 md:before:-ml-[1px] before:w-0.5 before:bg-[#caa359]/30">
-          {/* Timeline Item 1 */}
-          <div className="relative pl-14 md:pl-0">
-            <div className="md:w-1/2 md:pr-12 md:text-right">
-              <div className="absolute left-6 -translate-x-1/2 md:translate-x-0 md:left-1/2 md:-ml-[9px] top-1 md:top-0 w-4 h-4 rounded-full bg-[#caa359] ring-4 ring-amber-50"></div>
-              <h3 className="text-xl font-bold text-[#0c1b2a] mb-2">Foundation</h3>
-              <span className="inline-block px-3 py-1 bg-gray-100 text-[#caa359] font-bold text-sm mb-3">2008</span>
-              <p className="text-gray-600">MBA Contracting was established with a small but highly skilled team, taking on residential finishing and maintenance works across Doha.</p>
-            </div>
+      {/* ========================================================
+          WHAT WE DO SECTION
+      ======================================================== */}
+      <WhatWeDo />
+
+      {/* ========================================================
+          3. THE DIFFERENCE SECTION
+      ======================================================== */}
+      <section className="w-full bg-[#f8fafd] pt-20 lg:pt-28 pb-24 lg:pb-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-16 lg:mb-24">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
+              MBA Difference
+            </h2>
           </div>
 
-          {/* Timeline Item 2 */}
-          <div className="relative pl-14 md:pl-0">
-            <div className="md:w-1/2 md:ml-auto md:pl-12">
-              <div className="absolute left-6 -translate-x-1/2 md:translate-x-0 md:left-1/2 md:-ml-[9px] top-1 md:top-0 w-4 h-4 rounded-full bg-[#caa359] ring-4 ring-amber-50"></div>
-              <h3 className="text-xl font-bold text-[#0c1b2a] mb-2">Commercial Expansion</h3>
-              <span className="inline-block px-3 py-1 bg-gray-100 text-[#caa359] font-bold text-sm mb-3">2014</span>
-              <p className="text-gray-600">Expanded our operations to include full-scale commercial general contracting, delivering turnkey solutions for major office and retail spaces.</p>
-            </div>
-          </div>
-
-          {/* Timeline Item 3 */}
-          <div className="relative pl-14 md:pl-0">
-            <div className="md:w-1/2 md:pr-12 md:text-right">
-              <div className="absolute left-6 -translate-x-1/2 md:translate-x-0 md:left-1/2 md:-ml-[9px] top-1 md:top-0 w-4 h-4 rounded-full bg-[#caa359] ring-4 ring-amber-50"></div>
-              <h3 className="text-xl font-bold text-[#0c1b2a] mb-2">Excellence & ISO Certification</h3>
-              <span className="inline-block px-3 py-1 bg-gray-100 text-[#caa359] font-bold text-sm mb-3">2019</span>
-              <p className="text-gray-600">Achieved ISO certification for quality management and safety, solidifying our reputation as one of the most reliable contractors in Qatar.</p>
-            </div>
-          </div>
-
-          {/* Timeline Item 4 */}
-          <div className="relative pl-14 md:pl-0">
-            <div className="md:w-1/2 md:ml-auto md:pl-12">
-              <div className="absolute left-6 -translate-x-1/2 md:translate-x-0 md:left-1/2 md:-ml-[9px] top-1 md:top-0 w-4 h-4 rounded-full bg-[#caa359] ring-4 ring-amber-50 animate-pulse"></div>
-              <h3 className="text-xl font-bold text-[#0c1b2a] mb-2">Leading the Future</h3>
-              <span className="inline-block px-3 py-1 bg-[#caa359] text-white font-bold text-sm mb-3">Today</span>
-              <p className="text-gray-600">Continuing to build excellence with over 15+ years of experience, a dedicated team of experts, and an uncompromising commitment to client satisfaction.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {differences.map((diff, idx) => (
+              <div 
+                key={idx} 
+                className={`
+                  flex flex-col items-center md:items-start text-center md:text-left px-6 sm:px-10 py-10
+                  ${idx < 3 ? 'lg:border-b lg:border-gray-200/60' : ''} 
+                  ${idx % 3 !== 2 ? 'lg:border-r lg:border-gray-200/60' : ''}
+                  ${idx < 4 ? 'md:border-b md:border-gray-200/60 lg:border-b-0' : ''}
+                  ${idx % 2 !== 1 ? 'md:border-r md:border-gray-200/60 lg:border-r-0' : 'md:border-r-0'}
+                  border-b border-gray-200/60 md:border-b-0 last:border-b-0
+                `}
+              >
+                <div className="w-12 h-12 rounded-xl bg-blue-50/80 flex items-center justify-center mb-6 shadow-sm border border-blue-100">
+                  <diff.icon className="w-6 h-6 text-[#004080]" strokeWidth={2} />
+                </div>
+                <h3 className="text-lg font-bold text-[#0c1b2a] mb-3">
+                  {diff.title}
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {diff.desc}
+                </p>
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
+
+      {/* ========================================================
+          MEET OUR TEAM SECTION
+      ======================================================== */}
+      <MeetOurTeam />
 
     </div>
   );
