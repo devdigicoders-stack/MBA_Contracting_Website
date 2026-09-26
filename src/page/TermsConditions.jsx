@@ -142,7 +142,7 @@ export default function TermsConditions() {
       icon: Phone,
       shortTitle: 'Contact Information',
       content:
-        'If you have any questions about these Terms and Conditions, please contact us at: MBA Contracting, Doha, Qatar. Email: info@mbacontractingqa.com | Phone: +974 50722177',
+        'If you have any questions about these Terms and Conditions, please contact us at: MBA Contracting, Alkhayarin holding building, first floor, office no 102 Doha - qatar. Email: info@mbacontractingqa.com | Phone: +974 50722177',
       badge: 'Get in Touch',
     },
   ];
@@ -627,7 +627,7 @@ export default function TermsConditions() {
                   </div>
 
                   <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                    If you have any questions about these Terms and Conditions, please contact us at: MBA Contracting, Doha, Qatar.
+                    If you have any questions about these Terms and Conditions, please contact us at: MBA Contracting, Alkhayarin holding building, first floor, office no 102 Doha - qatar.
                   </p>
 
                   {/* Contact Methods Cards */}
@@ -636,7 +636,7 @@ export default function TermsConditions() {
                       <MapPin className="w-5 h-5 text-[#003366] flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="text-[11px] text-gray-400 uppercase font-bold">Office Address</p>
-                        <p className="text-xs font-semibold text-white mt-0.5">MBA Contracting, Doha, Qatar</p>
+                        <p className="text-xs font-semibold text-white mt-0.5">MBA Contracting, Alkhayarin holding building, first floor, office no 102 Doha - qatar</p>
                       </div>
                     </div>
 

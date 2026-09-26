@@ -893,7 +893,7 @@ export default function Home() {
             <div className="lg:col-span-6 order-2 lg:order-1 relative rounded-2xl overflow-hidden border border-gray-200 min-h-[400px] lg:min-h-full bg-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)]">
               <iframe
                 title="MBA Contracting Qatar Map"
-                src="https://maps.google.com/maps?q=Doha%20Qatar&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Alkhayarin%20holding%20building%20Doha%20Qatar&t=&z=12&ie=UTF8&iwloc=&output=embed"
                 className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 allowFullScreen
@@ -905,7 +905,7 @@ export default function Home() {
                   <div className="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center">
                     <MapPin className="w-3 h-3" />
                   </div>
-                  <span>Doha, Qatar</span>
+                  <span>Alkhayarin holding building, first floor, office no 102 Doha - qatar</span>
                 </div>
               </div>
             </div>
