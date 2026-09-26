@@ -36,18 +36,26 @@ export default function PageLoader() {
     >
       <div className="relative flex flex-col items-center justify-center gap-8">
         
-        {/* Minimalist Geometry Loader */}
-        <div className="relative flex items-center justify-center w-24 h-24">
+        {/* Logo + Spinner */}
+        <div className="relative flex items-center justify-center w-28 h-28">
           {/* Rotating Outer Ring */}
           <div className="absolute inset-0 rounded-full border-2 border-gray-100 border-t-[#004080] border-r-[#004080] animate-spin" style={{ animationDuration: '1.5s' }} />
           
-          {/* Inner Pulsing Diamond */}
-          <div className="absolute w-8 h-8 bg-[#0c1b2a] rotate-45 animate-pulse rounded-sm" />
+          {/* Second slower ring */}
+          <div className="absolute inset-2 rounded-full border border-gray-100 border-b-[#c8a84b] border-l-[#c8a84b] animate-spin" style={{ animationDuration: '2.5s', animationDirection: 'reverse' }} />
+
+          {/* Company Logo in center */}
+          <img
+            src="/logo.png"
+            alt="MBA Contracting Logo"
+            className="w-14 h-14 object-contain animate-pulse"
+            style={{ animationDuration: '2s' }}
+          />
         </div>
 
         {/* Loading Text */}
         <div className="text-[#0c1b2a] text-xs font-extrabold tracking-[0.4em] uppercase">
-          Loading
+          Loading...
         </div>
       </div>
     </div>
