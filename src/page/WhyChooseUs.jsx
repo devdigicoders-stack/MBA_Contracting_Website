@@ -131,7 +131,7 @@ export default function WhyChooseUs() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:9696559848"
+                href="tel:+97450722177"
                 className="px-8 py-3.5 bg-[#004080] text-white font-bold uppercase tracking-wider rounded-none hover:bg-[#002952] transition-colors inline-flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" /> Request a Quote — Call Now <ArrowRight className="w-4 h-4" />

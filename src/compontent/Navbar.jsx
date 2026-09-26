@@ -60,7 +60,7 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-3">
             <GoogleTranslate />
             <a
-              href="tel:9696559848"
+              href="tel:+97450722177"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-medium text-sm bg-gradient-to-r from-[#004080] via-[#002952] to-[#001a33] hover:from-[#002952] hover:to-[#001326] shadow-sm hover:shadow transition-all duration-200 active:scale-95"
             >
               <Phone className="w-4 h-4" />
@@ -73,7 +73,7 @@ export default function Navbar() {
             <GoogleTranslate />
 
             <a
-              href="tel:9696559848"
+              href="tel:+97450722177"
               className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-white bg-gradient-to-r from-[#004080] to-[#001a33]"
               aria-label="Call"
             >
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <span>Contact Us</span>
               </Link>
               <a
-                href="tel:9696559848"
+                href="tel:+97450722177"
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-[#004080] to-[#001a33] shadow"
               >
                 <Phone className="w-4 h-4" />
