@@ -340,10 +340,10 @@ export default function Home() {
           {/* Left Content */}
           <div className="w-full lg:w-[55%] xl:w-1/2 pt-4">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#2a2a2a] leading-[1.15] mb-5">
-              Premium Property<br />Maintenance &<br />Renovation <span className="text-[#003366]">in Dubai</span>
+              Premium Property<br />Maintenance &<br />Renovation <span className="text-[#003366]">in Qatar</span>
             </h1>
             <p className="text-[13px] sm:text-[15px] text-gray-700 font-medium mb-8 max-w-lg leading-relaxed">
-              MBA Contracting is a property maintenance and <span className="text-[#003366]">renovation company in Dubai</span>, providing reliable maintenance, repair, and renovation solutions for homes, villas, apartments, and commercial properties. Our services include AC, plumbing, electrical, painting, handyman work, renovation, fit-out, and <span className="text-[#003366]">Annual Maintenance Contracts (AMC)</span>.
+              MBA Contracting is a property maintenance and <span className="text-[#003366]">renovation company in Qatar</span>, providing reliable maintenance, repair, and renovation solutions for homes, villas, apartments, and commercial properties. Our services include AC, plumbing, electrical, painting, handyman work, renovation, fit-out, and <span className="text-[#003366]">Annual Maintenance Contracts (AMC)</span>.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a href="tel:+97450722177" className="inline-flex items-center gap-3 bg-[#004080] hover:bg-[#002952] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-blue-200/50">
@@ -365,10 +365,10 @@ export default function Home() {
           <div className="w-full lg:w-[45%] xl:w-1/2 relative mt-16 lg:mt-0 flex justify-end h-full items-center">
             {/* The Building Background and Car Image */}
             <div className="relative w-[150%] lg:w-[180%] xl:w-[160%] right-[-15%] lg:right-[-35%] xl:right-[-30%] z-0 h-full flex items-center">
-              {/* Foreground Image containing Dubai Skyline */}
+              {/* Foreground Image containing Qatar Skyline */}
               <img 
                 src="/image copy 11.png" 
-                alt="Dubai Skyline" 
+                alt="Qatar Skyline" 
                 className="w-full h-auto object-contain transform scale-125 lg:scale-150 xl:scale-125 z-10 origin-right"
               />
             </div>
@@ -559,7 +559,7 @@ export default function Home() {
                 <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Experts in Dubai property systems</span>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Experts in Qatar property systems</span>
               </div>
 
               {/* Floating Badge 2 */}
@@ -593,7 +593,7 @@ export default function Home() {
                 Your Property,<br />Engineered for Reliability
               </h3>
               <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                We go beyond basic repairs to deliver reliable property maintenance and home maintenance services in Dubai. Our certified engineers use advanced tools, deep technical expertise, and a preventive approach to optimize every system in your property. From HVAC and MEP systems to essential home maintenance, we ensure consistent performance and long-term reliability year-round.
+                We go beyond basic repairs to deliver reliable property maintenance and home maintenance services in Qatar. Our certified engineers use advanced tools, deep technical expertise, and a preventive approach to optimize every system in your property. From HVAC and MEP systems to essential home maintenance, we ensure consistent performance and long-term reliability year-round.
               </p>
               
               <div className="flex flex-wrap items-center gap-4">
