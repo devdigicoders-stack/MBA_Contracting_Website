@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { ArrowRight, Menu, X, Phone } from 'lucide-react';
 import GoogleTranslate from './GoogleTranslate';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -17,16 +30,22 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16 sm:h-20' : 'h-20'}`}>
 
           {/* Logo Section */}
           <Link to="/" className="flex items-center group focus:outline-none">
             <img 
               src="/logo.png" 
               alt="MBA Contracting Logo" 
-              className="h-14 w-auto transition-transform duration-200 group-hover:scale-105" 
+              className={`w-auto transition-all duration-300 group-hover:scale-105 ${isScrolled ? 'h-11 sm:h-14' : 'h-14'}`} 
             />
           </Link>
 
