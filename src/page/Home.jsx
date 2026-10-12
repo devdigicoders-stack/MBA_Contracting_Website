@@ -373,29 +373,6 @@ export default function Home() {
               />
             </div>
             
-            {/* Floating Stats Bar */}
-            <div className="absolute -bottom-8 lg:bottom-12 left-0 lg:left-[-20%] xl:left-[-15%] right-4 lg:right-auto bg-white rounded-xl shadow-2xl py-4 px-2 sm:px-6 z-20 flex justify-between sm:justify-start items-center border border-gray-100/50">
-              <div className="text-center px-3 sm:px-5">
-                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">25k+</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Jobs Completed</div>
-              </div>
-              <div className="text-center px-3 sm:px-5 border-l border-gray-200">
-                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">15k+</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Happy Clients</div>
-              </div>
-              <div className="text-center px-3 sm:px-5 border-l border-gray-200">
-                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">20+</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Vehicles</div>
-              </div>
-              <div className="text-center px-3 sm:px-5 border-l border-gray-200 hidden md:block">
-                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">50+</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Technicians</div>
-              </div>
-              <div className="text-center px-3 sm:px-5 border-l border-gray-200 hidden xl:block">
-                <div className="text-xl sm:text-2xl font-black text-[#1a1a1a]">20+</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1">Years of<br/>Expertise</div>
-              </div>
-            </div>
           </div>
           
         </div>
