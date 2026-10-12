@@ -643,63 +643,7 @@ export default function Home() {
 
 
 
-      {/* ========================================================
-          NEW SECTION 4: CLIENTS / HANDS-ON EXPERIENCE (Marquee)
-      ======================================================== */}
-      <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
-        
-        {/* Decorative Top Slanted Strips (Like Reference Image) */}
-        <div className="absolute top-0 left-0 w-[50%] md:w-[40%] h-12 sm:h-20 bg-[#ffb78c]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 20%, 0 100%)' }}></div>
-        <div className="absolute top-0 right-0 w-[50%] md:w-[40%] h-12 sm:h-20 bg-[#ffb78c]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 60%)' }}></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 sm:mb-16 mt-4">
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#1f2937] text-center tracking-tight leading-tight max-w-2xl mx-auto">
-            We have hands-on <br className="hidden sm:block" /> experience with
-          </h2>
-        </div>
-
-        {/* Scrolling Marquee Container */}
-        <div className="relative w-full overflow-hidden flex items-center h-24 sm:h-32 before:absolute before:left-0 before:top-0 before:w-16 sm:before:w-32 before:h-full before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:w-16 sm:after:w-32 after:h-full after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
-          
-          {/* Marquee Track */}
-          <div className="flex animate-marquee w-max items-center gap-16 sm:gap-24 px-8 text-[#2a3b4c] opacity-80 hover:opacity-100 transition-opacity duration-300">
-            
-            {/* Logo Set 1 */}
-            <div className="flex items-center gap-16 sm:gap-24">
-              <span className="font-black text-2xl tracking-tighter">SAMSUNG</span>
-              <span className="font-serif text-2xl tracking-widest uppercase">Emaar</span>
-              <span className="font-bold text-2xl tracking-wider">NAKHEEL</span>
-              <span className="font-sans font-extrabold italic text-2xl">MERAAS</span>
-              <span className="font-bold text-xl uppercase tracking-tighter flex items-center gap-1">
-                <div className="w-5 h-5 rounded-full border-[3px] border-current opacity-70"></div> dewa
-              </span>
-              <span className="font-bold text-2xl tracking-tight">DAIKIN</span>
-              <span className="font-medium text-2xl tracking-tight">Midea</span>
-              <span className="font-black text-xl italic tracking-widest">O GENERAL</span>
-              <span className="font-bold text-sm bg-[#1f2937] text-white px-4 py-1.5 rounded-full italic tracking-wide">Carrier</span>
-              <span className="font-bold text-sm border-2 border-[#1f2937] px-4 py-1 rounded-full uppercase tracking-widest">Cosmoplast</span>
-            </div>
-
-            {/* Logo Set 2 (Duplicate for seamless scroll) */}
-            <div className="flex items-center gap-16 sm:gap-24">
-              <span className="font-black text-2xl tracking-tighter">SAMSUNG</span>
-              <span className="font-serif text-2xl tracking-widest uppercase">Emaar</span>
-              <span className="font-bold text-2xl tracking-wider">NAKHEEL</span>
-              <span className="font-sans font-extrabold italic text-2xl">MERAAS</span>
-              <span className="font-bold text-xl uppercase tracking-tighter flex items-center gap-1">
-                <div className="w-5 h-5 rounded-full border-[3px] border-current opacity-70"></div> dewa
-              </span>
-              <span className="font-bold text-2xl tracking-tight">DAIKIN</span>
-              <span className="font-medium text-2xl tracking-tight">Midea</span>
-              <span className="font-black text-xl italic tracking-widest">O GENERAL</span>
-              <span className="font-bold text-sm bg-[#1f2937] text-white px-4 py-1.5 rounded-full italic tracking-wide">Carrier</span>
-              <span className="font-bold text-sm border-2 border-[#1f2937] px-4 py-1 rounded-full uppercase tracking-widest">Cosmoplast</span>
-            </div>
-            
-          </div>
-        </div>
-
-      </section>
 
       {/* ========================================================
           SEND US A MESSAGE SECTION (From Contact Page)
