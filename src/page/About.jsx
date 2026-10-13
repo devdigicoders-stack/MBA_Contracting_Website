@@ -20,34 +20,34 @@ import WhatWeDo from '../compontent/WhatWeDo';
 export default function About() {
   const differences = [
     {
-      title: 'Certified & Licensed',
-      desc: 'Every engineer and technician is certified, licensed, and rigorously vetted. Your project\'s safety is our top priority.',
+      title: 'Professional Workmanship',
+      desc: 'A focus on quality and attention to finishing details.',
+      icon: Award
+    },
+    {
+      title: 'Complete Solutions',
+      desc: 'Villa, building, extension and majlis construction, finishing and maintenance services through one contracting partner.',
       icon: ShieldCheck
     },
     {
-      title: 'Fast & Reliable',
-      desc: 'We value your time. Our team offers swift response times and long-lasting contracting and maintenance solutions.',
-      icon: Clock
-    },
-    {
-      title: 'Transparent Pricing',
-      desc: 'No hidden fees, no surprises. You\'ll always receive clear, upfront pricing before any work begins.',
-      icon: CreditCard
-    },
-    {
-      title: 'Expert Engineers',
-      desc: 'Our team comprises highly skilled engineers and craftsmen dedicated to delivering flawless execution on every site.',
+      title: 'Practical Project Execution',
+      desc: 'Organized execution based on the approved scope and site requirements.',
       icon: HardHat
     },
     {
-      title: 'Customer-Centric',
-      desc: 'Your satisfaction is our ultimate metric. We build lasting relationships through trust, not just one-time transactions.',
-      icon: HeartHandshake
+      title: 'Quality-Focused Approach',
+      desc: 'Attention to workmanship, materials and final appearance.',
+      icon: Target
     },
     {
-      title: 'Quality Workmanship',
-      desc: 'We use top-tier materials and proven techniques to ensure the highest quality in every job we undertake.',
-      icon: Award
+      title: 'Residential & Commercial Support',
+      desc: 'Solutions can be tailored to different property and project requirements.',
+      icon: Eye
+    },
+    {
+      title: 'Client-Centered Service',
+      desc: 'Clear communication and coordination throughout the project.',
+      icon: HeartHandshake
     }
   ];
 
@@ -68,10 +68,10 @@ export default function About() {
           <div className="space-y-6 lg:pr-8 text-center lg:text-left flex flex-col items-center lg:items-start">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
               Your Trusted <br />
-              <span className="text-[#004080]">Maintenance Partner</span>
+              <span className="text-[#004080]">Construction Partner</span>
             </h1>
             <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-lg">
-              Since our founding, MBA Contracting has been dedicated to delivering professional property maintenance, construction, and renovation services that Doha homeowners and businesses can rely on. With certified engineers, transparent pricing, and a commitment to excellence, we've become the trusted partner for countless properties across Qatar.
+              Since our founding, MBA Contracting has been dedicated to delivering professional building construction, finishing, maintenance, and renovation services that Doha homeowners and businesses can rely on. With skilled engineers, transparent pricing, and a commitment to excellence, we've become a trusted partner for properties across Qatar.
             </p>
             
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
@@ -135,7 +135,7 @@ export default function About() {
               
               <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4 relative z-10">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed relative z-10">
-                To provide unparalleled property maintenance, construction, and renovation services in Qatar. We strive to deliver transparent, high-quality, and reliable solutions that enhance the value and comfort of every property we touch, ensuring total customer satisfaction on every project.
+                To provide dependable building construction, finishing, maintenance, and renovation services in Qatar. We strive to deliver transparent, high-quality, and reliable solutions that enhance the value and comfort of every property we work on, ensuring total customer satisfaction on every project.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function About() {
               
               <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4 relative z-10">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed relative z-10">
-                To be the most trusted and sought-after contracting and maintenance partner in the Middle East. We envision setting new industry standards for operational excellence, innovation, and sustainable building practices, building a legacy of quality that lasts for generations.
+                To be the most trusted and sought-after contracting and maintenance partner in Qatar. We aim to set high standards for quality workmanship, safe site practices, and sustainable building methods, building a legacy of quality that lasts for generations.
               </p>
             </div>
 
@@ -174,8 +174,9 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16 lg:mb-24">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-              MBA Difference
+            <span className="text-[11px] font-bold tracking-[0.25em] text-[#004080] uppercase">CORE VALUES</span>
+            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
+              Core Values – The MBA Difference
             </h2>
           </div>
 

@@ -22,11 +22,11 @@ export default function WhoWeAre() {
             
             <div className="space-y-6 text-[#4b5563] text-[15px] sm:text-base leading-relaxed">
               <p>
-                MBA Contracting is Qatar's leading property maintenance and renovation company, providing comprehensive solutions for residential and commercial properties across all major communities. We specialize in on-demand maintenance services, cost-effective Annual Maintenance Contracts (AMC), and complete renovation and fit-out projects.
+                MBA Contracting is a building construction, maintenance and renovation company in Qatar, providing comprehensive solutions for residential and commercial properties across all major communities. We specialize in general finishing works, villa construction, building construction, extension construction, majlis construction, and building maintenance services.
               </p>
               
               <p>
-                Our mission is simple: make property maintenance effortless, transparent, and reliable. Whether you need prompt maintenance support, a complete villa renovation, or ongoing facility care, our team of certified engineers and skilled professionals delivers exceptional service with integrity and expertise.
+                Our mission is simple: make building, maintenance, and renovation effortless, transparent, and reliable. Whether you need a new villa, an extension, a majlis, finishing works, or ongoing maintenance support, our team of experienced engineers and skilled professionals delivers exceptional service with integrity and expertise.
               </p>
             </div>
 

@@ -6,73 +6,55 @@ export default function Services() {
 
   const serviceList = [
     { 
-      title: 'General Contracting', 
-      icon: Hammer, 
-      image: '/image copy 6.png',
-      desc: 'General construction and contracting support for residential and commercial building projects.',
-      bullets: [
-        'Civil and general building works',
-        'Masonry and block works',
-        'Concrete-related works',
-        'Renovation and modification works',
-        'Site coordination and project execution'
-      ]
-    },
-    { 
       title: 'Villa Construction', 
       icon: Home, 
       image: '/image copy 8.png',
-      desc: 'Professional construction solutions for new villa projects, from core construction works through finishing requirements.',
+      desc: 'Construction of new villas built to the approved plan, with strong structure, quality materials, and a clean finish.',
       bullets: [
         'New villa construction',
-        'Civil and structural works',
-        'Block and plaster works',
-        'Flooring and tiling',
-        'Painting and gypsum works',
-        'Interior finishing'
+        'Built to approved architectural plan',
+        'Strong structural engineering',
+        'Quality construction materials',
+        'Turnkey handover with clean finish'
+      ]
+    },
+    { 
+      title: 'Building Construction', 
+      icon: Hammer, 
+      image: '/image copy 6.png',
+      desc: 'Residential and commercial building construction, executed with organized planning, safe site practices, and steady progress.',
+      bullets: [
+        'Residential & commercial buildings',
+        'Organized planning & scheduling',
+        'Safe site practices & compliance',
+        'Steady execution & milestones',
+        'Structural and MEP coordination'
       ]
     },
     { 
       title: 'Extension Construction', 
       icon: Maximize, 
       image: '/image copy 5.png',
-      desc: 'Solutions for expanding existing properties with additional spaces while coordinating construction and finishing requirements.',
+      desc: 'Additional rooms, floors, and extensions built to blend with your existing property.',
       bullets: [
-        'Room and living-space extensions',
-        'Kitchen and bathroom extensions',
-        'Additional bedrooms or spaces',
+        'Additional rooms, floors, and extensions',
+        'Seamless integration with existing property',
         'Structural and civil works',
         'Block, plaster, flooring and painting works',
-        'Complete finishing'
+        'Complete turnkey finishing'
       ]
     },
     { 
       title: 'Majlis Construction', 
       icon: Tent, 
       image: '/image copy 6.png',
-      desc: 'Construction and finishing solutions for Majlis projects, combining practical construction requirements with a refined finished environment.',
+      desc: 'Majlis construction designed for comfort and hospitality, with careful attention to layout and finishing details.',
       bullets: [
-        'Majlis construction',
-        'Civil and structural works',
-        'Flooring and wall finishes',
-        'Gypsum ceilings',
-        'Painting and decorative finishing',
-        'Interior finishing works'
-      ]
-    },
-    { 
-      title: 'Building Maintenance Services', 
-      icon: Wrench, 
-      image: '/image copy 8.png',
-      desc: 'Maintenance and repair solutions designed to help property owners keep buildings functional, presentable and well maintained.',
-      bullets: [
-        'General building maintenance',
-        'Civil repair works',
-        'Wall and ceiling repairs',
-        'Painting maintenance',
-        'Tile and flooring repairs',
-        'Gypsum and plaster repairs',
-        'Minor renovation works'
+        'Custom Majlis architecture',
+        'Designed for comfort and hospitality',
+        'Careful attention to layout and flow',
+        'Gypsum ceilings & lighting',
+        'High-end interior finishing'
       ]
     }
   ];
@@ -90,19 +72,19 @@ export default function Services() {
         {/* Bottom Fade Gradient for the Grid */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div>
 
-        <div className="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
           
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#004080] text-xs font-bold uppercase tracking-widest mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#004080] animate-pulse" />
-            Complete Contracting Solutions Under One Roof
+            CONSTRUCTION SERVICES
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1f2937] tracking-tight mb-5">
-            Professional Services
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1f2937] tracking-tight mb-5 leading-tight">
+            Villa, Building, Extension &<br />Majlis Construction <span className="text-[#004080]">in Qatar</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
-            Explore our comprehensive range of contracting, construction, and maintenance services crafted for excellence and durability.
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10">
+            MBA Contracting delivers complete construction services for villas, buildings, extensions, and majlis spaces across Qatar. From planning the scope to final handover, our team manages the work with organized execution, quality materials, and close site supervision.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
@@ -124,7 +106,7 @@ export default function Services() {
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-3 px-6 py-3.5 sm:py-3 bg-[#25D366] hover:bg-[#1ebd5b] text-white rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
             >
-              Or chat with us on
+              Or chat with us on WhatsApp
               <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                 <svg className="w-4 h-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.079-2.115-.508-1.745-.722-2.859-2.513-2.946-2.628-.088-.116-.708-.941-.708-1.792 0-.85.447-1.268.607-1.442.159-.175.348-.218.463-.218.117 0 .232.001.333.007.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.42-.099.824z" />
@@ -138,13 +120,14 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase">
-            Our Core Services
+          <span className="text-[11px] font-bold tracking-[0.2em] text-[#004080] uppercase">OUR SOLUTIONS</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase mt-2">
+            Our Construction Solutions
           </h2>
           <div className="w-16 h-1 bg-[#004080] mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {serviceList.map((s, i) => {
             const Icon = s.icon;
             return (
@@ -154,7 +137,7 @@ export default function Services() {
                 className="group cursor-pointer bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 flex flex-col"
               >
                 {/* Service Image Thumbnail */}
-                <div className="w-full h-48 overflow-hidden relative">
+                <div className="w-full h-56 overflow-hidden relative">
                   <div className="absolute inset-0 bg-[#0c1b2a]/10 group-hover:bg-transparent transition-colors z-10" />
                   <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-4 left-4 z-20 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -166,7 +149,7 @@ export default function Services() {
                   <h3 className="font-extrabold text-xl text-[#0c1b2a] group-hover:text-[#004080] transition-colors mb-3">
                     {s.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                     {s.desc}
                   </p>
                   
@@ -179,6 +162,43 @@ export default function Services() {
           })}
         </div>
       </div>
+
+      {/* Construction Service Scope Table (Matching image) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 w-full">
+        <div className="text-center mb-10">
+          <span className="text-[11px] font-bold tracking-[0.2em] text-[#004080] uppercase">COMPLETE SCOPE</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c1b2a] tracking-tight mt-2">
+            Construction Service Scope
+          </h2>
+          <p className="text-gray-500 text-sm mt-2 max-w-xl mx-auto">
+            Summary of all construction capabilities provided by MBA Contracting in Qatar.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto bg-white rounded-2xl shadow-sm border border-gray-200 max-w-5xl mx-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#0c1b2a] text-white">
+                <th className="py-4 px-6 font-bold text-sm tracking-wide w-1/3 border-r border-gray-750">Service</th>
+                <th className="py-4 px-6 font-bold text-sm tracking-wide">Description</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200 text-sm">
+              {serviceList.map((item, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white hover:bg-gray-50/80 transition-colors' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                  <td className="py-4 px-6 font-bold text-[#0c1b2a] border-r border-gray-200 flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-[#004080] flex-shrink-0" />
+                    {item.title}
+                  </td>
+                  <td className="py-4 px-6 text-gray-700 leading-relaxed">
+                    {item.desc}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       {/* Dynamic Modal Overlay */}
       {selectedService && (

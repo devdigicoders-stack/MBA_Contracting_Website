@@ -15,7 +15,7 @@ export default function WhatWeDo() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-16">
           
-          {/* Card 1: Maintenance Services */}
+          {/* Card 1: Building Maintenance Services */}
           <div className="bg-white rounded-3xl border border-gray-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgb(0,0,0,0.08)] transition-all duration-300 p-8 sm:p-10 flex flex-col items-center text-center">
             {/* Graphic area */}
             <div className="relative w-full h-48 mb-8 flex items-center justify-center">
@@ -31,29 +31,29 @@ export default function WhatWeDo() {
               <div className="absolute top-[45%] right-[-5%] bg-white p-2.5 rounded-full shadow-lg text-orange-500"><Droplets className="w-4 h-4"/></div>
             </div>
 
-            <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">Maintenance<br/>Services</h3>
+            <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">Building Maintenance<br/>Services</h3>
             <p className="text-gray-500 leading-relaxed text-[15px]">
-              Expert property maintenance services in Qatar including plumbing fixes, electrical work, painting, and general handyman services. Book effortlessly, track progress, and enjoy professional service with upfront pricing.
+              Expert building maintenance in Qatar including Plumbing fixes, electrical work, painting, and general handyman services. Book easily, track progress, and enjoy professional service with upfront pricing.
             </p>
           </div>
 
-          {/* Card 2: AMC */}
+          {/* Card 2: Construction Services */}
           <div className="bg-white rounded-3xl border border-gray-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgb(0,0,0,0.08)] transition-all duration-300 p-8 sm:p-10 flex flex-col">
-            <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">Annual Maintenance<br/>Contracts (AMC)</h3>
+            <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">Construction<br/>Services</h3>
             
             <div className="mb-6 flex items-center gap-2 border-b border-gray-100 pb-6">
               <span className="text-4xl font-extrabold text-[#004080] italic tracking-tighter">MBA</span>
-              <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Care</span>
+              <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-2">Build</span>
             </div>
 
             <p className="text-gray-500 leading-relaxed text-[15px] mb-8">
-              Qatar's most reliable AMC packages from MBA Contracting. Save up to 30% on repairs with included preventive maintenance, priority 24/7 emergency response, and dedicated certified engineers who know your property.
+              Complete construction services from MBA Contracting. From site preparation to final handover, we deliver villa, building, extension and majlis construction with organized execution, quality materials, and close site supervision.
             </p>
 
             <ul className="space-y-4 mt-auto">
-              {['Villas & Townhouses', 'Apartments & Flats', 'Commercial Properties', 'Large Facilities'].map((item, i) => (
+              {['Villa Construction', 'Building Construction', 'Extension Construction', 'Majlis Construction'].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#e87a38] flex items-center justify-center shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-[#004080] flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
                   </div>
                   <span className="text-[15px] font-medium text-gray-700">{item}</span>
@@ -62,16 +62,16 @@ export default function WhatWeDo() {
             </ul>
           </div>
 
-          {/* Card 3: Fit-out & Renovation */}
+          {/* Card 3: General Finishing Works */}
           <div className="bg-[#fdeed6] rounded-3xl border border-orange-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgb(0,0,0,0.08)] transition-all duration-300 p-8 sm:p-10 flex flex-col">
-            <h3 className="text-2xl font-bold text-[#0c1b2a] mb-6 border-b border-orange-200/60 pb-6">Fit-out &<br/>Renovation</h3>
+            <h3 className="text-2xl font-bold text-[#0c1b2a] mb-6 border-b border-orange-200/60 pb-6">General Finishing<br/>Works</h3>
             
             <p className="text-[#0c1b2a]/90 leading-relaxed text-[15px] mb-8 font-medium">
-              Transform your property with end-to-end renovation services. From initial design consultation to final delivery, our expert team manages every detail of your villa, apartment, or office transformation project.
+              Complete finishing works for your property. From surface preparation to the final finish, our team manages every detail of your villa, building, or majlis project with skilled workmanship and clean results.
             </p>
 
             <ul className="space-y-4 mt-auto">
-              {['Swimming Pool Renovation', 'Outdoor Landscaping & Gardens', 'Interior Fit-Out & Refurbishment', 'Custom Renovations'].map((item, i) => (
+              {['Tile Installation & Flooring Works', 'Painting & Plastering Works', 'Gypsum Board & Interior Finishing', 'Electrical & Plumbing Works'].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#e87a38] flex items-center justify-center shrink-0">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>

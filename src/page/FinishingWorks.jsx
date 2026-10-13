@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Award, Users, ShieldCheck, Building2, Paintbrush, Layers, Maximize, Tent, Wrench, CheckCircle2, ArrowRight, X, ArrowUpRight } from 'lucide-react';
+import { Award, Users, ShieldCheck, Building2, Paintbrush, Layers, Maximize, Tent, Wrench, CheckCircle2, ArrowRight, X, ArrowUpRight, Zap, Droplets } from 'lucide-react';
 
 export default function FinishingWorks() {
   const [selectedService, setSelectedService] = useState(null);
@@ -16,9 +16,10 @@ export default function FinishingWorks() {
       title: 'Tile Installation Works', 
       icon: Layers, 
       image: '/image copy 6.png',
-      desc: 'Expert tiling solutions for functional and beautiful spaces.',
+      desc: 'Professional wall and floor tiling with accurate leveling, alignment, and neat finishing for lasting results.',
       bullets: [
         'Floor and wall tiles',
+        'Accurate leveling & alignment',
         'Bathroom and kitchen tiling',
         'Decorative tile installation',
         'Tile replacement and repair'
@@ -28,11 +29,12 @@ export default function FinishingWorks() {
       title: 'Painting Works', 
       icon: Paintbrush, 
       image: '/image copy 5.png',
-      desc: 'Professional painting services for perfect interiors and exteriors.',
+      desc: 'Interior and exterior painting with proper surface preparation for a smooth, durable, and attractive finish.',
       bullets: [
         'Interior and exterior painting',
+        'Surface preparation & priming',
         'Wall and ceiling painting',
-        'Surface preparation',
+        'Durable & attractive finish',
         'Repainting and touch-up works'
       ]
     },
@@ -40,12 +42,12 @@ export default function FinishingWorks() {
       title: 'Gypsum Board Works', 
       icon: Maximize, 
       image: '/image copy 10.png',
-      desc: 'Custom gypsum installations for ceilings and partitions.',
+      desc: 'Gypsum partitions, false ceilings, and decorative ceiling designs installed with precision.',
       bullets: [
-        'Gypsum ceilings',
+        'Gypsum partitions',
         'False ceilings',
-        'Partition walls',
-        'Decorative gypsum features',
+        'Decorative ceiling designs',
+        'Cove lighting troughs',
         'Repair and modification works'
       ]
     },
@@ -53,39 +55,65 @@ export default function FinishingWorks() {
       title: 'Plastering Works', 
       icon: Wrench, 
       image: '/image copy 6.png',
-      desc: 'Smooth and durable plastering for all surface types.',
+      desc: 'Smooth, even plastering for internal and external walls, ready for painting or final finishes.',
       bullets: [
-        'Wall plastering',
-        'Ceiling plastering',
-        'Surface preparation',
-        'Repair plastering',
-        'Smooth finishing'
+        'Internal and external walls',
+        'Smooth and even surface',
+        'Ready for painting or final finish',
+        'Crack repair & patching',
+        'Surface leveling'
       ]
     },
     { 
       title: 'Flooring Works', 
       icon: Tent, 
       image: '/image copy 8.png',
-      desc: 'Comprehensive flooring installation and repair services.',
+      desc: 'Supply and installation of flooring solutions suited to your space, budget, and usage.',
       bullets: [
-        'Floor installation',
-        'Floor replacement',
-        'Tile flooring',
-        'Floor repair',
-        'Surface preparation'
+        'Supply and installation',
+        'Tile, marble & parquet flooring',
+        'Subfloor leveling & preparation',
+        'Commercial & residential flooring',
+        'Repair and replacement'
       ]
     },
     { 
       title: 'Interior Finishing Works', 
       icon: Building2, 
       image: '/image copy 5.png',
-      desc: 'Complete interior renovation and luxury finishing solutions.',
+      desc: 'Complete interior finishing to bring your space to a handover-ready standard.',
       bullets: [
-        'Wall finishes',
-        'Ceiling finishes',
-        'Flooring and related works',
-        'Decorative finishing',
-        'Interior renovation and finishing'
+        'Complete interior detailing',
+        'Handover-ready standard',
+        'Wall and ceiling finishes',
+        'Carpentry & woodwork touchups',
+        'Architectural detailing'
+      ]
+    },
+    { 
+      title: 'Electrical Works', 
+      icon: Zap, 
+      image: '/image copy 8.png',
+      desc: 'Safe and reliable electrical installation, wiring, and repair carried out by skilled technicians.',
+      bullets: [
+        'Safe wiring and distribution',
+        'Lighting fixtures & switches',
+        'DB dressing & breaker testing',
+        'Appliance power points',
+        'Troubleshooting and repairs'
+      ]
+    },
+    { 
+      title: 'Plumbing Works', 
+      icon: Droplets, 
+      image: '/image copy 6.png',
+      desc: 'Dependable plumbing installation, repair, and maintenance for homes and commercial properties.',
+      bullets: [
+        'Sanitary ware installation',
+        'Water supply and drainage piping',
+        'Leak detection & repairs',
+        'Water heater & pump setup',
+        'Commercial & home plumbing'
       ]
     }
   ];
@@ -111,11 +139,11 @@ export default function FinishingWorks() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1f2937] tracking-tight mb-5">
-            General Finishing Works
+            General Finishing Works <span className="text-[#004080]">in Qatar</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
-            Complete Interior & Finishing Solutions. The quality of finishing has a direct impact on the final appearance and usability of a property. MBA Contracting provides a range of finishing works to help clients achieve clean, functional and professionally completed spaces.
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10">
+            MBA Contracting provides complete general finishing works for villas, apartments, offices, and commercial buildings across Qatar. Our skilled team delivers clean, precise results at every stage, from surface preparation to the final finish, all under one contracting partner.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto mb-10">
@@ -210,6 +238,43 @@ export default function FinishingWorks() {
           })}
         </div>
       </div>
+
+      {/* Service Scope & Description Table (Matching image) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 w-full">
+        <div className="text-center mb-10">
+          <span className="text-[11px] font-bold tracking-[0.2em] text-[#004080] uppercase">COMPLETE SCOPE</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c1b2a] tracking-tight mt-2">
+            Service Scope & Description
+          </h2>
+          <p className="text-gray-500 text-sm mt-2 max-w-xl mx-auto">
+            Summary of all general finishing works managed by MBA Contracting across Qatar.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto bg-white rounded-2xl shadow-sm border border-gray-200">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#0c1b2a] text-white">
+                <th className="py-4 px-6 font-bold text-sm tracking-wide w-1/3 border-r border-gray-750">Service</th>
+                <th className="py-4 px-6 font-bold text-sm tracking-wide">Description</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200 text-sm">
+              {serviceList.map((item, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white hover:bg-gray-50/80 transition-colors' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                  <td className="py-4 px-6 font-bold text-[#0c1b2a] border-r border-gray-200 flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-[#004080] flex-shrink-0" />
+                    {item.title}
+                  </td>
+                  <td className="py-4 px-6 text-gray-700 leading-relaxed">
+                    {item.desc}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       {/* Dynamic Modal Overlay */}
       {selectedService && (

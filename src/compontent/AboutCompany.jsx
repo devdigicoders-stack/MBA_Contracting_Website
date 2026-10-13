@@ -30,10 +30,10 @@ export default function AboutCompany() {
             
             <div className="space-y-5 text-gray-600 leading-relaxed text-[15px] sm:text-base mb-10">
               <p>
-                MBA Contracting delivers construction, contracting, finishing and maintenance solutions for clients in Doha, Qatar. Our objective is to provide dependable workmanship, organized project execution and solutions aligned with each client's requirements.
+                MBA Contracting delivers villa, building, extension and majlis construction, finishing and maintenance solutions for clients in Doha, Qatar. Our objective is to provide dependable workmanship, organized project execution and solutions aligned with each client's requirements.
               </p>
               <p>
-                We understand that every property project has different requirements. Our team works around the project scope, site conditions and desired finish to deliver practical solutions with attention to detail.
+                We understand that every building project has different requirements. Our team works around the project scope, site conditions and desired finish to deliver practical solutions with attention to detail.
               </p>
             </div>
 

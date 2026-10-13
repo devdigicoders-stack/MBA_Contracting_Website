@@ -340,10 +340,10 @@ export default function Home() {
           {/* Left Content */}
           <div className="w-full lg:w-[55%] xl:w-1/2 pt-4">
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#2a2a2a] leading-[1.15] mb-5">
-              Premium Property<br />Maintenance &<br />Renovation <span className="text-[#003366]">in Qatar</span>
+              Building Construction,<br />Maintenance &<br />Renovation <span className="text-[#003366]">in Qatar</span>
             </h1>
             <p className="text-[13px] sm:text-[15px] text-gray-700 font-medium mb-8 max-w-lg leading-relaxed">
-              MBA Contracting is a property maintenance and <span className="text-[#003366]">renovation company in Qatar</span>, providing reliable maintenance, repair, and renovation solutions for homes, villas, apartments, and commercial properties. Our services include plumbing, electrical, painting, handyman work, renovation, fit-out, and <span className="text-[#003366]">Annual Maintenance Contracts (AMC)</span>.
+              MBA Contracting is a building construction, maintenance and <span className="text-[#003366]">renovation company in Qatar</span>, providing reliable construction and finishing solutions for villas, buildings, extensions, majlis, and commercial properties. Our services include general finishing works, villa construction, building construction, extension construction, majlis construction, and <span className="text-[#003366]">building maintenance services</span>.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a href="tel:+97450722177" className="inline-flex items-center gap-3 bg-[#004080] hover:bg-[#002952] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-blue-200/50">
@@ -353,7 +353,7 @@ export default function Home() {
                 </span>
               </a>
               <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-[#2ed573] hover:bg-[#27ae60] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-green-200/50">
-                Or chat with us on 
+                Or chat with us on WhatsApp
                 <span className="bg-white text-[#2ed573] rounded-full p-1 flex items-center justify-center w-6 h-6">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
                 </span>
@@ -389,7 +389,7 @@ export default function Home() {
       <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-            Complete Property Maintenance Services
+            Complete Building & Maintenance Services
           </h2>
         </div>
 
@@ -505,10 +505,10 @@ export default function Home() {
                 SUPERIOR QUALITY
               </span>
               <h3 className="text-3xl sm:text-4xl font-extrabold text-[#0c1b2a] leading-tight mb-6">
-                Dedicated Engineers<br />Who Know Your Property
+                Dedicated Engineers<br />Who Know Your Project
               </h3>
               <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                Our experienced engineers understand the unique needs of your property, from plumbing and electrical infrastructure to finishing works. Through detailed inspections and a smart service history, every visit is informed, precise, and efficient. Your property is never just another job. It is a tailored maintenance journey built around reliability and care.
+                Our experienced engineers understand the unique needs of every project, from villa and building construction to finishing, electrical and plumbing works. Through detailed site inspections and clear project records, every stage is planned, precise, and efficient. Your property is never just another job. It is a carefully managed project built around quality and reliability.
               </p>
               
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 text-[#0c1b2a] font-bold text-sm hover:border-[#003366] hover:text-[#003366] transition-colors group shadow-sm">
@@ -536,7 +536,7 @@ export default function Home() {
                 <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Experts in Qatar property systems</span>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Experts in Qatar construction</span>
               </div>
 
               {/* Floating Badge 2 */}
@@ -544,7 +544,7 @@ export default function Home() {
                 <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Consistent technician visits</span>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Consistent site supervision</span>
               </div>
             </div>
 
@@ -567,20 +567,20 @@ export default function Home() {
                 ENGINEERED SOLUTIONS
               </span>
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] leading-tight mb-6">
-                Your Property,<br />Engineered for Reliability
+                Your Property,<br />Built for Reliability
               </h3>
               <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                We go beyond basic repairs to deliver reliable property maintenance and home maintenance services in Qatar. Our certified engineers use advanced tools, deep technical expertise, and a preventive approach to optimize every system in your property. From civil and MEP systems to essential home maintenance, we ensure consistent performance and long-term reliability year-round.
+                We go beyond basic repairs to deliver reliable building construction, finishing, maintenance and renovation services in Qatar. Our engineers use proper tools, strong technical expertise, and a preventive approach to build and care for every part of your property. From plastering, tiling and gypsum works to electrical and plumbing systems, we ensure consistent quality and long-term performance.
               </p>
               
               <div className="flex flex-wrap items-center gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#004080] text-white font-bold text-sm hover:bg-[#002952] transition-colors group shadow-md shadow-blue-200/50">
+                <a href="tel:+97450722177" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#004080] text-white font-bold text-sm hover:bg-[#002952] transition-colors group shadow-md shadow-blue-200/50">
                   <span>Call us now</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform -rotate-45" />
-                </Link>
+                </a>
 
                 <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2ed573] text-white font-bold text-sm hover:bg-[#27ae60] transition-colors shadow-md shadow-green-200/50 group">
-                  <span>Or chat with us on</span>
+                  <span>Or chat with us on WhatsApp</span>
                   <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform fill-current" />
                 </a>
               </div>
@@ -609,7 +609,7 @@ export default function Home() {
                 <div className="bg-blue-50 rounded-full p-1 text-[#003366]">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Preventive care that stops issues</span>
+                <span className="text-[10px] sm:text-xs font-bold text-[#0c1b2a]">Quality checks at every stage</span>
               </div>
             </div>
 
