@@ -26,7 +26,7 @@ export default function WhoWeAre() {
               </p>
               
               <p>
-                Our mission is simple: make property maintenance effortless, transparent, and reliable. Whether you need emergency AC repair, a complete villa renovation, or ongoing maintenance support, our team of certified engineers and skilled professionals delivers exceptional service with integrity and expertise.
+                Our mission is simple: make property maintenance effortless, transparent, and reliable. Whether you need prompt maintenance support, a complete villa renovation, or ongoing facility care, our team of certified engineers and skilled professionals delivers exceptional service with integrity and expertise.
               </p>
             </div>
 

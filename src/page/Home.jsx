@@ -343,7 +343,7 @@ export default function Home() {
               Premium Property<br />Maintenance &<br />Renovation <span className="text-[#003366]">in Qatar</span>
             </h1>
             <p className="text-[13px] sm:text-[15px] text-gray-700 font-medium mb-8 max-w-lg leading-relaxed">
-              MBA Contracting is a property maintenance and <span className="text-[#003366]">renovation company in Qatar</span>, providing reliable maintenance, repair, and renovation solutions for homes, villas, apartments, and commercial properties. Our services include AC, plumbing, electrical, painting, handyman work, renovation, fit-out, and <span className="text-[#003366]">Annual Maintenance Contracts (AMC)</span>.
+              MBA Contracting is a property maintenance and <span className="text-[#003366]">renovation company in Qatar</span>, providing reliable maintenance, repair, and renovation solutions for homes, villas, apartments, and commercial properties. Our services include plumbing, electrical, painting, handyman work, renovation, fit-out, and <span className="text-[#003366]">Annual Maintenance Contracts (AMC)</span>.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a href="tel:+97450722177" className="inline-flex items-center gap-3 bg-[#004080] hover:bg-[#002952] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-blue-200/50">
@@ -508,7 +508,7 @@ export default function Home() {
                 Dedicated Engineers<br />Who Know Your Property
               </h3>
               <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                Our experienced engineers understand the unique needs of your property, from AC systems to plumbing and electrical infrastructure. Through detailed inspections and a smart service history, every visit is informed, precise, and efficient. Your property is never just another job. It is a tailored maintenance journey built around reliability and care.
+                Our experienced engineers understand the unique needs of your property, from plumbing and electrical infrastructure to finishing works. Through detailed inspections and a smart service history, every visit is informed, precise, and efficient. Your property is never just another job. It is a tailored maintenance journey built around reliability and care.
               </p>
               
               <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 text-[#0c1b2a] font-bold text-sm hover:border-[#003366] hover:text-[#003366] transition-colors group shadow-sm">
@@ -570,7 +570,7 @@ export default function Home() {
                 Your Property,<br />Engineered for Reliability
               </h3>
               <p className="text-gray-600 text-[15px] leading-relaxed mb-8">
-                We go beyond basic repairs to deliver reliable property maintenance and home maintenance services in Qatar. Our certified engineers use advanced tools, deep technical expertise, and a preventive approach to optimize every system in your property. From HVAC and MEP systems to essential home maintenance, we ensure consistent performance and long-term reliability year-round.
+                We go beyond basic repairs to deliver reliable property maintenance and home maintenance services in Qatar. Our certified engineers use advanced tools, deep technical expertise, and a preventive approach to optimize every system in your property. From civil and MEP systems to essential home maintenance, we ensure consistent performance and long-term reliability year-round.
               </p>
               
               <div className="flex flex-wrap items-center gap-4">

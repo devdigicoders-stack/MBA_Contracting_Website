@@ -37,7 +37,7 @@ export default function MeetOurTeam() {
               </p>
               
               <p className="text-[#4b5563] text-[15px] sm:text-base leading-relaxed">
-                <strong className="text-[#1f2937] font-bold">Our Technicians:</strong> Skilled craftsmen who take pride in their work. From AC specialists to plumbers, electricians to painters, every technician brings expertise and professionalism to every job.
+                <strong className="text-[#1f2937] font-bold">Our Technicians:</strong> Skilled craftsmen who take pride in their work. From plumbers and electricians to painters and carpenters, every technician brings expertise and professionalism to every job.
               </p>
               
               <p className="text-[#4b5563] text-[15px] sm:text-base leading-relaxed">

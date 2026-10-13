@@ -33,7 +33,7 @@ export default function WhatWeDo() {
 
             <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">Maintenance<br/>Services</h3>
             <p className="text-gray-500 leading-relaxed text-[15px]">
-              Expert property maintenance services in Qatar including AC repairs, plumbing fixes, electrical work, painting, and general handyman services. Book effortlessly, track progress, and enjoy professional service with upfront pricing.
+              Expert property maintenance services in Qatar including plumbing fixes, electrical work, painting, and general handyman services. Book effortlessly, track progress, and enjoy professional service with upfront pricing.
             </p>
           </div>
 
