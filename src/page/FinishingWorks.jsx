@@ -213,9 +213,13 @@ export default function FinishingWorks() {
                 className="group cursor-pointer bg-white rounded-none shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 flex flex-col"
               >
                 {/* Image Thumbnail */}
-                <div className="w-full h-48 overflow-hidden relative">
+                <div className="w-full aspect-[3/2] overflow-hidden relative bg-gray-100">
                   <div className="absolute inset-0 bg-[#0c1b2a]/10 group-hover:bg-transparent transition-colors z-10" />
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img 
+                    src={s.image} 
+                    alt={s.title} 
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                  />
                   <div className="absolute top-4 left-4 z-20 w-10 h-10 bg-white rounded-none flex items-center justify-center shadow-md">
                     <Icon className="w-5 h-5 text-[#004080]" />
                   </div>
@@ -284,60 +288,89 @@ export default function FinishingWorks() {
             onClick={() => setSelectedService(null)} 
           />
           
-          <div className="relative bg-white w-full max-w-4xl rounded-none shadow-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh] animate-slide-up">
+          <div className="relative bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-slide-up">
             
+            {/* Close Button */}
             <button 
               onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 z-20 w-8 h-8 bg-white/80 backdrop-blur rounded-none flex items-center justify-center text-gray-800 hover:bg-[#004080] hover:text-white transition-colors"
+              className="absolute top-4 right-4 z-30 w-9 h-9 bg-black/60 hover:bg-[#004080] text-white backdrop-blur rounded-full flex items-center justify-center transition-all shadow-lg hover:scale-105"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Left Image Side */}
-            <div className="lg:w-2/5 h-64 lg:h-auto relative bg-gray-100">
+            {/* Top Showcase Image (Full Landscape 3:2 / 16:9 View) */}
+            <div className="w-full h-64 sm:h-80 md:h-96 relative overflow-hidden bg-gray-900 flex-shrink-0">
               <img 
                 src={selectedService.image} 
                 alt={selectedService.title} 
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent lg:bg-gradient-to-r" />
-              <div className="absolute bottom-6 left-6 right-6 lg:bottom-auto lg:top-6 flex items-center gap-3">
-                 <div className="w-12 h-12 bg-white rounded-none flex items-center justify-center shadow-lg">
-                    <selectedService.icon className="w-6 h-6 text-[#004080]" />
-                 </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+              
+              {/* Floating Badge & Title over Image */}
+              <div className="absolute bottom-5 left-6 right-6 flex items-center gap-4">
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-xl flex-shrink-0">
+                  <selectedService.icon className="w-6 h-6 text-[#004080]" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
+                    MBA Contracting Qatar
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight drop-shadow-sm">
+                    {selectedService.title}
+                  </h2>
+                </div>
               </div>
             </div>
 
-            {/* Right Content Side */}
-            <div className="lg:w-3/5 p-8 lg:p-12 overflow-y-auto">
-              <h2 className="text-3xl font-extrabold text-[#0c1b2a] mb-4">
-                {selectedService.title}
-              </h2>
-              
-              <div className="p-4 bg-amber-50 rounded-none border border-amber-100 mb-8">
-                <p className="text-gray-700 italic font-medium leading-relaxed">
+            {/* Content Body */}
+            <div className="p-6 sm:p-8 lg:p-10 overflow-y-auto flex-1">
+              {/* Description Box */}
+              <div className="p-4 sm:p-5 bg-amber-50/90 rounded-xl border border-amber-200 mb-6">
+                <p className="text-gray-800 text-sm sm:text-base italic font-medium leading-relaxed">
                   {selectedService.desc}
                 </p>
               </div>
 
-              <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
-                <span className="w-2 h-2 rounded-none bg-[#004080]" />
+              {/* Features Heading */}
+              <h4 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2 border-b border-gray-100 pb-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#004080]" />
                 Included Works & Features
               </h4>
               
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Features Grid */}
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-8">
                 {selectedService.bullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                  <li key={idx} className="flex items-start gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
                     <CheckCircle2 className="w-5 h-5 text-[#004080] mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-600 font-medium">{bullet}</span>
+                    <span className="text-xs sm:text-sm text-gray-700 font-medium">{bullet}</span>
                   </li>
                 ))}
               </ul>
               
-              <div className="mt-10 pt-6 border-t border-gray-100 flex justify-end">
+              {/* Footer CTA Buttons */}
+              <div className="pt-5 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3 w-full sm:w-auto">
+                  <a 
+                    href="tel:+97450722177"
+                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#f05c26] hover:bg-[#d94a15] text-white text-xs sm:text-sm font-bold rounded-lg transition-all shadow-sm"
+                  >
+                    Call Now: +974 5072 2177
+                  </a>
+                  <a 
+                    href="https://wa.me/97450722177"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#1ebd5b] text-white text-xs sm:text-sm font-bold rounded-lg transition-all shadow-sm"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
+
                 <button 
                   onClick={() => setSelectedService(null)}
-                  className="px-6 py-2.5 bg-gray-100 text-gray-700 font-bold text-sm rounded-none hover:bg-gray-200 transition-colors"
+                  className="w-full sm:w-auto px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs sm:text-sm rounded-lg transition-colors cursor-pointer"
                 >
                   Close Details
                 </button>
