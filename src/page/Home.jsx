@@ -361,13 +361,13 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Right Content - Hero Image */}
-          <div className="w-full lg:w-[48%] xl:w-1/2 relative mt-10 lg:mt-0 flex justify-center lg:justify-end items-center">
-            <div className="relative w-full max-w-lg lg:max-w-2xl flex items-center justify-center">
+          {/* Right Content - Hero Skyline */}
+          <div className="w-full lg:w-[50%] xl:w-1/2 relative mt-8 lg:mt-0 flex justify-center lg:justify-end items-center">
+            <div className="relative w-full max-w-xl lg:max-w-2xl flex items-center justify-center lg:justify-end">
               <img 
-                src="/MBA HERO IMAGE.png" 
+                src="/MBA HERO IMAGE.png?v=2" 
                 alt="Qatar Skyline - MBA Contracting" 
-                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-md"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
