@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, MapPin, Calendar, Building2, Star, Users, HardHat, ArrowUpRight } from 'lucide-react';
+import { Briefcase, MapPin, Calendar, Building2, ShieldCheck, Award, Clock, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Projects() {
@@ -68,50 +68,50 @@ export default function Projects() {
             </Link>
           </div>
 
-          {/* Stats Row */}
+          {/* Features Row */}
           <div className="flex flex-wrap items-center justify-center gap-y-6 gap-x-8 sm:gap-x-12 pt-8 border-t border-gray-200/80 w-full">
-            {/* Stat 1 */}
+            {/* Feature 1 */}
             <div className="flex items-center gap-3">
               <Building2 className="w-8 h-8 text-[#004080]" />
               <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">100+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Projects Completed</span>
+                <span className="text-xl font-black text-[#1f2937] leading-none">Turnkey</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Complete Solutions</span>
               </div>
             </div>
 
             {/* Divider */}
             <div className="hidden sm:block w-px h-10 bg-gray-200" />
 
-            {/* Stat 2 */}
+            {/* Feature 2 */}
             <div className="flex items-center gap-3">
-              <Star className="w-8 h-8 text-[#004080]" />
+              <Award className="w-8 h-8 text-[#004080]" />
               <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">32+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Years Experience</span>
+                <span className="text-xl font-black text-[#1f2937] leading-none">Quality First</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Precision Finishing</span>
               </div>
             </div>
 
             {/* Divider */}
             <div className="hidden lg:block w-px h-10 bg-gray-200" />
 
-            {/* Stat 3 */}
+            {/* Feature 3 */}
             <div className="flex items-center gap-3">
-              <Users className="w-8 h-8 text-[#004080]" />
+              <Clock className="w-8 h-8 text-[#004080]" />
               <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">5000+</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Happy Clients</span>
+                <span className="text-xl font-black text-[#1f2937] leading-none">On-Time</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Reliable Handover</span>
               </div>
             </div>
 
             {/* Divider */}
             <div className="hidden sm:block w-px h-10 bg-gray-200" />
 
-            {/* Stat 4 */}
+            {/* Feature 4 */}
             <div className="flex items-center gap-3">
-              <HardHat className="w-8 h-8 text-[#004080]" />
+              <ShieldCheck className="w-8 h-8 text-[#004080]" />
               <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">100%</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Quality Work</span>
+                <span className="text-xl font-black text-[#1f2937] leading-none">Skilled Team</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Strict Supervision</span>
               </div>
             </div>
           </div>
