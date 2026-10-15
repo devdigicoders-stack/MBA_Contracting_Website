@@ -361,18 +361,15 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Right Content - Image and Floating Stats */}
-          <div className="w-full lg:w-[45%] xl:w-1/2 relative mt-16 lg:mt-0 flex justify-end h-full items-center">
-            {/* The Building Background and Car Image */}
-            <div className="relative w-[150%] lg:w-[180%] xl:w-[160%] right-[-15%] lg:right-[-35%] xl:right-[-30%] z-0 h-full flex items-center">
-              {/* Foreground Image containing Qatar Skyline */}
+          {/* Right Content - Hero Image */}
+          <div className="w-full lg:w-[48%] xl:w-1/2 relative mt-10 lg:mt-0 flex justify-center lg:justify-end items-center">
+            <div className="relative w-full max-w-lg lg:max-w-2xl flex items-center justify-center">
               <img 
-                src="/image copy 11.png" 
-                alt="Qatar Skyline" 
-                className="w-full h-auto object-contain transform scale-125 lg:scale-150 xl:scale-125 z-10 origin-right"
+                src="/MBA HERO IMAGE.png" 
+                alt="Qatar Skyline - MBA Contracting" 
+                className="w-full h-auto object-contain mix-blend-multiply drop-shadow-md"
               />
             </div>
-            
           </div>
           
         </div>
