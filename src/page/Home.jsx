@@ -160,19 +160,19 @@ export default function Home() {
     { 
       title: 'Tile Installation Works', 
       icon: Layers, 
-      image: '/image copy 6.png',
+      image: '/finishingwork/Tile Installation Works.png',
       desc: 'Expert tiling solutions for functional and beautiful spaces.'
     },
     { 
       title: 'Painting Works', 
       icon: Paintbrush, 
-      image: '/image copy 5.png',
+      image: '/finishingwork/Painting Works.png',
       desc: 'Professional painting services for perfect interiors and exteriors.'
     },
     { 
       title: 'Gypsum Board Works', 
       icon: Maximize, 
-      image: '/image copy 10.png',
+      image: '/finishingwork/Gypsum Board Works.png',
       desc: 'Custom gypsum installations for ceilings and partitions.'
     }
   ];

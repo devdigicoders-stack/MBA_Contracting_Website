@@ -15,7 +15,7 @@ export default function FinishingWorks() {
     { 
       title: 'Tile Installation Works', 
       icon: Layers, 
-      image: '/image copy 6.png',
+      image: '/finishingwork/Tile Installation Works.png',
       desc: 'Professional wall and floor tiling with accurate leveling, alignment, and neat finishing for lasting results.',
       bullets: [
         'Floor and wall tiles',
@@ -28,7 +28,7 @@ export default function FinishingWorks() {
     { 
       title: 'Painting Works', 
       icon: Paintbrush, 
-      image: '/image copy 5.png',
+      image: '/finishingwork/Painting Works.png',
       desc: 'Interior and exterior painting with proper surface preparation for a smooth, durable, and attractive finish.',
       bullets: [
         'Interior and exterior painting',
@@ -41,7 +41,7 @@ export default function FinishingWorks() {
     { 
       title: 'Gypsum Board Works', 
       icon: Maximize, 
-      image: '/image copy 10.png',
+      image: '/finishingwork/Gypsum Board Works.png',
       desc: 'Gypsum partitions, false ceilings, and decorative ceiling designs installed with precision.',
       bullets: [
         'Gypsum partitions',
@@ -54,7 +54,7 @@ export default function FinishingWorks() {
     { 
       title: 'Plastering Works', 
       icon: Wrench, 
-      image: '/image copy 6.png',
+      image: '/finishingwork/Plastering Works.png',
       desc: 'Smooth, even plastering for internal and external walls, ready for painting or final finishes.',
       bullets: [
         'Internal and external walls',
@@ -67,7 +67,7 @@ export default function FinishingWorks() {
     { 
       title: 'Flooring Works', 
       icon: Tent, 
-      image: '/image copy 8.png',
+      image: '/finishingwork/Flooring Works.png',
       desc: 'Supply and installation of flooring solutions suited to your space, budget, and usage.',
       bullets: [
         'Supply and installation',
@@ -80,7 +80,7 @@ export default function FinishingWorks() {
     { 
       title: 'Interior Finishing Works', 
       icon: Building2, 
-      image: '/image copy 5.png',
+      image: '/finishingwork/Interior Finishing Works.png',
       desc: 'Complete interior finishing to bring your space to a handover-ready standard.',
       bullets: [
         'Complete interior detailing',
@@ -93,7 +93,7 @@ export default function FinishingWorks() {
     { 
       title: 'Electrical Works', 
       icon: Zap, 
-      image: '/image copy 8.png',
+      image: '/finishingwork/Electrical Works.png',
       desc: 'Safe and reliable electrical installation, wiring, and repair carried out by skilled technicians.',
       bullets: [
         'Safe wiring and distribution',
@@ -106,7 +106,7 @@ export default function FinishingWorks() {
     { 
       title: 'Plumbing Works', 
       icon: Droplets, 
-      image: '/image copy 6.png',
+      image: '/finishingwork/Plumbing Works.png',
       desc: 'Dependable plumbing installation, repair, and maintenance for homes and commercial properties.',
       bullets: [
         'Sanitary ware installation',
