@@ -194,10 +194,10 @@ export default function Contact() {
               
               <div className="mb-8">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c1b2a] tracking-tight">
-                  Send Us a <span className="text-[#004080]">Message</span>
+                  {t.contact.formTitle}
                 </h2>
                 <p className="mt-1.5 text-xs sm:text-sm text-gray-500">
-                  Fill out the form below and our team will get back to you soon.
+                  {isRTL ? 'املأ النموذج أدناه وسيقوم فريقنا بالتواصل معك قريباً.' : 'Fill out the form below and our team will get back to you soon.'}
                 </p>
               </div>
 
@@ -243,7 +243,7 @@ export default function Contact() {
                       required
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      placeholder="Enter your full name"
+                      placeholder={isRTL ? 'أدخل اسمك الكامل' : 'Enter your full name'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -256,7 +256,7 @@ export default function Contact() {
                       type="text"
                       value={formData.companyName}
                       onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                      placeholder="Enter company or property name"
+                      placeholder={isRTL ? 'أدخل اسم الشركة أو العقار' : 'Enter company or property name'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -273,7 +273,7 @@ export default function Contact() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="Enter your phone number"
+                      placeholder={isRTL ? 'أدخل رقم الهاتف' : 'Enter your phone number'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -287,7 +287,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Enter your email address"
+                      placeholder={isRTL ? 'أدخل البريد الإلكتروني' : 'Enter your email address'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -305,13 +305,10 @@ export default function Contact() {
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 bg-white transition"
                     >
-                      <option value="">Select a service</option>
-                      <option value="General Finishing Works">General Finishing Works</option>
-                      <option value="Villa Construction">Villa Construction</option>
-                      <option value="Building Construction">Building Construction</option>
-                      <option value="Extension Construction">Extension Construction</option>
-                      <option value="Majlis Construction">Majlis Construction</option>
-                      <option value="Building Maintenance Services">Building Maintenance Services</option>
+                      <option value="">{isRTL ? 'اختر الخدمة المطلوبة' : 'Select a service'}</option>
+                      {t.servicesList.map((srv, idx) => (
+                        <option key={idx} value={srv}>{srv}</option>
+                      ))}
                     </select>
                   </div>
 
@@ -324,7 +321,7 @@ export default function Contact() {
                       required
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      placeholder="Enter project location"
+                      placeholder={isRTL ? 'أدخل موقع المشروع' : 'Enter project location'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -333,14 +330,14 @@ export default function Contact() {
                 {/* Row 4: {t.contact.projectDetails}/}
                 <div>
                   <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                    Project Details *
+                    {isRTL ? 'تفاصيل المشروع *' : 'Project Details *'}
                   </label>
                   <textarea
                     rows="4"
                     required
                     value={formData.projectDetails}
                     onChange={(e) => setFormData({ ...formData, projectDetails: e.target.value })}
-                    placeholder="Tell us about your project (size, type of work, timeline, etc.)"
+                    placeholder={isRTL ? 'أخبرنا عن مشروعك (المساحة، نوع العمل، الجدول الزمني، إلخ)' : 'Tell us about your project (size, type of work, timeline, etc.)'}
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition resize-none"
                   ></textarea>
                 </div>
@@ -412,7 +409,7 @@ export default function Contact() {
             </div>
 
             {/* Right Content */}
-            <div className="w-full lg:w-1/2 lg:pl-6">
+            <div className="w-full lg:w-1/2 lg:pl-6 rtl:lg:pl-0 rtl:lg:pr-6 text-left rtl:text-right">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-[2px] bg-[#004080]"></div>
                 <span className="text-[#004080] font-bold text-[11px] sm:text-xs tracking-[0.2em] uppercase">

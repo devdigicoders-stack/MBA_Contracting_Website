@@ -58,6 +58,30 @@ export const translations = {
         tag1: 'Expert analysis',
         tag2: 'Quality checks at every stage',
       },
+      completeServices: {
+        title: 'Complete Building & Maintenance Services',
+        subheading: 'Our Core Contracting Services',
+        viewAll: 'View All Services',
+        items: [
+          { name: 'Villa Construction', icon: 'HomeIcon' },
+          { name: 'General Contracting', icon: 'HardHat' },
+          { name: 'Majlis Construction', icon: 'Sparkles' },
+          { name: 'Extension Construction', icon: 'Building2' },
+          { name: 'General Finishing Works', icon: 'Paintbrush' },
+          { name: 'Building Maintenance Services', icon: 'Wrench' },
+        ],
+      },
+      simpleProcess: {
+        badge: 'How We Work',
+        heading: 'Our Simple Process',
+        desc: "We've streamlined our workflow to ensure seamless communication, complete transparency, and top-quality results from start to finish.",
+        steps: [
+          { title: 'Consultation', desc: 'We discuss your vision, requirements, and budget in detail.' },
+          { title: 'Planning', desc: 'Our experts draft precise architectural plans and timelines.' },
+          { title: 'Construction', desc: 'Flawless execution using premium materials and expert labor.' },
+          { title: 'Handover', desc: 'Final inspection, quality assurance, and key delivery.' },
+        ],
+      },
     },
     about: {
       heroHeading: 'Your Trusted Construction Partner',
@@ -290,6 +314,30 @@ export const translations = {
         p1: 'نتجاوز أعمال الإصلاح البسيطة لنقدّم خدمات موثوقة في تشييد المباني والتشطيب والصيانة والتجديد في قطر. يعتمد مهندسونا على الأدوات المناسبة والخبرة الفنية القوية ونهج وقائي في بناء كل جزء من عقارك والعناية به. من أعمال اللياسة والبلاط والجبس إلى الأنظمة الكهربائية وأنظمة السباكة، نضمن جودة ثابتة وأداءً يدوم طويلاً.',
         tag1: 'تحليل فني متخصص',
         tag2: 'فحوصات جودة في كل مرحلة',
+      },
+      completeServices: {
+        title: 'خدمات البناء والصيانة المتكاملة',
+        subheading: 'خدمات المقاولات الأساسية لدينا',
+        viewAll: 'عرض جميع الخدمات',
+        items: [
+          { name: 'بناء الفلل', icon: 'HomeIcon' },
+          { name: 'المقاولات العامة', icon: 'HardHat' },
+          { name: 'بناء المجالس', icon: 'Sparkles' },
+          { name: 'بناء الملاحق والتوسعات', icon: 'Building2' },
+          { name: 'أعمال التشطيبات العامة', icon: 'Paintbrush' },
+          { name: 'خدمات صيانة المباني', icon: 'Wrench' },
+        ],
+      },
+      simpleProcess: {
+        badge: 'منهجية العمل',
+        heading: 'مراحل العمل والتنفيذ',
+        desc: 'نعمل وفق خطوات منظمة ومدروسة لضمان التواصل الشفاف والتنفيذ الدقيق وأعلى درجات الجودة.',
+        steps: [
+          { title: 'الاستشارة وفهم المتطلبات', desc: 'دراسة متطلبات العميل وتحديد نطاق المشروع والميزانية.' },
+          { title: 'التخطيط وتحديد النطاق', desc: 'معاينة الموقع ووضع خطة العمل والجداول الزمنية المحددة.' },
+          { title: 'التنفيذ باحترافية', desc: 'تنفيذ الأعمال المعتمدة بمواد عالية الجودة وإشراف مستمر.' },
+          { title: 'الفحص والتسليم', desc: 'فحص جودة الأعمال المنجزة وتنسيق التسليم النهائي بكل دقة.' },
+        ],
       },
     },
     about: {

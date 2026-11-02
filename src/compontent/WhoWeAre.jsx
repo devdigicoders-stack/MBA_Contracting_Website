@@ -18,8 +18,8 @@ export default function WhoWeAre() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Side: Content */}
-          <div className="flex flex-col justify-center max-w-xl mx-auto lg:mx-0">
-            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#1f2937] tracking-tight mb-8">
+          <div className="flex flex-col justify-center max-w-xl mx-auto lg:mx-0 text-left rtl:text-right">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#1f2937] tracking-tight mb-8">
               {t.whoWeAre.heading}
             </h2>
             
@@ -47,7 +47,7 @@ export default function WhoWeAre() {
           </div>
 
           {/* Right Side: Image */}
-          <div className="w-full h-full min-h-[400px] lg:min-h-[600px] relative rounded-[2rem] overflow-hidden shadow-2xl">
+          <div className="w-full h-full min-h-[300px] sm:min-h-[420px] lg:min-h-[600px] relative rounded-[2rem] overflow-hidden shadow-2xl">
             <img 
               src="/who_we_are_corporate.jpg" 
               alt="MBA Contracting Professional Team" 

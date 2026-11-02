@@ -39,36 +39,36 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16 sm:h-20' : 'h-20'}`}>
+        <div className={`flex items-center justify-between gap-4 transition-all duration-300 ${isScrolled ? 'h-16 sm:h-20' : 'h-20'}`}>
 
           {/* Logo Section */}
-          <Link to="/" className="flex items-center group focus:outline-none">
+          <Link to="/" className="flex items-center group focus:outline-none shrink-0">
             <img 
               src="/logo.png" 
               alt="MBA Contracting Logo" 
-              className={`w-auto transition-all duration-300 group-hover:scale-105 ${isScrolled ? 'h-11 sm:h-14' : 'h-14'}`} 
+              className={`w-auto transition-all duration-300 group-hover:scale-105 ${isScrolled ? 'h-9 sm:h-11 lg:h-14' : 'h-10 sm:h-12 lg:h-14'}`} 
             />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 xl:space-x-8 rtl:space-x-reverse">
+          {/* Desktop Navigation Links - Modern Flexbox gap that works seamlessly in LTR and RTL */}
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-8 shrink-0">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 end={link.path === '/'}
                 className={({ isActive }) =>
-                  `relative py-2 text-[15px] font-medium transition-all duration-200 ${isActive
+                  `relative py-2 text-[13px] xl:text-[15px] font-medium whitespace-nowrap transition-all duration-200 ${isActive
                     ? 'text-[#003366] font-semibold'
                     : 'text-gray-600 hover:text-[#0c1b2a]'
                   }`
                 }
               >
                 {({ isActive }) => (
-                  <span className="inline-block relative">
+                  <span className="inline-block relative whitespace-nowrap">
                     {link.name}
                     {isActive && (
-                      <span className="absolute left-0 -bottom-1.5 w-full h-[2.5px] bg-[#003366] rounded-full animate-fade-in" />
+                      <span className="absolute inset-x-0 -bottom-1.5 h-[2.5px] bg-[#003366] rounded-full animate-fade-in" />
                     )}
                   </span>
                 )}
@@ -77,19 +77,19 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons + Google Translate */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             <GoogleTranslate />
             <a
               href="tel:+97450722177"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-medium text-sm bg-gradient-to-r from-[#004080] via-[#002952] to-[#001a33] hover:from-[#002952] hover:to-[#001326] shadow-sm hover:shadow transition-all duration-200 active:scale-95"
+              className="inline-flex items-center gap-2 px-4 xl:px-5 py-2.5 rounded-lg text-white font-medium text-xs xl:text-sm whitespace-nowrap bg-gradient-to-r from-[#004080] via-[#002952] to-[#001a33] hover:from-[#002952] hover:to-[#001326] shadow-sm hover:shadow transition-all duration-200 active:scale-95"
             >
-              <Phone className="w-4 h-4" />
-              <span>{t.nav.getQuote}</span>
+              <Phone className="w-4 h-4 shrink-0" />
+              <span className="whitespace-nowrap">{t.nav.getQuote}</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden gap-2">
+          <div className="flex items-center lg:hidden gap-2 shrink-0">
             <GoogleTranslate />
 
             <a
@@ -103,7 +103,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-gray-700 hover:text-[#003366] hover:bg-gray-50 focus:outline-none"
+              className="p-2 rounded-lg text-gray-700 hover:text-[#003366] hover:bg-gray-50 focus:outline-none cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -115,7 +115,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200">
+        <div className="lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top duration-200 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <NavLink

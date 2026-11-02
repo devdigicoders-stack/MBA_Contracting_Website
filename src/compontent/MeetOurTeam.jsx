@@ -15,7 +15,7 @@ export default function MeetOurTeam() {
             <div className={`absolute inset-0 bg-gray-200 rounded-[2rem] transform ${isRTL ? '-translate-x-4 sm:-translate-x-6' : 'translate-x-4 sm:translate-x-6'} translate-y-4 sm:translate-y-6`}></div>
             
             {/* Main Image */}
-            <div className="relative h-[450px] sm:h-[550px] rounded-[2rem] overflow-hidden bg-white shadow-xl">
+            <div className="relative h-[340px] sm:h-[450px] lg:h-[550px] rounded-[2rem] overflow-hidden bg-white shadow-xl">
               <img 
                 src="/who_we_are_team.jpg" 
                 alt="Meet Our Team - MBA Contracting" 

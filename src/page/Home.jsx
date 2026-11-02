@@ -341,22 +341,22 @@ export default function Home() {
           
           {/* Left Content */}
           <div className="w-full lg:w-[55%] xl:w-1/2 pt-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#2a2a2a] leading-[1.15] mb-5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#2a2a2a] leading-[1.2] mb-5">
               {t.home.heroTitleLine1}<br />{t.home.heroTitleLine2}<br />{t.home.heroTitleLine3}
             </h1>
             <p className="text-[13px] sm:text-[15px] text-gray-700 font-medium mb-8 max-w-lg leading-relaxed">
               {t.home.heroText}
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <a href="tel:+97450722177" className="inline-flex items-center gap-3 bg-[#004080] hover:bg-[#002952] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-blue-200/50">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+              <a href="tel:+97450722177" className="inline-flex items-center justify-center gap-3 bg-[#004080] hover:bg-[#002952] text-white px-6 py-3.5 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-blue-200/50 w-full sm:w-auto">
                 <span>{t.nav.callUsNow}</span>
-                <span className="bg-white text-[#004080] rounded-full p-1 w-6 h-6 flex items-center justify-center">
+                <span className="bg-white text-[#004080] rounded-full p-1 w-6 h-6 flex items-center justify-center shrink-0">
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </a>
-              <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-[#2ed573] hover:bg-[#27ae60] text-white px-6 py-3 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-green-200/50">
+              <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 bg-[#2ed573] hover:bg-[#27ae60] text-white px-6 py-3.5 rounded-full font-bold transition-transform hover:scale-105 shadow-md shadow-green-200/50 w-full sm:w-auto">
                 <span>{t.nav.chatWhatsApp}</span>
-                <span className="bg-white text-[#2ed573] rounded-full p-1 flex items-center justify-center w-6 h-6">
+                <span className="bg-white text-[#2ed573] rounded-full p-1 flex items-center justify-center w-6 h-6 shrink-0">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
                 </span>
               </a>
@@ -388,7 +388,7 @@ export default function Home() {
       <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-            Complete Building & Maintenance Services
+            {t.home.completeServices?.title || 'Complete Building & Maintenance Services'}
           </h2>
         </div>
 
@@ -396,7 +396,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* Left Column: Orbital Animation */}
-            <div className="flex items-center justify-center py-8 relative h-[400px] w-full max-w-[400px] mx-auto">
+            <div className="flex items-center justify-center py-4 sm:py-8 relative h-[300px] sm:h-[380px] lg:h-[400px] w-[300px] sm:w-[380px] lg:w-[400px] max-w-full mx-auto">
               
               {/* Center Icon */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 bg-white rounded-full shadow-lg border border-gray-100 flex items-center justify-center text-[#004080]">
@@ -443,23 +443,37 @@ export default function Home() {
               
               {/* Group 1 */}
               <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0c1b2a] mb-4">Our Core<br />Contracting Services</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0c1b2a] mb-6 text-left rtl:text-right">
+                  {t.home.completeServices?.subheading || 'Our Core Contracting Services'}
+                </h3>
                 <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
-                    <HardHat className="w-4 h-4 text-[#004080]" /> General Contracting
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
-                    <HomeIcon className="w-4 h-4 text-[#004080]" /> Villa Construction
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
-                    <Building2 className="w-4 h-4 text-[#004080]" /> Extension Construction
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
-                    <Sparkles className="w-4 h-4 text-[#004080]" /> Majlis Construction
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 shadow-sm hover:border-[#004080] transition-colors">
-                    <Wrench className="w-4 h-4 text-[#004080]" /> Building Maintenance Services
-                  </span>
+                  {(t.home.completeServices?.items || [
+                    { name: 'Villa Construction', icon: 'HomeIcon' },
+                    { name: 'General Contracting', icon: 'HardHat' },
+                    { name: 'Majlis Construction', icon: 'Sparkles' },
+                    { name: 'Extension Construction', icon: 'Building2' },
+                    { name: 'General Finishing Works', icon: 'Paintbrush' },
+                    { name: 'Building Maintenance Services', icon: 'Wrench' },
+                  ]).map((item, idx) => {
+                    const iconMap = {
+                      HomeIcon,
+                      HardHat,
+                      Sparkles,
+                      Building2,
+                      Paintbrush,
+                      Wrench
+                    };
+                    const IconComp = iconMap[item.icon] || HardHat;
+                    return (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center gap-2.5 px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 shadow-sm hover:border-[#004080] hover:text-[#004080] transition-colors"
+                      >
+                        <IconComp className="w-4 h-4 text-[#004080] shrink-0" />
+                        <span>{item.name}</span>
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -471,9 +485,9 @@ export default function Home() {
               to="/services"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#004080] text-white font-bold text-sm tracking-wide hover:bg-[#002952] hover:-translate-y-1 shadow-lg shadow-blue-200/50 transition-all group"
             >
-              <span>View All Services</span>
-              <span className="bg-white text-[#004080] rounded-full p-1 w-6 h-6 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                <ArrowRight className="w-4 h-4 transform -rotate-45" />
+              <span>{t.home.completeServices?.viewAll || 'View All Services'}</span>
+              <span className="bg-white text-[#004080] rounded-full p-1 w-6 h-6 flex items-center justify-center group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
+                <ArrowRight className="w-4 h-4 transform -rotate-45 rtl:rotate-135" />
               </span>
             </Link>
           </div>
@@ -574,12 +588,12 @@ export default function Home() {
               
               <div className="flex flex-wrap items-center gap-4">
                 <a href="tel:+97450722177" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#004080] text-white font-bold text-sm hover:bg-[#002952] transition-colors group shadow-md shadow-blue-200/50">
-                  <span>Call us now</span>
+                  <span>{t.nav.callUsNow}</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform -rotate-45" />
                 </a>
 
                 <a href="https://wa.me/97450722177" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2ed573] text-white font-bold text-sm hover:bg-[#27ae60] transition-colors shadow-md shadow-green-200/50 group">
-                  <span>Or chat with us on WhatsApp</span>
+                  <span>{t.nav.chatWhatsApp}</span>
                   <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform fill-current" />
                 </a>
               </div>
@@ -633,10 +647,10 @@ export default function Home() {
               
               <div className="mb-8">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0c1b2a] tracking-tight">
-                  Send Us a <span className="text-[#004080]">Message</span>
+                  {t.contact.formTitle}
                 </h2>
                 <p className="mt-1.5 text-xs sm:text-sm text-gray-500">
-                  Fill out the form below and our team will get back to you soon.
+                  {isRTL ? 'املأ النموذج أدناه وسيقوم فريقنا بالتواصل معك قريباً.' : 'Fill out the form below and our team will get back to you soon.'}
                 </p>
               </div>
 
@@ -675,27 +689,27 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Full Name *
+                      {t.contact.fullName}
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      placeholder="Enter your full name"
+                      placeholder={isRTL ? 'أدخل اسمك الكامل' : 'Enter your full name'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Company / Property Name
+                      {t.contact.companyName}
                     </label>
                     <input
                       type="text"
                       value={formData.companyName}
                       onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                      placeholder="Enter company or property name"
+                      placeholder={isRTL ? 'أدخل اسم الشركة أو العقار' : 'Enter company or property name'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -705,28 +719,28 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Phone Number *
+                      {t.contact.phone}
                     </label>
                     <input
                       type="tel"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="Enter your phone number"
+                      placeholder={isRTL ? 'أدخل رقم الهاتف' : 'Enter your phone number'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Email Address *
+                      {t.contact.email}
                     </label>
                     <input
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Enter your email address"
+                      placeholder={isRTL ? 'أدخل البريد الإلكتروني' : 'Enter your email address'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -736,7 +750,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Service Required *
+                      {t.contact.serviceRequired}
                     </label>
                     <select
                       required
@@ -744,26 +758,23 @@ export default function Home() {
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 bg-white transition"
                     >
-                      <option value="">Select a service</option>
-                      <option value="General Contracting">General Contracting</option>
-                      <option value="Villa Construction">Villa Construction</option>
-                      <option value="Extension Construction">Extension Construction</option>
-                      <option value="Majlis Construction">Majlis Construction</option>
-                      <option value="Building Maintenance">Building Maintenance</option>
-                      <option value="General Finishing Works">General Finishing Works</option>
+                      <option value="">{isRTL ? 'اختر الخدمة المطلوبة' : 'Select a service'}</option>
+                      {t.servicesList.map((srv, idx) => (
+                        <option key={idx} value={srv}>{srv}</option>
+                      ))}
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Project Location *
+                      {t.contact.projectLocation}
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      placeholder="Enter project location"
+                      placeholder={isRTL ? 'أدخل موقع المشروع' : 'Enter project location'}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition"
                     />
                   </div>
@@ -772,14 +783,14 @@ export default function Home() {
                 {/* Row 4: Project Details */}
                 <div>
                   <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                    Project Details *
+                    {isRTL ? 'تفاصيل المشروع *' : 'Project Details *'}
                   </label>
                   <textarea
                     rows="4"
                     required
                     value={formData.projectDetails}
                     onChange={(e) => setFormData({ ...formData, projectDetails: e.target.value })}
-                    placeholder="Tell us about your project (size, type of work, timeline, etc.)"
+                    placeholder={isRTL ? 'أخبرنا عن مشروعك (المساحة، نوع العمل، الجدول الزمني، إلخ)' : 'Tell us about your project (size, type of work, timeline, etc.)'}
                     className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 placeholder:text-gray-400 bg-white transition resize-none"
                   ></textarea>
                 </div>
@@ -794,11 +805,11 @@ export default function Home() {
                     {loading ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>Sending Inquiry...</span>
+                        <span>{t.contact.submitting}</span>
                       </>
                     ) : (
                       <>
-                        <span>Send Inquiry</span>
+                        <span>{t.contact.submit}</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
@@ -825,7 +836,7 @@ export default function Home() {
                   <div className="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center">
                     <MapPin className="w-3 h-3" />
                   </div>
-                  <span>Alkhayarin holding building, first floor, office no 102 Doha - qatar</span>
+                  <span>{t.contact.address}</span>
                 </div>
               </div>
             </div>
@@ -942,13 +953,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="inline-block py-1.5 px-4 rounded-full bg-blue-50 border border-blue-100 text-[11px] font-extrabold tracking-[0.2em] text-[#004080] uppercase mb-4 shadow-sm">
-              How We Work
+              {t.home.simpleProcess?.badge || 'How We Work'}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-              Our Simple Process
+              {t.home.simpleProcess?.heading || 'Our Simple Process'}
             </h2>
             <p className="mt-5 text-gray-500 text-sm sm:text-base leading-relaxed">
-              We've streamlined our workflow to ensure seamless communication, complete transparency, and top-quality results from start to finish.
+              {t.home.simpleProcess?.desc || "We've streamlined our workflow to ensure seamless communication, complete transparency, and top-quality results from start to finish."}
             </p>
           </div>
 
@@ -957,12 +968,15 @@ export default function Home() {
             {/* Connecting dashed line for desktop */}
             <div className="hidden md:block absolute top-[48px] left-[12.5%] right-[12.5%] h-[2px] border-t-2 border-dashed border-gray-300 z-0 opacity-70" />
             
-            {[
-              { title: 'Consultation', desc: 'We discuss your vision, requirements, and budget in detail.', icon: Users },
-              { title: 'Planning', desc: 'Our experts draft precise architectural plans and timelines.', icon: ClipboardList },
-              { title: 'Construction', desc: 'Flawless execution using premium materials and expert labor.', icon: Wrench },
-              { title: 'Handover', desc: 'Final inspection, quality assurance, and key delivery.', icon: Sparkles }
-            ].map((step, idx) => (
+            {(t.home.simpleProcess?.steps || [
+              { title: 'Consultation', desc: 'We discuss your vision, requirements, and budget in detail.' },
+              { title: 'Planning', desc: 'Our experts draft precise architectural plans and timelines.' },
+              { title: 'Construction', desc: 'Flawless execution using premium materials and expert labor.' },
+              { title: 'Handover', desc: 'Final inspection, quality assurance, and key delivery.' }
+            ]).map((step, idx) => {
+              const procIcons = [Users, ClipboardList, Wrench, Sparkles];
+              const StepIcon = procIcons[idx] || Users;
+              return (
               <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
                 
                 {/* Circle Container */}
@@ -970,7 +984,7 @@ export default function Home() {
                   
                   {/* Inner Circle (Changes color on hover) */}
                   <div className="w-full h-full rounded-full bg-[#f8fafd] border border-gray-100 flex items-center justify-center group-hover:bg-[#004080] group-hover:border-[#004080] transition-colors duration-500">
-                    <step.icon className="w-8 h-8 text-[#004080] group-hover:text-white transition-colors duration-500" />
+                    <StepIcon className="w-8 h-8 text-[#004080] group-hover:text-white transition-colors duration-500" />
                   </div>
 
                   {/* Step Number Badge */}
@@ -989,7 +1003,8 @@ export default function Home() {
                 </p>
                 
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

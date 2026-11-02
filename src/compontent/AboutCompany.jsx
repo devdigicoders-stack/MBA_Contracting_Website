@@ -54,7 +54,7 @@ export default function AboutCompany() {
           </div>
 
           {/* Right: Image */}
-          <div className="relative w-full h-full min-h-[500px] lg:min-h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
+          <div className="relative w-full h-full min-h-[320px] sm:min-h-[450px] lg:min-h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
             {/* Background decorative shape */}
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
             
@@ -67,9 +67,9 @@ export default function AboutCompany() {
             {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c1b2a]/60 to-transparent pointer-events-none"></div>
             
-            <div className="absolute bottom-8 left-8 right-8">
-              <div className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20">
-                <p className="text-[#0c1b2a] font-bold text-lg leading-snug">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8">
+              <div className="bg-white/95 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-white/20">
+                <p className="text-[#0c1b2a] font-bold text-sm sm:text-lg leading-snug">
                   "{t.about.quote}"
                 </p>
               </div>
