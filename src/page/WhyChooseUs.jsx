@@ -1,40 +1,11 @@
 import React from 'react';
 import { ShieldCheck, CheckCircle2, Award, Briefcase, Wrench, Users, ArrowRight, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function WhyChooseUs() {
-  const reasons = [
-    {
-      title: 'Professional Workmanship',
-      desc: 'A focus on quality and attention to finishing details.',
-      icon: Award
-    },
-    {
-      title: 'Complete Solutions',
-      desc: 'Construction, extensions, finishing and maintenance services through one contracting partner.',
-      icon: Briefcase
-    },
-    {
-      title: 'Practical Project Execution',
-      desc: 'Organized execution based on the approved scope and site requirements.',
-      icon: Wrench
-    },
-    {
-      title: 'Quality-Focused Approach',
-      desc: 'Attention to workmanship, materials and final appearance.',
-      icon: ShieldCheck
-    },
-    {
-      title: 'Residential & Commercial Support',
-      desc: 'Solutions can be tailored to different property and project requirements.',
-      icon: Users
-    },
-    {
-      title: 'Client-Centered Service',
-      desc: 'Clear communication and coordination throughout the project.',
-      icon: CheckCircle2
-    }
-  ];
+  const { t, isRTL } = useLanguage();
+  const icons = [Award, Briefcase, Wrench, ShieldCheck, Users, CheckCircle2];
 
   return (
     <div className="min-h-screen bg-[#fcfbf9] flex flex-col">
@@ -52,15 +23,18 @@ export default function WhyChooseUs() {
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
           
           <span className="text-sm font-bold tracking-[0.2em] text-[#f05c26] uppercase mb-4 block animate-fade-in-up">
-            Our Advantages
+            {isRTL ? 'مميزاتنا' : 'Our Advantages'}
           </span>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0c1b2a] tracking-tight mb-6 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-            Why Choose <span className="text-[#004080]">MBA</span>
+            {isRTL ? 'لماذا تختار' : 'Why Choose'}{' '}
+            <span className="text-[#004080]">{isRTL ? 'إم بي إيه' : 'MBA'}</span>
           </h1>
 
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            Delivering dependable workmanship, organized execution, and premium solutions tailored to your requirements in Qatar.
+            {isRTL 
+              ? 'تقديم عمل متقن يُعتمد عليه، وتنفيذ منظّم، وحلول متكاملة تلبي متطلباتكم في قطر.'
+              : 'Delivering dependable workmanship, organized execution, and premium solutions tailored to your requirements in Qatar.'}
           </p>
 
           <div className="flex items-center justify-center animate-fade-in-up" style={{ animationDelay: '300ms' }}>
@@ -68,9 +42,9 @@ export default function WhyChooseUs() {
               to="/contact"
               className="inline-flex items-center justify-between gap-3 px-6 py-3.5 bg-[#004080] hover:bg-[#002952] text-white rounded-full font-bold text-[15px] transition-all shadow-md hover:shadow-lg w-full sm:w-auto shrink-0"
             >
-              <span>Work With Us</span>
+              <span>{isRTL ? 'تواصل معنا' : 'Work With Us'}</span>
               <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0">
-                <ArrowRight className="w-4 h-4 text-[#004080] stroke-[3]" />
+                <ArrowRight className="w-4 h-4 text-[#004080] stroke-[3] rtl:rotate-180" />
               </span>
             </Link>
           </div>
@@ -86,20 +60,20 @@ export default function WhyChooseUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 lg:mb-20">
             <span className="text-[11px] font-bold tracking-[0.25em] text-[#f05c26] uppercase mb-3 block">
-              Core Values
+              {t.coreValues.label}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-              The MBA Difference
+              {t.coreValues.heading}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {reasons.map((reason, idx) => {
-              const Icon = reason.icon;
+            {t.coreValues.items.map((reason, idx) => {
+              const Icon = icons[idx] || Award;
               return (
                 <div 
                   key={idx}
-                  className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-gray-100 hover:border-blue-100 transition-all duration-300 group flex flex-col items-start relative overflow-hidden"
+                  className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-gray-100 hover:border-blue-100 transition-all duration-300 group flex flex-col items-start rtl:items-start text-left rtl:text-right relative overflow-hidden"
                 >
                   <div className="absolute -right-4 -top-4 w-24 h-24 bg-blue-50/50 rounded-full group-hover:scale-150 transition-transform duration-500 ease-out z-0"></div>
 
@@ -119,32 +93,38 @@ export default function WhyChooseUs() {
         </div>
       </section>
 
-        {/* CTA Section inside the page */}
-        <div className="mt-20 bg-[#0c1b2a] rounded-none p-10 md:p-16 text-center relative overflow-hidden">
-          {/* Decorative background element */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#004080] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-extrabold text-white mb-6 uppercase">Ready to start your project?</h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              Partner with MBA Contracting for professional, reliable, and high-quality construction and finishing services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="tel:+97450722177"
-                className="px-8 py-3.5 bg-[#004080] text-white font-bold uppercase tracking-wider rounded-none hover:bg-[#002952] transition-colors inline-flex items-center justify-center gap-2"
-              >
-                <Phone className="w-4 h-4" /> Request a Quote — Call Now <ArrowRight className="w-4 h-4" />
-              </a>
-              <Link 
-                to="/contact" 
-                className="px-8 py-3.5 bg-transparent border border-[#004080] text-[#004080] font-bold uppercase tracking-wider rounded-none hover:bg-[#004080]/10 transition-colors inline-flex items-center justify-center gap-2"
-              >
-                Contact Us
-              </Link>
-            </div>
+      {/* CTA Section inside the page */}
+      <div className="mt-20 bg-[#0c1b2a] rounded-none p-10 md:p-16 text-center relative overflow-hidden">
+        {/* Decorative background element */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#004080] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-white mb-6 uppercase">
+            {isRTL ? 'جاهز لبدء مشروعك؟' : 'Ready to start your project?'}
+          </h2>
+          <p className="text-gray-300 mb-8 text-lg">
+            {isRTL 
+              ? 'تشارك مع إم بي إيه للمقاولات للحصول على خدمات بناء وتشطيب احترافية وموثوقة وعالية الجودة.'
+              : 'Partner with MBA Contracting for professional, reliable, and high-quality construction and finishing services.'}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#f05c26] hover:bg-[#d94a15] text-white rounded-full font-bold text-sm transition-all shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
+            >
+              <span>{t.nav.contact}</span>
+              <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+            </Link>
+            <a 
+              href="tel:+97450722177" 
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full font-bold text-sm transition-all w-full sm:w-auto justify-center"
+            >
+              <Phone className="w-4 h-4" />
+              <span>{t.nav.callUsNow}</span>
+            </a>
           </div>
         </div>
+      </div>
     </div>
   );
 }

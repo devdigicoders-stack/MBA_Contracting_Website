@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { ArrowRight, Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import GoogleTranslate from './GoogleTranslate';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
+  const { t, isRTL } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -20,13 +22,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
-    // { name: 'Blog', path: '/blog' },
-    { name: 'Finishing Works', path: '/finishing-works' },
-    { name: 'Contact', path: '/contact' },
+    { name: t.nav.home, path: '/' },
+    { name: t.nav.about, path: '/about' },
+    { name: t.nav.services, path: '/services' },
+    { name: t.nav.projects, path: '/projects' },
+    { name: t.nav.finishingWorks, path: '/finishing-works' },
+    { name: t.nav.contact, path: '/contact' },
   ];
 
   return (
@@ -50,7 +51,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 xl:space-x-8">
+          <nav className="hidden lg:flex items-center space-x-7 xl:space-x-8 rtl:space-x-reverse">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
@@ -83,7 +84,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-medium text-sm bg-gradient-to-r from-[#004080] via-[#002952] to-[#001a33] hover:from-[#002952] hover:to-[#001326] shadow-sm hover:shadow transition-all duration-200 active:scale-95"
             >
               <Phone className="w-4 h-4" />
-              <span>Get a Quote</span>
+              <span>{t.nav.getQuote}</span>
             </a>
           </div>
 
@@ -124,13 +125,13 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
                   `px-3 py-2.5 rounded-md text-base font-medium flex items-center justify-between ${isActive
-                    ? 'bg-amber-50 text-[#003366] font-semibold border-l-4 border-[#003366]'
+                    ? 'bg-amber-50 text-[#003366] font-semibold border-l-4 rtl:border-r-4 rtl:border-l-0 border-[#003366]'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                   }`
                 }
               >
                 <span>{link.name}</span>
-                <span className="text-xs text-gray-400">›</span>
+                <span className="text-xs text-gray-400">{isRTL ? '‹' : '›'}</span>
               </NavLink>
             ))}
             <div className="pt-3 flex flex-col gap-2">
@@ -139,14 +140,14 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-[#0c1b2a] font-medium border border-gray-200 hover:border-[#004080] transition-colors"
               >
-                <span>Contact Us</span>
+                <span>{t.nav.contact}</span>
               </Link>
               <a
                 href="tel:+97450722177"
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-[#004080] to-[#001a33] shadow"
               >
                 <Phone className="w-4 h-4" />
-                <span>Get a Quote — Call Now</span>
+                <span>{t.nav.getQuote}</span>
               </a>
             </div>
           </div>

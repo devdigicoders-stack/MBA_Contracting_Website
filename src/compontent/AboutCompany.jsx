@@ -1,14 +1,9 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function AboutCompany() {
-  const approaches = [
-    "Understand the client's requirement",
-    "Assess the property or project site",
-    "Define the scope of work",
-    "Execute the approved works professionally",
-    "Inspect completed works and coordinate handover"
-  ];
+  const { t } = useLanguage();
 
   return (
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
@@ -21,29 +16,29 @@ export default function AboutCompany() {
             
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#004080] text-xs font-bold uppercase tracking-widest mb-6 w-max">
               <span className="w-1.5 h-1.5 rounded-full bg-[#004080] animate-pulse" />
-              About Us
+              {t.nav.about}
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0c1b2a] leading-tight mb-4">
-              Built on Quality.<br />Driven by Excellence.
+              {t.about.companyHeading}
             </h2>
             
             <div className="space-y-5 text-gray-600 leading-relaxed text-[15px] sm:text-base mb-10">
               <p>
-                MBA Contracting delivers villa, building, extension and majlis construction, finishing and maintenance solutions for clients in Doha, Qatar. Our objective is to provide dependable workmanship, organized project execution and solutions aligned with each client's requirements.
+                {t.about.companyP1}
               </p>
               <p>
-                We understand that every building project has different requirements. Our team works around the project scope, site conditions and desired finish to deliver practical solutions with attention to detail.
+                {t.about.companyP2}
               </p>
             </div>
 
             {/* Our Approach */}
             <div>
               <h3 className="text-2xl font-bold text-[#f05c26] mb-5">
-                Our Approach
+                {t.about.approachTitle}
               </h3>
               <ul className="space-y-4">
-                {approaches.map((item, idx) => (
+                {t.about.approachSteps.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="mt-0.5">
                       <CheckCircle2 className="w-5 h-5 text-[#004080]" strokeWidth={2.5} />
@@ -75,7 +70,7 @@ export default function AboutCompany() {
             <div className="absolute bottom-8 left-8 right-8">
               <div className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/20">
                 <p className="text-[#0c1b2a] font-bold text-lg leading-snug">
-                  "Delivering practical solutions with attention to detail across Qatar."
+                  "{t.about.quote}"
                 </p>
               </div>
             </div>

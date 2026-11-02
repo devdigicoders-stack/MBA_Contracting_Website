@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function WhoWeAre() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 sm:py-24 bg-[#f8fafd] relative overflow-hidden">
       {/* Decorative Top Slanted Strip */}
@@ -17,16 +20,16 @@ export default function WhoWeAre() {
           {/* Left Side: Content */}
           <div className="flex flex-col justify-center max-w-xl mx-auto lg:mx-0">
             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#1f2937] tracking-tight mb-8">
-              Who We Are
+              {t.whoWeAre.heading}
             </h2>
             
             <div className="space-y-6 text-[#4b5563] text-[15px] sm:text-base leading-relaxed">
               <p>
-                MBA Contracting is a building construction, maintenance and renovation company in Qatar, providing comprehensive solutions for residential and commercial properties across all major communities. We specialize in general finishing works, villa construction, building construction, extension construction, majlis construction, and building maintenance services.
+                {t.whoWeAre.p1}
               </p>
               
               <p>
-                Our mission is simple: make building, maintenance, and renovation effortless, transparent, and reliable. Whether you need a new villa, an extension, a majlis, finishing works, or ongoing maintenance support, our team of experienced engineers and skilled professionals delivers exceptional service with integrity and expertise.
+                {t.whoWeAre.p2}
               </p>
             </div>
 
@@ -35,7 +38,7 @@ export default function WhoWeAre() {
                 to="/about"
                 className="inline-flex items-center gap-3 bg-[#f05c26] hover:bg-[#e04b15] text-white font-bold text-sm sm:text-base px-6 py-3 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(240,92,38,0.39)] hover:shadow-[0_6px_20px_rgba(240,92,38,0.23)] hover:-translate-y-0.5"
               >
-                Our History
+                <span>{t.whoWeAre.historyBtn}</span>
                 <span className="bg-white text-[#f05c26] p-1 rounded-full">
                   <ArrowUpRight className="w-4 h-4" strokeWidth={3} />
                 </span>

@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import { Briefcase, MapPin, Calendar, Building2, ShieldCheck, Award, Clock, ArrowUpRight } from 'lucide-react';
+import { Briefcase, Building2, ShieldCheck, Award, Clock, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Projects() {
+  const { t, isRTL } = useLanguage();
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const projectProcess = [
+  const projectProcess = isRTL ? [
+    { step: '01', title: 'الاستشارة الأولية', desc: 'فهم متطلبات العميل وأهداف المشروع والميزانية المقترحة.' },
+    { step: '02', title: 'معاينة الموقع', desc: 'معاينة الموقع وتحديد أعمال البناء أو التشطيب أو الصيانة المطلوبة.' },
+    { step: '03', title: 'تحديد النطاق وعرض السعر', desc: 'تحديد نطاق العمل وتقديم عرض سعر تفصيلي بناءً على المتطلبات.' },
+    { step: '04', title: 'تنفيذ المشروع', desc: 'تنفيذ الأعمال المعتمدة بتنسيق منظّم وعناية فائقة بالجودة.' },
+    { step: '05', title: 'فحص الجودة', desc: 'مراجعة الأعمال المنجزة وضمان مطابقتها لأعلى معايير الإتقان.' },
+    { step: '06', title: 'التسليم النهائي', desc: 'إتمام النطاق المتفق عليه وتنسيق تسليم المشروع بشكل رسمي.' },
+  ] : [
     { step: '01', title: 'Consultation', desc: 'Understand the client\'s requirements, property and project objectives.' },
     { step: '02', title: 'Site Inspection', desc: 'Assess the site and identify the required construction, finishing or maintenance works.' },
     { step: '03', title: 'Scope & Quotation', desc: 'Define the work scope and provide a project quotation based on the requirements.' },
@@ -14,7 +23,13 @@ export default function Projects() {
     { step: '06', title: 'Handover', desc: 'Complete the agreed scope and coordinate project handover.' },
   ];
 
-  const projectTypes = [
+  const projectTypes = isRTL ? [
+    { title: 'الفلل السكنية', desc: 'البناء، الملاحق والتوسعات، التشطيبات والصيانة.' },
+    { title: 'المجالس', desc: 'بناء المجالس وحلول التشطيب المتكاملة للضيافة.' },
+    { title: 'العقارات السكنية', desc: 'التجديد، الإصلاح، أعمال التشطيب والصيانة.' },
+    { title: 'المباني التجارية', desc: 'المقاولات العامة، الصيانة والتشطيبات.' },
+    { title: 'المكاتب والمساحات الإدارية', desc: 'الدهانات، الأرضيات، أعمال الجبس بورد والتشطيب.' },
+  ] : [
     { title: 'Villas', desc: 'Construction, extensions, renovation, finishing and maintenance.' },
     { title: 'Majlis', desc: 'Construction and complete finishing solutions.' },
     { title: 'Residential Properties', desc: 'Renovation, repair, finishing and maintenance.' },
@@ -22,7 +37,16 @@ export default function Projects() {
     { title: 'Offices & Business Spaces', desc: 'Renovation, painting, flooring, gypsum and finishing.' },
   ];
 
-  const projectCategories = [
+  const projectCategories = isRTL ? [
+    { title: 'بناء الفلل', img: '/projects/villa_construction.jpg' },
+    { title: 'بناء الملاحق والتوسعات', img: '/projects/villa_extensions.jpg' },
+    { title: 'بناء المجالس', img: '/projects/majlis_construction.jpg' },
+    { title: 'التشطيبات الداخلية', img: '/projects/interior_finishing.jpg' },
+    { title: 'صيانة المباني', img: '/projects/building_maintenance.jpg' },
+    { title: 'أعمال التجديد', img: '/projects/renovation_works.jpg' },
+    { title: 'أعمال الدهانات', img: '/projects/painting_projects.jpg' },
+    { title: 'البلاط والأرضيات', img: '/projects/flooring_tiling.jpg' },
+  ] : [
     { title: 'Villa Construction', img: '/projects/villa_construction.jpg' },
     { title: 'Villa Extensions', img: '/projects/villa_extensions.jpg' },
     { title: 'Majlis Construction', img: '/projects/majlis_construction.jpg' },
@@ -49,11 +73,13 @@ export default function Projects() {
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1f2937] tracking-tight mb-5">
-            Our Projects
+            {isRTL ? 'مشاريعنا المنجزة' : 'Our Projects'}
           </h1>
 
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
-            Explore our completed and ongoing projects that reflect our commitment to quality, innovation and excellence in construction.
+            {isRTL
+              ? 'استكشف مشاريعنا المنجزة والجارية التي تعكس التزامنا بالجودة والاحترافية والتميز في البناء في قطر.'
+              : 'Explore our completed and ongoing projects that reflect our commitment to quality, innovation and excellence in construction.'}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto mb-12">
@@ -61,7 +87,7 @@ export default function Projects() {
               to="/contact"
               className="group flex items-center justify-center gap-3 px-6 py-3.5 sm:py-3 bg-[#f05c26] hover:bg-[#d94a15] text-white rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
             >
-              Start Your Project
+              <span>{isRTL ? 'ابدأ مشروعك معنا' : 'Start Your Project'}</span>
               <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#f05c26] stroke-[3]" />
               </span>
@@ -73,9 +99,9 @@ export default function Projects() {
             {/* Feature 1 */}
             <div className="flex items-center gap-3">
               <Building2 className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">Turnkey</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Complete Solutions</span>
+              <div className="flex flex-col text-left rtl:text-right">
+                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'تسليم مفتاح' : 'Turnkey'}</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'حلول متكاملة' : 'Complete Solutions'}</span>
               </div>
             </div>
 
@@ -85,9 +111,9 @@ export default function Projects() {
             {/* Feature 2 */}
             <div className="flex items-center gap-3">
               <Award className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">Quality First</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Precision Finishing</span>
+              <div className="flex flex-col text-left rtl:text-right">
+                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'الجودة أولاً' : 'Quality First'}</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'تشطيبات دقيقة' : 'Precision Finishing'}</span>
               </div>
             </div>
 
@@ -97,9 +123,9 @@ export default function Projects() {
             {/* Feature 3 */}
             <div className="flex items-center gap-3">
               <Clock className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">On-Time</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Reliable Handover</span>
+              <div className="flex flex-col text-left rtl:text-right">
+                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'في الموعد' : 'On-Time'}</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'تسليم موثوق' : 'Reliable Handover'}</span>
               </div>
             </div>
 
@@ -109,9 +135,9 @@ export default function Projects() {
             {/* Feature 4 */}
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left">
-                <span className="text-xl font-black text-[#1f2937] leading-none">Skilled Team</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">Strict Supervision</span>
+              <div className="flex flex-col text-left rtl:text-right">
+                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'فريق متخصص' : 'Skilled Team'}</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'إشراف دقيق' : 'Strict Supervision'}</span>
               </div>
             </div>
           </div>
@@ -123,10 +149,10 @@ export default function Projects() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="text-center mb-14">
           <span className="text-sm font-bold tracking-[0.2em] text-[#004080] uppercase mb-2 block">
-            How We Work
+            {isRTL ? 'منهجية العمل' : 'How We Work'}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase">
-            6. Our Project Process
+            {isRTL ? 'مراحل تنفيذ المشروع' : 'Our Project Process'}
           </h2>
           <div className="w-16 h-1 bg-[#004080] mx-auto mt-6" />
         </div>
@@ -160,10 +186,10 @@ export default function Projects() {
           
           <div className="text-center mb-16 lg:mb-20">
             <span className="text-[11px] font-bold tracking-[0.25em] text-[#f05c26] uppercase mb-3 block">
-              Our Expertise
+              {isRTL ? 'خبراتنا المتنوعة' : 'Our Expertise'}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-              Project Types
+              {isRTL ? 'أنواع المشاريع' : 'Project Types'}
             </h2>
           </div>
           
@@ -171,7 +197,7 @@ export default function Projects() {
             {projectTypes.map((type, idx) => (
               <div 
                 key={idx} 
-                className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-gray-100 hover:border-blue-100 transition-all duration-300 group flex flex-col items-start relative overflow-hidden"
+                className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-gray-100 hover:border-blue-100 transition-all duration-300 group flex flex-col items-start rtl:items-start text-left rtl:text-right relative overflow-hidden"
               >
                 {/* Decorative subtle corner shape */}
                 <div className="absolute -right-4 -top-4 w-24 h-24 bg-blue-50/50 rounded-full group-hover:scale-150 transition-transform duration-500 ease-out z-0"></div>
@@ -186,8 +212,8 @@ export default function Projects() {
                   {type.desc}
                 </p>
 
-                <div className="inline-flex items-center gap-2 text-[13px] font-bold text-[#f05c26] uppercase tracking-wider mt-auto group-hover:translate-x-2 transition-transform duration-300 relative z-10">
-                  Learn more <ArrowUpRight className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 text-[13px] font-bold text-[#f05c26] uppercase tracking-wider mt-auto group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform duration-300 relative z-10">
+                  <span>{isRTL ? 'معرفة المزيد' : 'Learn more'}</span> <ArrowUpRight className="w-4 h-4" />
                 </div>
               </div>
             ))}
@@ -199,15 +225,19 @@ export default function Projects() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="text-center mb-14 max-w-3xl mx-auto">
           <span className="text-sm font-bold tracking-[0.2em] text-[#004080] uppercase mb-2 block">
-            Portfolio
+            {isRTL ? 'معرض الأعمال' : 'Portfolio'}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase">
-            8. Projects / Our Work
+            {isRTL ? 'أعمال ومشاريع إم بي إيه' : 'Projects / Our Work'}
           </h2>
           <div className="w-16 h-1 bg-[#004080] mx-auto mt-6 mb-6" />
-          <p className="text-[#0c1b2a] font-bold text-lg mb-2">Quality Work You Can See.</p>
+          <p className="text-[#0c1b2a] font-bold text-lg mb-2">
+            {isRTL ? 'جودة ملموسة يمكنك رؤيتها.' : 'Quality Work You Can See.'}
+          </p>
           <p className="text-gray-500 text-sm">
-            Showcase completed and ongoing projects with strong photography and concise project descriptions.
+            {isRTL 
+              ? 'مجموعة من صور مشاريعنا المنجزة والجارية في مختلف أنحاء قطر.'
+              : 'Showcase of completed and ongoing projects with real photography and clean execution.'}
           </p>
         </div>
 
@@ -235,7 +265,7 @@ export default function Projects() {
         
         <div className="mt-12 text-center">
           <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#004080] hover:bg-[#002952] text-white font-bold text-xs uppercase tracking-wider rounded-none shadow-md transition-colors">
-            Start Your Project
+            <span>{isRTL ? 'ابدأ مشروعك الآن' : 'Start Your Project'}</span>
           </Link>
         </div>
       </section>
@@ -250,7 +280,7 @@ export default function Projects() {
             {/* Close Button */}
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white md:text-[#0c1b2a] md:bg-gray-100 md:hover:bg-gray-200 transition-colors"
+              className="absolute top-4 right-4 rtl:right-auto rtl:left-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white md:text-[#0c1b2a] md:bg-gray-100 md:hover:bg-gray-200 transition-colors"
             >
               ✕
             </button>
@@ -258,39 +288,43 @@ export default function Projects() {
             {/* Image Section */}
             <div className="w-full md:w-1/2 h-64 md:h-auto relative">
               <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden" />
-              <h2 className="absolute bottom-4 left-6 text-2xl font-bold text-white md:hidden">{selectedProject.title}</h2>
             </div>
-            
+
             {/* Content Section */}
-            <div className="w-full md:w-1/2 p-8 sm:p-10 flex flex-col justify-center">
-              <span className="text-[#004080] font-bold text-xs tracking-widest uppercase mb-2 hidden md:block">Project Focus</span>
-              <h2 className="text-3xl font-extrabold text-[#0c1b2a] mb-6 hidden md:block">{selectedProject.title}</h2>
-              
-              <div className="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
-                <p>
-                  At MBA Contracting, our <strong>{selectedProject.title}</strong> services are designed with precision, utilizing premium materials and highly skilled labor. We ensure that every project is completed to the highest standards of quality and safety.
+            <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-bold text-[#004080] uppercase tracking-wider block mb-1">
+                  {isRTL ? 'مشروع معتمد' : 'Verified Project'}
+                </span>
+                <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">{selectedProject.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  {isRTL
+                    ? 'تم تنفيذ المشروع وفق أعلى معايير الجودة والسلامة مع إشراف هندسي دقيق من فريق إم بي إيه للمقاولات في قطر.'
+                    : 'Executed according to strict quality and safety standards under close engineering supervision by MBA Contracting in Qatar.'}
                 </p>
-                <p>
-                  From initial planning to the final finishing touches, our dedicated team manages all aspects of the project, delivering results that exceed expectations while strictly adhering to timelines and budgets.
-                </p>
-                <ul className="space-y-2 mt-4 border-l-2 border-[#004080] pl-4">
-                  <li>✔ Premium Quality Materials</li>
-                  <li>✔ Timely Project Delivery</li>
-                  <li>✔ Expert Workmanship</li>
-                </ul>
               </div>
-              
-              <div className="mt-auto">
-                <Link to="/contact" className="inline-flex justify-center items-center gap-2 w-full py-4 bg-[#0c1b2a] hover:bg-[#004080] text-white font-bold text-sm uppercase tracking-wider rounded-none shadow-md transition-colors group">
-                  Discuss a similar project
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+
+              <div className="pt-6 border-t border-gray-100 flex items-center gap-4">
+                <Link 
+                  to="/contact" 
+                  onClick={() => setSelectedProject(null)}
+                  className="flex-1 py-3 px-4 bg-[#004080] hover:bg-[#002952] text-white font-bold text-center text-sm transition-colors"
+                >
+                  {isRTL ? 'طلب استشارة' : 'Inquire Now'}
                 </Link>
+                <a 
+                  href="tel:+97450722177" 
+                  className="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-[#0c1b2a] font-bold text-center text-sm transition-colors"
+                >
+                  {t.nav.callUsNow}
+                </a>
               </div>
             </div>
+
           </div>
         </div>
       )}
+
     </div>
   );
 }

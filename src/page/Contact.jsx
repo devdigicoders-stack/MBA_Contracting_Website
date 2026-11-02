@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import {
   Mail,
   Phone,
@@ -20,6 +21,7 @@ import {
 } from 'lucide-react';
 
 export default function Contact() {
+  const { t, isRTL } = useLanguage();
   const [openFaq, setOpenFaq] = useState(null);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -141,11 +143,11 @@ export default function Contact() {
         <div className="relative z-10 w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1f2937] tracking-tight mb-5">
-            Contact Us
+            {t.contact.heading}
           </h1>
 
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
-            Looking for reliable home maintenance services in Qatar or a trusted property maintenance company? Get in touch with MBA Contracting today. Our team is ready to assist with everything from emergency repairs to Annual Maintenance Contracts and renovation services.
+            {t.contact.intro}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
@@ -155,7 +157,7 @@ export default function Contact() {
               href="tel:+97450722177"
               className="group flex items-center justify-center gap-3 px-6 py-3.5 sm:py-3 bg-[#f05c26] hover:bg-[#d94a15] text-white rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
             >
-              Call us now
+              <span>{t.nav.callUsNow}</span>
               <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#f05c26] stroke-[3]" />
               </span>
@@ -168,7 +170,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-3 px-6 py-3.5 sm:py-3 bg-[#25D366] hover:bg-[#1ebd5b] text-white rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
             >
-              Or chat with us on
+              <span>{t.nav.chatWhatsApp}</span>
               <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                 <svg className="w-4 h-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.079-2.115-.508-1.745-.722-2.859-2.513-2.946-2.628-.088-.116-.708-.941-.708-1.792 0-.85.447-1.268.607-1.442.159-.175.348-.218.463-.218.117 0 .232.001.333.007.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.42-.099.824z" />
@@ -234,7 +236,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Full Name *
+                      {t.contact.fullName}
                     </label>
                     <input
                       type="text"
@@ -248,7 +250,7 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Company / Property Name
+                      {t.contact.companyName}
                     </label>
                     <input
                       type="text"
@@ -260,11 +262,11 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Row 2: Phone Number & Email Address */}
+                {/* Row 2: Phone Number & {t.contact.email}/}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Phone Number *
+                      {t.contact.phone}
                     </label>
                     <input
                       type="tel"
@@ -291,11 +293,11 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Row 3: Service Required & Project Location */}
+                {/* Row 3: Service Required & {t.contact.projectLocation}/}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      Service Required *
+                      {t.contact.serviceRequired}
                     </label>
                     <select
                       required
@@ -304,12 +306,12 @@ export default function Contact() {
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#004080]/40 focus:border-[#004080] text-sm text-gray-900 bg-white transition"
                     >
                       <option value="">Select a service</option>
-                      <option value="General Contracting">General Contracting</option>
+                      <option value="General Finishing Works">General Finishing Works</option>
                       <option value="Villa Construction">Villa Construction</option>
+                      <option value="Building Construction">Building Construction</option>
                       <option value="Extension Construction">Extension Construction</option>
                       <option value="Majlis Construction">Majlis Construction</option>
-                      <option value="Building Maintenance">Building Maintenance</option>
-                      <option value="General Finishing Works">General Finishing Works</option>
+                      <option value="Building Maintenance Services">Building Maintenance Services</option>
                     </select>
                   </div>
 
@@ -328,7 +330,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Row 4: Project Details */}
+                {/* Row 4: {t.contact.projectDetails}/}
                 <div>
                   <label className="block text-xs font-bold text-gray-800 mb-1.5">
                     Project Details *
@@ -353,11 +355,11 @@ export default function Contact() {
                     {loading ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>Sending Inquiry...</span>
+                        <span>{t.contact.submitting}</span>
                       </>
                     ) : (
                       <>
-                        <span>Send Inquiry</span>
+                        <span>{t.contact.submit}</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
@@ -384,7 +386,7 @@ export default function Contact() {
                   <div className="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center">
                     <MapPin className="w-3 h-3" />
                   </div>
-                  <span>Alkhayarin holding building, first floor, office no 102 Doha - qatar</span>
+                  <span>{t.contact.address}</span>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Globe, ChevronDown, Check } from 'lucide-react';
+import { ChevronDown, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const languages = [
   { code: 'en', label: 'English', nativeLabel: 'English', flag: '🇬🇧' },
@@ -7,12 +8,7 @@ const languages = [
 ];
 
 export default function GoogleTranslate() {
-  const [selectedLang, setSelectedLang] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('mba_preferred_lang') || 'en';
-    }
-    return 'en';
-  });
+  const { lang, setLang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -30,14 +26,6 @@ export default function GoogleTranslate() {
       if (combo) {
         combo.value = code;
         combo.dispatchEvent(new Event('change'));
-      } else {
-        setTimeout(() => {
-          const retryCombo = document.querySelector('.goog-te-combo');
-          if (retryCombo) {
-            retryCombo.value = code;
-            retryCombo.dispatchEvent(new Event('change'));
-          }
-        }, 500);
       }
     } catch (err) {
       console.error('Failed to apply language:', err);
@@ -55,54 +43,20 @@ export default function GoogleTranslate() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Initialize Google Translate script
-  useEffect(() => {
-    const saved = localStorage.getItem('mba_preferred_lang') || 'en';
-
-    window.googleTranslateElementInit = () => {
-      if (window.google && window.google.translate) {
-        new window.google.translate.TranslateElement(
-          {
-            pageLanguage: 'en',
-            includedLanguages: 'en,ar',
-            autoDisplay: false,
-          },
-          'google_translate_element'
-        );
-
-        if (saved && saved !== 'en') {
-          setTimeout(() => applyLanguage(saved), 600);
-        }
-      }
-    };
-
-    if (!document.getElementById('google-translate-script')) {
-      const script = document.createElement('script');
-      script.id = 'google-translate-script';
-      script.type = 'text/javascript';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-    } else if (window.google && window.google.translate && saved !== 'en') {
-      setTimeout(() => applyLanguage(saved), 400);
-    }
-  }, []);
-
   const handleSelectLanguage = (code) => {
-    setSelectedLang(code);
-    localStorage.setItem('mba_preferred_lang', code);
+    setLang(code);
     setIsOpen(false);
     applyLanguage(code);
   };
 
-  const current = languages.find((l) => l.code === selectedLang) || languages[0];
+  const current = languages.find((l) => l.code === lang) || languages[0];
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
-      {/* Hidden Google Translate container (controlled via custom UI) */}
+      {/* Hidden Google Translate container for fallback if script loaded */}
       <div id="google_translate_element" className="hidden" aria-hidden="true" />
 
-      {/* Premium Language Trigger Button */}
+      {/* Language Trigger Button */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -121,39 +75,39 @@ export default function GoogleTranslate() {
 
       {/* Language Selection Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-52 rounded-xl bg-white shadow-xl border border-gray-100 py-1.5 z-50 animate-in fade-in zoom-in-95 duration-150">
+        <div className={`absolute ${lang === 'ar' ? 'left-0' : 'right-0'} mt-2 w-52 rounded-xl bg-white shadow-xl border border-gray-100 py-1.5 z-50 animate-in fade-in zoom-in-95 duration-150`}>
           <div className="px-3 py-1.5 border-b border-gray-100 text-[10px] font-bold uppercase tracking-wider text-gray-400 flex items-center justify-between">
-            <span>Select Language</span>
-            <span className="text-[9px] text-[#003366] font-normal">Google Translate</span>
+            <span>{lang === 'ar' ? 'اختر اللغة' : 'Select Language'}</span>
+            <span className="text-[9px] text-[#003366] font-normal">MBA Qatar</span>
           </div>
 
           <div className="py-1">
-            {languages.map((lang) => (
+            {languages.map((item) => (
               <button
-                key={lang.code}
+                key={item.code}
                 type="button"
-                onClick={() => handleSelectLanguage(lang.code)}
+                onClick={() => handleSelectLanguage(item.code)}
                 className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors cursor-pointer ${
-                  selectedLang === lang.code
+                  lang === item.code
                     ? 'bg-amber-50 text-[#003366] font-bold'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="text-lg leading-none">{lang.flag}</span>
-                  <div className="text-left">
-                    <div className="leading-tight font-medium text-gray-900">{lang.nativeLabel}</div>
-                    <div className="text-[10px] text-gray-400">{lang.label}</div>
+                  <span className="text-lg leading-none">{item.flag}</span>
+                  <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
+                    <div className="leading-tight font-medium text-gray-900">{item.nativeLabel}</div>
+                    <div className="text-[10px] text-gray-400">{item.label}</div>
                   </div>
                 </div>
-                {selectedLang === lang.code && <Check className="w-4 h-4 text-[#003366] shrink-0" />}
+                {lang === item.code && <Check className="w-4 h-4 text-[#003366] shrink-0" />}
               </button>
             ))}
           </div>
         </div>
       )}
 
-      {/* Force-hide Google Translate banner via inline style to ensure maximum priority */}
+      {/* Force-hide Google Translate banner via inline style */}
       <style dangerouslySetInnerHTML={{ __html: `
         .goog-te-banner-frame.skiptranslate, 
         .goog-te-banner-frame, 
