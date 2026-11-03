@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { Hammer, Home, Maximize, Tent, CheckCircle2, ArrowRight, X, ArrowUpRight } from 'lucide-react';
+import { Home, Maximize, Tent, CheckCircle2, ArrowRight, X, ArrowUpRight, Building2, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Services() {
   const { t, isRTL } = useLanguage();
   const [selectedService, setSelectedService] = useState(null);
 
-  const icons = [Home, Hammer, Maximize, Tent];
-  const images = ['/image copy 8.png', '/image copy 6.png', '/image copy 5.png', '/image copy 6.png'];
+  const icons = [Home, Tent, Maximize, Building2];
+  const images = [
+    '/serveice/Villa for Service Page.png',
+    '/serveice/Majlis For MBA Service Page.png',
+    '/serveice/IMG-20261024-WA0014.jpg.jpeg',
+    '/serveice/IMG-20261024-WA0015.jpg.jpeg',
+  ];
 
   const serviceList = t.constructionPage.services.map((item, idx) => ({
     ...item,
     icon: icons[idx] || Home,
-    image: images[idx] || '/image copy 6.png',
+    image: images[idx] || '/serveice/Villa for Service Page.png',
   }));
 
   return (
@@ -98,7 +103,7 @@ export default function Services() {
                 className="group cursor-pointer bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 flex flex-col"
               >
                 {/* Service Image Thumbnail */}
-                <div className="w-full h-56 overflow-hidden relative">
+                <div className="w-full h-64 overflow-hidden relative bg-gray-100">
                   <div className="absolute inset-0 bg-[#0c1b2a]/10 group-hover:bg-transparent transition-colors z-10" />
                   <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4 z-20 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -204,10 +209,29 @@ export default function Services() {
             {/* Right Content Side */}
             <div className="w-full lg:w-1/2 p-6 sm:p-8 overflow-y-auto flex flex-col justify-between">
               <div>
-                <h4 className="text-lg font-bold text-[#0c1b2a] mb-2">{isRTL ? 'نظرة عامة على الخدمة' : 'Service Overview'}</h4>
+                <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-[#004080] border border-blue-100 uppercase tracking-wider mb-2">
+                  {isRTL ? 'خدمة معتمدة في قطر' : 'Verified Qatar Service'}
+                </span>
+                <h4 className="text-2xl font-extrabold text-[#0c1b2a] mb-3 leading-snug">{selectedService.title}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                   {selectedService.desc}
                 </p>
+
+                {selectedService.features && (
+                  <div className="mb-6 bg-gray-50/80 p-4 rounded-xl border border-gray-100">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-3">
+                      {isRTL ? 'نطاق العمل وأبرز المميزات:' : 'Key Scope & Deliverables:'}
+                    </h5>
+                    <ul className="space-y-2">
+                      {selectedService.features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-700">
+                          <CheckCircle2 className="w-4 h-4 text-[#004080] shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
               {/* Action Buttons in Modal */}

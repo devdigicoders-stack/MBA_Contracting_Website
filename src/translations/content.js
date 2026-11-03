@@ -44,6 +44,7 @@ export const translations = {
       heroText:
         'MBA Contracting is a building construction, maintenance and renovation company in Qatar, providing reliable construction and finishing solutions for villas, buildings, extensions, majlis, and commercial properties. Our services include general finishing works, villa construction, building construction, extension construction, majlis construction, and building maintenance services.',
       experienceDifference: {
+        title: 'Experience the difference of MBA',
         label: 'SUPERIOR QUALITY',
         heading: 'Dedicated Engineers Who Know Your Project',
         p1: 'Our experienced engineers understand the unique needs of every project, from villa and building construction to finishing, electrical and plumbing works. Through detailed site inspections and clear project records, every stage is planned, precise, and efficient. Your property is never just another job. It is a carefully managed project built around quality and reliability.',
@@ -177,20 +178,44 @@ export const translations = {
         'MBA Contracting delivers complete construction services for villas, buildings, extensions, and majlis spaces across Qatar. From planning the scope to final handover, our team manages the work with organized execution, quality materials, and close site supervision.',
       services: [
         {
-          title: 'Villa Construction',
-          desc: 'Construction of new villas built to the approved plan, with strong structure, quality materials, and a clean finish.',
+          title: 'Luxury Villa Construction',
+          desc: 'Complete turnkey construction of luxury modern villas in Qatar, incorporating reinforced concrete framing, integrated architectural facade lighting, bespoke layouts, and high-end exterior finishing.',
+          features: [
+            'Turnkey design & architectural execution',
+            'Reinforced concrete structure & certified waterproofing',
+            'Modern facade profile lighting & exterior stone plaster',
+            'Full MEP coordination & strict site QA inspection'
+          ]
         },
         {
-          title: 'Building Construction',
-          desc: 'Residential and commercial building construction, executed with organized planning, safe site practices, and steady progress.',
+          title: 'Majlis & Luxury Annex Construction',
+          desc: 'Traditional and contemporary Majlis construction tailored for authentic Qatari hospitality, featuring spacious courtyards, swimming pools, expansive glass facades, and premium interior-exterior flow.',
+          features: [
+            'Authentic hospitality layouts & grand gathering halls',
+            'Integrated swimming pool & courtyard landscaping',
+            'Acoustic insulation & floor-to-ceiling glass systems',
+            'High-spec electrical & climate control setup'
+          ]
         },
         {
-          title: 'Extension Construction',
-          desc: 'Additional rooms, floors, and extensions built to blend with your existing property.',
+          title: 'Villa Extensions & Boundary Infrastructure',
+          desc: 'Seamless residential extensions, boundary perimeter walls, automated gate systems, and stone cladding engineered to integrate smoothly with existing structures and enhance security.',
+          features: [
+            'Room, floor, and external facility expansions',
+            'Structural tie-in with existing foundation & grade beams',
+            'Perimeter boundary walls & automated electric gates',
+            'Durable weather-resistant exterior plaster & cladding'
+          ]
         },
         {
-          title: 'Majlis Construction',
-          desc: 'Majlis construction designed for comfort and hospitality, with careful attention to layout and finishing details.',
+          title: 'Building Construction & General Contracting',
+          desc: 'Full-scope general contracting for multi-story residential and commercial buildings, managing complete civil works, structural engineering, MEP coordination, and turnkey handover.',
+          features: [
+            'Civil & structural engineering execution',
+            'Commercial & residential multi-story developments',
+            'Comprehensive project management & QA protocols',
+            'Strict compliance with Qatar building codes & safety'
+          ]
         },
       ],
     },
@@ -301,6 +326,7 @@ export const translations = {
       heroText:
         'إم بي إيه للمقاولات شركة متخصصة في بناء المباني وصيانتها وتجديدها في قطر، وتقدّم حلولاً موثوقة في البناء والتشطيب للفلل والمباني والملاحق والمجالس والعقارات التجارية. تشمل خدماتنا أعمال التشطيبات العامة، وبناء الفلل ، وبناء الملاحق، وبناء المجالس، وخدمات صيانة المباني.',
       experienceDifference: {
+        title: 'اختبر الفرق مع إم بي إيه',
         label: 'جودة متميزة',
         heading: 'مهندسون متخصصون يعرفون مشروعك جيداً',
         p1: 'يدرك مهندسونا ذوو الخبرة الاحتياجات الخاصة بكل مشروع، بدءاً من بناء الفلل والمباني وصولاً إلى أعمال التشطيب والكهرباء والسباكة. ومن خلال المعاينات الدقيقة للموقع والسجلات الواضحة للمشروع، تُخطَّط كل مرحلة بعناية وتُنفَّذ بدقة وكفاءة. عقارك ليس مجرد عمل عابر بالنسبة لنا. بل هو مشروع تتم إدارته بعناية، ويقوم على الجودة والموثوقية.',
@@ -434,20 +460,44 @@ export const translations = {
         'تقدّم إم بي إيه للمقاولات خدمات بناء متكاملة للفلل والمباني والملاحق والمجالس في مختلف أنحاء قطر. من تحديد نطاق العمل حتى التسليم النهائي، يدير فريقنا الأعمال بتنفيذ منظّم ومواد عالية الجودة وإشراف دقيق على الموقع.',
       services: [
         {
-          title: 'بناء الفلل',
-          desc: 'بناء فلل جديدة وفق المخطط المعتمد، بهيكل إنشائي متين ومواد عالية الجودة وتشطيب نظيف.',
+          title: 'بناء الفلل الفاخرة',
+          desc: 'تنفيذ وبناء الفلل السكنية الفاخرة تسليم مفتاح في قطر، بأعلى المواصفات الإنشائية والواجهات المعمارية المضيئة وتشطيبات راقية تواكب أحدث التصاميم العصرية.',
+          features: [
+            'تصميم وتنفيذ معماري متكامل تسليم مفتاح',
+            'هيكل خرساني مسلح مع عزل مائي وحراري معتمد',
+            'واجهات معمارية حديثة مع إنارة مدمجة وتشطيبات حجرية',
+            'إشراف هندسي دقيق على كافة مراحل التنفيذ'
+          ]
         },
         {
-          title: 'بناء المباني',
-          desc: 'بناء المباني السكنية والتجارية بتخطيط منظّم وممارسات آمنة في الموقع وتقدّم ثابت في العمل.',
+          title: 'بناء المجالس والملاحق الفاخرة',
+          desc: 'بناء وتصميم المجالس القطرية الفاخرة والملاحق الترفيهية مع برك السباحة والواجهات الزجاجية والجلسات الخارجية المصممة بأعلى معايير الفخامة والضيافة.',
+          features: [
+            'مساحات ضيافة واسعة بتصاميم تراثية وعصرية فاخرة',
+            'دمج برك السباحة وتنسيق الحدائق والممرات الخارجية',
+            'عزل صوتي وحراري مع واجهات زجاجية واسعة',
+            'تمديدات كهربائية وتكييف متطورة لراحة تامة'
+          ]
         },
         {
-          title: 'بناء الملاحق والتوسعات',
-          desc: 'إضافة غرف وأدوار وملاحق تنسجم مع عقارك القائم.',
+          title: 'بناء التوسعات والأسوار المعمارية',
+          desc: 'بناء الملاحق والغرف الإضافية وأسوار الفلل الأمنية مع تركيب البوابات الحديثة والكسوات الخارجية التي تتناغم تماماً مع الطابع المعماري للمبنى.',
+          features: [
+            'توسعات الغرف والأدوار والمرافق الخارجية للفلل',
+            'ربط إنشائي آمن مع هيكل المبنى والميدات القائمة',
+            'بناء أسوار الحماية وتركيب بوابات المداخل الآلية',
+            'كسوات حجرية ودهانات عالية المقاومة للعوامل الجوية'
+          ]
         },
         {
-          title: 'بناء المجالس',
-          desc: 'بناء مجالس مصمّمة للراحة والضيافة، مع عناية دقيقة بالتوزيع وتفاصيل التشطيب.',
+          title: 'بناء المباني والمقاولات العامة',
+          desc: 'مقاولات عامة متكاملة لإنشاء المباني السكنية والتجارية، شاملة الأعمال الإنشائية والمدنية، التمديدات الكهروميكانيكية، والإشراف الهندسي الدقيق حتى التسليم.',
+          features: [
+            'تنفيذ الأعمال الإنشائية والمدنية الشاملة',
+            'مشاريع سكنية وتجارية متعددة الطوابق',
+            'إدارة مشاريع متكاملة وضمان الجودة الصارم',
+            'مطابقة تامة لمعايير كود البناء والسلامة في قطر'
+          ]
         },
       ],
     },

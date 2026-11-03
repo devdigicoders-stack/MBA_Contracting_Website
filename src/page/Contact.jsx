@@ -400,9 +400,9 @@ export default function Contact() {
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
             
             {/* Left Image */}
-            <div className="w-full lg:w-1/2 relative overflow-hidden shadow-xl h-[350px] sm:h-[450px] lg:h-[500px]">
+            <div className="w-full lg:w-1/2 relative overflow-hidden shadow-xl h-[350px] sm:h-[450px] lg:h-[500px] rounded-2xl">
               <img 
-                src="/image copy.png" 
+                src="/file_000000000cb4821184d0f09a038f7058.png" 
                 alt="MBA Contracting"
                 className="w-full h-full object-cover"
               />

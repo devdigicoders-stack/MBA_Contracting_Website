@@ -142,8 +142,8 @@ export default function Home() {
       });
 
       setToast({
-        title: 'Message Sent Successfully!',
-        message: 'Thank you for reaching out. Our engineering team in Doha will get back to you soon.',
+        title: isRTL ? 'تم إرسال الرسالة بنجاح!' : 'Message Sent Successfully!',
+        message: isRTL ? 'شكراً لتواصلك معنا. سيقوم فريقنا الهندسي في الدوحة بالتواصل معك قريباً.' : 'Thank you for reaching out. Our engineering team in Doha will get back to you soon.',
       });
 
       setTimeout(() => {
@@ -506,7 +506,7 @@ export default function Home() {
           
           <div className="text-center mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0c1b2a] tracking-tight">
-              Experience the<br />difference of MBA
+              {t.home.experienceDifference?.title || 'Experience the difference of MBA'}
             </h2>
           </div>
 
@@ -658,7 +658,7 @@ export default function Home() {
                 <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-start gap-3 animate-fade-in">
                   <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold">Unable to send message</p>
+                    <p className="font-bold">{isRTL ? 'تعذر إرسال الرسالة' : 'Unable to send message'}</p>
                     <p className="mt-0.5 text-red-600">{error}</p>
                   </div>
                 </div>
@@ -1033,7 +1033,7 @@ export default function Home() {
             
             {/* Content Section */}
             <div className="w-full md:w-1/2 p-8 sm:p-10 flex flex-col justify-center">
-              <span className="text-[#004080] font-bold text-xs tracking-widest uppercase mb-2 hidden md:block">Project Focus</span>
+              <span className="text-[#004080] font-bold text-xs tracking-widest uppercase mb-2 hidden md:block">{isRTL ? 'نطاق المشروع' : 'Project Focus'}</span>
               <h2 className="text-3xl font-extrabold text-[#0c1b2a] mb-6 hidden md:block">{selectedProject.title}</h2>
               
               <div className="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
@@ -1052,8 +1052,8 @@ export default function Home() {
               
               <div className="mt-auto">
                 <Link to="/contact" className="inline-flex justify-center items-center gap-2 w-full py-4 bg-[#0c1b2a] hover:bg-[#004080] text-white font-bold text-sm uppercase tracking-wider rounded-none shadow-md transition-colors group">
-                  Discuss a similar project
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  {isRTL ? 'طلب استشارة لمشروع مماثل' : 'Discuss a similar project'}
+                  <span className="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">{isRTL ? '←' : '→'}</span>
                 </Link>
               </div>
             </div>

@@ -37,24 +37,152 @@ export default function Projects() {
     { title: 'Offices & Business Spaces', desc: 'Renovation, painting, flooring, gypsum and finishing.' },
   ];
 
-  const projectCategories = isRTL ? [
-    { title: 'بناء الفلل', img: '/projects/villa_construction.jpg' },
-    { title: 'بناء الملاحق والتوسعات', img: '/projects/villa_extensions.jpg' },
-    { title: 'بناء المجالس', img: '/projects/majlis_construction.jpg' },
-    { title: 'التشطيبات الداخلية', img: '/projects/interior_finishing.jpg' },
-    { title: 'صيانة المباني', img: '/projects/building_maintenance.jpg' },
-    { title: 'أعمال التجديد', img: '/projects/renovation_works.jpg' },
-    { title: 'أعمال الدهانات', img: '/projects/painting_projects.jpg' },
-    { title: 'البلاط والأرضيات', img: '/projects/flooring_tiling.jpg' },
+  const ourWorkProjects = isRTL ? [
+    {
+      title: 'بناء الفلل الحديثة والإنارة المعمارية',
+      category: 'بناء فلل فاخرة',
+      desc: 'تنفيذ وبناء فلل سكنية حديثة في الدوحة مع إنارة معمارية مدمجة بالواجهات وتنسيق متكامل للحديقة والمداخل.',
+      img: '/projecet2/IMG-20261024-WA0012.jpg.jpeg',
+    },
+    {
+      title: 'تنفيذ الفلل السكنية تسليم مفتاح',
+      category: 'مقاولات عامة وتصميم',
+      desc: 'بناء كامل للمبنى من الحفر والأساسات وحتى التشطيبات المعمارية النهائية وتسليم المفتاح بأعلى معايير الإتقان.',
+      img: '/projecet2/IMG-20261024-WA0015.jpg.jpeg',
+    },
+    {
+      title: 'الواجهات المعمارية والمداخل الفندقية',
+      category: 'تشطيب واجهات خارجية',
+      desc: 'تصميم وتنفيذ واجهات خارجية حديثة مع مداخل مزدوجة الارتفاع وإضاءات ديكورية تبرز جمالية التصميم الهندسي.',
+      img: '/projecet2/IMG-20261024-WA0013.jpg.jpeg',
+    },
+    {
+      title: 'أسوار الفلل الخارجية والبوابات والكسوات',
+      category: 'أسوار وبوابات معمارية',
+      desc: 'بناء أسوار الحماية والخصوصية المحيطة بالفلل مع تركيب البوابات الآلية والتشطيبات الحجرية المقاومة للعوامل الجوية.',
+      img: '/projecet2/IMG-20261024-WA0014.jpg.jpeg',
+    },
+    {
+      title: 'صب الخرسانة المسلحة للأسقف',
+      category: 'أعمال خرسانية وإنشائية',
+      desc: 'عمليات صب الخرسانة الجاهزة للأسقف باستخدام مضخات الخرسانة الميكانيكية والهزازات لضمان أعلى كثافة وقوة تحمل.',
+      img: '/projecet2/file_000000007cc08211818deee6274b32d6.png',
+    },
+    {
+      title: 'تركيب الجبس بورد والأسقف المعلقة',
+      category: 'تشطيبات داخلية وجبس',
+      desc: 'تنفيذ أسقف جبسية مستوية وديكورية مع معالجة فواصل الألواح والمعجون بدقة متناهية بأيدي فنيي إم بي إيه.',
+      img: '/projecet2/file_000000002fac8211b01ec051ac8697e7.png',
+    },
+    {
+      title: 'الجسور الأرضية (الميدات) والأساسات',
+      category: 'توسعات ومقاولات إنشائية',
+      desc: 'أعمال النجارة والحدادة والصب للميدات الأرضية وربط التوسعات السكنية الجديدة بالمباني القائمة وفق المواصفات.',
+      img: '/projecet2/file_0000000058748211b67b203b299e7ac9.png',
+    },
+    {
+      title: 'العزل البيتوميني لجدران الأساسات',
+      category: 'عزل وحماية تحت الأرض',
+      desc: 'عزل الجدران الخرسانية والبلوك تحت مستوى الأرض بدهانات بيتومينية سميكة لحماية الهيكل الإنشائي من الرطوبة والأملاح.',
+      img: '/projecet2/file_00000000b4fc8211b374f8a143f25d25.png',
+    },
+    {
+      title: 'أعمال تسوية ودك التربة للموقع',
+      category: 'تجهيز الموقع والأساسات',
+      desc: 'استخدام المداحل والآليات الثقيلة لدك طبقات التربة وتسوية المنسوب قبل بدء صب القواعد الخرسانية للفيلا.',
+      img: '/projecet2/file_000000001fc88211876925b828412bdf.png',
+    },
+    {
+      title: 'دمك طبقات الردم وتسليح الأعمدة',
+      category: 'أعمال مدنية وتحت الأرض',
+      desc: 'تدرج وضغط طبقات الدفان حول الرقاب الإنشائية مع مراعاة حماية حديد التسليح واستقامة المحاور الهندسية.',
+      img: '/projecet2/file_000000002ef482118c914afbe7b82f3f.png',
+    },
+    {
+      title: 'فرش عوازل الرطوبة والنايلون المقوى',
+      category: 'عزل رطوبة وتربة',
+      desc: 'تبطين خنادق القواعد والميدات بطبقات البولي إيثيلين المقاومة للتمزق لعزل الخرسانة عن رطوبة التربة المحيطة.',
+      img: '/projecet2/file_00000000d72c8211bc69f2e90eb15cdd.png',
+    },
+    {
+      title: 'صب وعزل رقاب الأعمدة الخرسانية',
+      category: 'هيكل إنشائي خرساني',
+      desc: 'صب رقاب الأعمدة المسلحة بدقة عالية وتطبيق العازل الوقائي الأسود قبل دفن القواعد الأرضية.',
+      img: '/projecet2/file_00000000f0b88211b679781e7fdf0051.png',
+    },
   ] : [
-    { title: 'Villa Construction', img: '/projects/villa_construction.jpg' },
-    { title: 'Villa Extensions', img: '/projects/villa_extensions.jpg' },
-    { title: 'Majlis Construction', img: '/projects/majlis_construction.jpg' },
-    { title: 'Interior Finishing', img: '/projects/interior_finishing.jpg' },
-    { title: 'Building Maintenance', img: '/projects/building_maintenance.jpg' },
-    { title: 'Renovation Works', img: '/projects/renovation_works.jpg' },
-    { title: 'Painting Projects', img: '/projects/painting_projects.jpg' },
-    { title: 'Flooring & Tiling', img: '/projects/flooring_tiling.jpg' },
+    {
+      title: 'Modern Luxury Villa & Night Illumination',
+      category: 'Turnkey Luxury Villa',
+      desc: 'Bespoke contemporary residential villa build in Doha featuring integrated exterior LED profile lighting and private landscape compound.',
+      img: '/projecet2/IMG-20261024-WA0012.jpg.jpeg',
+    },
+    {
+      title: 'Turnkey Residential Villa Construction',
+      category: 'General Contracting',
+      desc: 'Comprehensive turnkey villa execution from initial excavation and civil foundations through architectural finishing and key delivery.',
+      img: '/projecet2/IMG-20261024-WA0015.jpg.jpeg',
+    },
+    {
+      title: 'Contemporary Facade Architecture & Portals',
+      category: 'Exterior Finishing',
+      desc: 'Minimalist exterior facade engineering with double-height entrance portals, architectural lighting accents, and custom glazing.',
+      img: '/projecet2/IMG-20261024-WA0013.jpg.jpeg',
+    },
+    {
+      title: 'Boundary Walls, Security Gates & Cladding',
+      category: 'Perimeter Infrastructure',
+      desc: 'Premium privacy boundary walls, automated driveway gate installation, and high-durability weather-resistant stone plaster finishes.',
+      img: '/projecet2/IMG-20261024-WA0014.jpg.jpeg',
+    },
+    {
+      title: 'Reinforced Concrete Roof Slab Casting',
+      category: 'Structural Concrete',
+      desc: 'High-volume ready-mix roof slab pouring utilizing concrete boom pumps with mechanical vibration for structural integrity.',
+      img: '/projecet2/file_000000007cc08211818deee6274b32d6.png',
+    },
+    {
+      title: 'Gypsum Board Ceiling & Joint Finishing',
+      category: 'Interior Gypsum Works',
+      desc: 'Precision suspended gypsum ceiling grid installation, taping, and seamless joint skim plastering by MBA craftsmen.',
+      img: '/projecet2/file_000000002fac8211b01ec051ac8697e7.png',
+    },
+    {
+      title: 'Ground Beams & Villa Extension Foundations',
+      category: 'Civil & Extensions',
+      desc: 'Formwork, structural steel reinforcement, and tie beam casting for structural expansion and villa additions in Qatar.',
+      img: '/projecet2/file_0000000058748211b67b203b299e7ac9.png',
+    },
+    {
+      title: 'Bituminous Waterproofing & Substructure Masonry',
+      category: 'Waterproofing Protection',
+      desc: 'Heavy-duty multi-layer bituminous damp-proof application over below-grade blockwork walls to shield against subterranean salts and water.',
+      img: '/projecet2/file_00000000b4fc8211b374f8a143f25d25.png',
+    },
+    {
+      title: 'Heavy Roller Compaction & Site Earthworks',
+      category: 'Earthworks & Ground Prep',
+      desc: 'Mechanical ground leveling and compaction using heavy vibrating rollers to ensure firm subgrade bearing capacity.',
+      img: '/projecet2/file_000000001fc88211876925b828412bdf.png',
+    },
+    {
+      title: 'Sub-Base Soil Compaction & Rebar Framing',
+      category: 'Foundation Substructure',
+      desc: 'Controlled layer-by-layer backfill compaction and starter rebar alignment for load-bearing reinforced concrete elements.',
+      img: '/projecet2/file_000000002ef482118c914afbe7b82f3f.png',
+    },
+    {
+      title: 'Vapor Barrier & Foundation Trench Lining',
+      category: 'Moisture Protection',
+      desc: 'High-density polyethylene sheet installation across foundation footing trenches to prevent rising capillary moisture.',
+      img: '/projecet2/file_00000000d72c8211bc69f2e90eb15cdd.png',
+    },
+    {
+      title: 'Reinforced Column Necks & Isolated Footing Protection',
+      category: 'Substructure Civil',
+      desc: 'Cast-in-place reinforced concrete neck columns with complete protective bitumen barrier coating before final site backfilling.',
+      img: '/projecet2/file_00000000f0b88211b679781e7fdf0051.png',
+    },
   ];
 
   return (
@@ -70,7 +198,7 @@ export default function Projects() {
         {/* Bottom Fade Gradient for the Grid */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div>
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
+        <div className="relative z-10 w-full max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-6 sm:mt-12">
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1f2937] tracking-tight mb-5">
             {isRTL ? 'مشاريعنا المنجزة' : 'Our Projects'}
@@ -94,50 +222,85 @@ export default function Projects() {
             </Link>
           </div>
 
-          {/* Features Row */}
-          <div className="flex flex-wrap items-center justify-center gap-y-6 gap-x-8 sm:gap-x-12 pt-8 border-t border-gray-200/80 w-full">
-            {/* Feature 1 */}
-            <div className="flex items-center gap-3">
-              <Building2 className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left rtl:text-right">
-                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'تسليم مفتاح' : 'Turnkey'}</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'حلول متكاملة' : 'Complete Solutions'}</span>
+          {/* Features Row - All 4 in one line on tablet and desktop */}
+          <div className="pt-8 border-t border-gray-200/80 w-full max-w-5xl mx-auto">
+            {/* Desktop / Tablet: All 4 in 1 single line */}
+            <div className="hidden sm:flex items-center justify-between gap-3 md:gap-5 lg:gap-8 w-full">
+              {/* Feature 1 */}
+              <div className="flex items-center gap-2.5 lg:gap-3 shrink-0">
+                <Building2 className="w-7 h-7 lg:w-8 lg:h-8 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-base sm:text-lg lg:text-xl font-black text-[#1f2937] leading-none whitespace-nowrap">{isRTL ? 'تسليم مفتاح' : 'Turnkey'}</span>
+                  <span className="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1 whitespace-nowrap">{isRTL ? 'حلول متكاملة' : 'Complete Solutions'}</span>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-9 lg:h-10 bg-gray-200 shrink-0" />
+
+              {/* Feature 2 */}
+              <div className="flex items-center gap-2.5 lg:gap-3 shrink-0">
+                <Award className="w-7 h-7 lg:w-8 lg:h-8 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-base sm:text-lg lg:text-xl font-black text-[#1f2937] leading-none whitespace-nowrap">{isRTL ? 'الجودة أولاً' : 'Quality First'}</span>
+                  <span className="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1 whitespace-nowrap">{isRTL ? 'تشطيبات دقيقة' : 'Precision Finishing'}</span>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-9 lg:h-10 bg-gray-200 shrink-0" />
+
+              {/* Feature 3 */}
+              <div className="flex items-center gap-2.5 lg:gap-3 shrink-0">
+                <Clock className="w-7 h-7 lg:w-8 lg:h-8 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-base sm:text-lg lg:text-xl font-black text-[#1f2937] leading-none whitespace-nowrap">{isRTL ? 'في الموعد' : 'On-Time'}</span>
+                  <span className="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1 whitespace-nowrap">{isRTL ? 'تسليم موثوق' : 'Reliable Handover'}</span>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-9 lg:h-10 bg-gray-200 shrink-0" />
+
+              {/* Feature 4 */}
+              <div className="flex items-center gap-2.5 lg:gap-3 shrink-0">
+                <ShieldCheck className="w-7 h-7 lg:w-8 lg:h-8 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-base sm:text-lg lg:text-xl font-black text-[#1f2937] leading-none whitespace-nowrap">{isRTL ? 'فريق متخصص' : 'Skilled Team'}</span>
+                  <span className="text-[9px] lg:text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1 whitespace-nowrap">{isRTL ? 'إشراف دقيق' : 'Strict Supervision'}</span>
+                </div>
               </div>
             </div>
 
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-10 bg-gray-200" />
-
-            {/* Feature 2 */}
-            <div className="flex items-center gap-3">
-              <Award className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left rtl:text-right">
-                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'الجودة أولاً' : 'Quality First'}</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'تشطيبات دقيقة' : 'Precision Finishing'}</span>
+            {/* Mobile: Clean 2x2 Grid */}
+            <div className="grid grid-cols-2 gap-4 sm:hidden max-w-sm mx-auto">
+              <div className="flex items-center gap-2">
+                <Building2 className="w-6 h-6 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-sm font-black text-[#1f2937] leading-none">{isRTL ? 'تسليم مفتاح' : 'Turnkey'}</span>
+                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-0.5">{isRTL ? 'حلول متكاملة' : 'Complete Solutions'}</span>
+                </div>
               </div>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden lg:block w-px h-10 bg-gray-200" />
-
-            {/* Feature 3 */}
-            <div className="flex items-center gap-3">
-              <Clock className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left rtl:text-right">
-                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'في الموعد' : 'On-Time'}</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'تسليم موثوق' : 'Reliable Handover'}</span>
+              <div className="flex items-center gap-2">
+                <Award className="w-6 h-6 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-sm font-black text-[#1f2937] leading-none">{isRTL ? 'الجودة أولاً' : 'Quality First'}</span>
+                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-0.5">{isRTL ? 'تشطيبات دقيقة' : 'Precision Finishing'}</span>
+                </div>
               </div>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-10 bg-gray-200" />
-
-            {/* Feature 4 */}
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="w-8 h-8 text-[#004080]" />
-              <div className="flex flex-col text-left rtl:text-right">
-                <span className="text-xl font-black text-[#1f2937] leading-none">{isRTL ? 'فريق متخصص' : 'Skilled Team'}</span>
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-1">{isRTL ? 'إشراف دقيق' : 'Strict Supervision'}</span>
+              <div className="flex items-center gap-2">
+                <Clock className="w-6 h-6 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-sm font-black text-[#1f2937] leading-none">{isRTL ? 'في الموعد' : 'On-Time'}</span>
+                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-0.5">{isRTL ? 'تسليم موثوق' : 'Reliable Handover'}</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-6 h-6 text-[#004080] shrink-0" />
+                <div className="flex flex-col text-left rtl:text-right">
+                  <span className="text-sm font-black text-[#1f2937] leading-none">{isRTL ? 'فريق متخصص' : 'Skilled Team'}</span>
+                  <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wide mt-0.5">{isRTL ? 'إشراف دقيق' : 'Strict Supervision'}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -225,47 +388,59 @@ export default function Projects() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="text-center mb-14 max-w-3xl mx-auto">
           <span className="text-sm font-bold tracking-[0.2em] text-[#004080] uppercase mb-2 block">
-            {isRTL ? 'معرض الأعمال' : 'Portfolio'}
+            {isRTL ? 'معرض الأعمال الواقعية' : 'Portfolio'}
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#0c1b2a] tracking-tight uppercase">
             {isRTL ? 'أعمال ومشاريع إم بي إيه' : 'Projects / Our Work'}
           </h2>
           <div className="w-16 h-1 bg-[#004080] mx-auto mt-6 mb-6" />
           <p className="text-[#0c1b2a] font-bold text-lg mb-2">
-            {isRTL ? 'جودة ملموسة يمكنك رؤيتها.' : 'Quality Work You Can See.'}
+            {isRTL ? 'مشاريع حقيقية وجودة ملموسة يمكنك رؤيتها.' : 'Quality Work You Can See.'}
           </p>
           <p className="text-gray-500 text-sm">
             {isRTL 
-              ? 'مجموعة من صور مشاريعنا المنجزة والجارية في مختلف أنحاء قطر.'
-              : 'Showcase of completed and ongoing projects with real photography and clean execution.'}
+              ? 'توثيق حي لمراحل البناء والتنفيذ والتشطيب للفلل والمشاريع السكنية في قطر.'
+              : 'Real on-site photography documenting every phase: excavation, civil structures, gypsum works, and turnkey luxury villas.'}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projectCategories.map((cat, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {ourWorkProjects.map((cat, idx) => (
             <div 
               key={idx} 
               onClick={() => setSelectedProject(cat)}
-              className="bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer relative"
+              className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-56 overflow-hidden relative bg-gray-100">
                 <img 
                   src={cat.img} 
                   alt={cat.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
               </div>
-              <div className="p-4 bg-[#0c1b2a]">
-                <h3 className="text-sm font-bold text-white text-center tracking-wide">{cat.title}</h3>
+              <div className="p-5 flex flex-col flex-1 justify-between bg-white">
+                <div>
+                  <h3 className="text-base font-bold text-[#0c1b2a] group-hover:text-[#004080] transition-colors line-clamp-2 leading-snug mb-2">
+                    {cat.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">
+                    {cat.desc}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#f05c26]">
+                  <span>{isRTL ? 'عرض تفاصيل المشروع' : 'View Project Details'}</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:group-hover:-translate-x-0.5 transition-transform" />
+                </div>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-          <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#004080] hover:bg-[#002952] text-white font-bold text-xs uppercase tracking-wider rounded-none shadow-md transition-colors">
+        <div className="mt-14 text-center">
+          <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#004080] hover:bg-[#002952] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md hover:shadow-lg transition-all active:scale-95">
             <span>{isRTL ? 'ابدأ مشروعك الآن' : 'Start Your Project'}</span>
+            <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -274,47 +449,58 @@ export default function Projects() {
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm transition-opacity" onClick={() => setSelectedProject(null)}>
           <div 
-            className="bg-white max-w-4xl w-full rounded-none shadow-2xl overflow-hidden flex flex-col md:flex-row relative animate-in fade-in zoom-in duration-300"
+            className="bg-white max-w-4xl w-full rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row relative animate-in fade-in zoom-in duration-300 max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 rtl:right-auto rtl:left-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white md:text-[#0c1b2a] md:bg-gray-100 md:hover:bg-gray-200 transition-colors"
+              className="absolute top-4 right-4 rtl:right-auto rtl:left-4 z-10 w-10 h-10 bg-white/80 hover:bg-white backdrop-blur-md rounded-full flex items-center justify-center text-gray-700 shadow-md transition-colors cursor-pointer"
+              aria-label="Close"
             >
               ✕
             </button>
             
             {/* Image Section */}
-            <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+            <div className="w-full md:w-1/2 h-64 md:h-auto min-h-[300px] bg-black/5 relative overflow-hidden flex items-center justify-center">
               <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-full object-cover" />
             </div>
 
             {/* Content Section */}
-            <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+            <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto">
               <div>
-                <span className="text-xs font-bold text-[#004080] uppercase tracking-wider block mb-1">
-                  {isRTL ? 'مشروع معتمد' : 'Verified Project'}
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-[#004080] border border-blue-100 uppercase tracking-wider mb-3">
+                  {selectedProject.category || (isRTL ? 'مشروع معتمد' : 'Verified Project')}
                 </span>
-                <h3 className="text-2xl font-bold text-[#0c1b2a] mb-4">{selectedProject.title}</h3>
+                <h3 className="text-2xl font-extrabold text-[#0c1b2a] mb-4 leading-snug">{selectedProject.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  {isRTL
-                    ? 'تم تنفيذ المشروع وفق أعلى معايير الجودة والسلامة مع إشراف هندسي دقيق من فريق إم بي إيه للمقاولات في قطر.'
-                    : 'Executed according to strict quality and safety standards under close engineering supervision by MBA Contracting in Qatar.'}
+                  {selectedProject.desc}
                 </p>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-100 space-y-2 text-xs text-gray-600 mb-6">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#004080]"></span>
+                    <strong className="text-gray-900">{isRTL ? 'الموقع: ' : 'Location: '}</strong>
+                    <span>{isRTL ? 'الدوحة، قطر' : 'Doha, Qatar'}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    <strong className="text-gray-900">{isRTL ? 'معيار الجودة: ' : 'Standard: '}</strong>
+                    <span>{isRTL ? 'إشراف هندسي وضمان جودة معتمد' : 'Strict Engineering Standards & QA'}</span>
+                  </div>
+                </div>
               </div>
 
               <div className="pt-6 border-t border-gray-100 flex items-center gap-4">
                 <Link 
                   to="/contact" 
                   onClick={() => setSelectedProject(null)}
-                  className="flex-1 py-3 px-4 bg-[#004080] hover:bg-[#002952] text-white font-bold text-center text-sm transition-colors"
+                  className="flex-1 py-3 px-4 bg-[#004080] hover:bg-[#002952] text-white font-bold text-center text-sm rounded-lg transition-colors shadow-sm"
                 >
-                  {isRTL ? 'طلب استشارة' : 'Inquire Now'}
+                  {isRTL ? 'طلب استشارة لمشروعك' : 'Inquire for Your Project'}
                 </Link>
                 <a 
                   href="tel:+97450722177" 
-                  className="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-[#0c1b2a] font-bold text-center text-sm transition-colors"
+                  className="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-[#0c1b2a] font-bold text-center text-sm rounded-lg transition-colors"
                 >
                   {t.nav.callUsNow}
                 </a>
