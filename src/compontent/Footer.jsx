@@ -126,9 +126,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-6 pb-2 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="border-t border-gray-200 pt-6 pb-2 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
           <p className="text-gray-500 font-semibold text-[11px] sm:text-xs text-center md:text-left rtl:md:text-right">
             © {new Date().getFullYear()} {t.footer.rights}
+          </p>
+          <p className="text-gray-500 font-medium text-[11px] sm:text-xs text-center">
+            {isRTL ? 'تصميم وتطوير بواسطة ' : 'Design and Developed by '}
+            <a 
+              href="https://www.worknestconnect.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-bold text-[#0c1b2a] hover:text-[#004080] hover:underline transition-colors cursor-pointer"
+            >
+              Worknest connect
+            </a>
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link to="/privacy-policy" className="text-gray-500 font-semibold hover:text-[#004080] text-[11px] sm:text-xs transition-colors">
